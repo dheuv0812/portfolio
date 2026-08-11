@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { FaCalendarAlt, FaAward, FaBuilding, FaHandshake } from 'react-icons/fa';
+import { FaCalendarAlt, FaAward, FaBuilding, FaHandshake, FaFileAlt } from 'react-icons/fa';
 
 import { useSEO } from '@/hooks/useSEO';
 import internshipData from '@/data/experience.json';
@@ -188,6 +188,16 @@ export function ExperiencePage() {
                           </span>
                         ))}
                       </div>
+                      {activeExp.offerLetter && (
+                        <a
+                          href={activeExp.offerLetter}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-[9.5px] font-black uppercase bg-[#CCFF00] border border-black py-2 rounded-xl text-black flex items-center justify-center gap-1.5 mt-1"
+                        >
+                          <FaFileAlt className="w-3 h-3" /> Offer Letter
+                        </a>
+                      )}
                     </div>
                   )}
                 </div>
@@ -258,12 +268,22 @@ export function ExperiencePage() {
                 </div>
 
                 {/* Tools footer */}
-                <div className="flex flex-wrap gap-1.5 mt-4 pt-6 border-t border-black/5">
+                <div className="flex flex-wrap items-center gap-1.5 mt-4 pt-6 border-t border-black/5">
                   {exp.technologies.map(t => (
                     <span key={t} className="text-[9px] font-black uppercase border border-black/10 bg-white/80 px-2.5 py-1 rounded-full text-black/70">
                       {t}
                     </span>
                   ))}
+                  {(exp as any).offerLetter && (
+                    <a
+                      href={(exp as any).offerLetter}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ml-auto text-[9.5px] font-black uppercase tracking-wider bg-[#CCFF00] border-2 border-black px-3.5 py-1.5 rounded-full text-black hover:bg-black hover:text-[#CCFF00] transition-colors flex items-center gap-1.5 shadow-sm flex-shrink-0"
+                    >
+                      <FaFileAlt className="w-2.5 h-2.5" /> Offer Letter
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))

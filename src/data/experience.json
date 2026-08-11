@@ -16,6 +16,7 @@
       "Successfully launched Upsilon Landing version and integrated dark mode features.",
       "Handled Google OAuth credentials setups.",
       "Constructed NeonDB database table columns."
-    ]
+    ],
+    "offerLetter": "/aks-offer-letter.pdf"
   }
 ]

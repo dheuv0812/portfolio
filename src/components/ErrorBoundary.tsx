@@ -31,7 +31,7 @@ export class ErrorBoundary extends Component<Props, State> {
         <div className="w-full min-h-screen bg-white bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] flex flex-col items-center justify-center p-6 text-center select-none">
           <div className="max-w-md bg-white border-[3px] border-black rounded-[2.5rem] p-8 shadow-[8px_8px_0px_0px_#000] flex flex-col items-center gap-6">
             <span className="text-5xl">⚡</span>
-            <span className="inline-block bg-[#CCFF00] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase border border-black">
+            <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase border border-black">
               SYSTEM ERROR
             </span>
             <h1 className="text-2xl font-black text-black uppercase leading-tight">
@@ -47,7 +47,7 @@ export class ErrorBoundary extends Component<Props, State> {
             )}
             <button
               onClick={() => window.location.reload()}
-              className="px-6 py-3 bg-[#CCFF00] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] cursor-pointer"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] cursor-pointer"
             >
               Reload Application
             </button>

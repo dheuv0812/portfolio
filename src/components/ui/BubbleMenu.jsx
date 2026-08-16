@@ -5,14 +5,14 @@ import { FaFilePdf, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './BubbleMenu.css';
 
 const DEFAULT_ITEMS = [
-  { label: 'home',           href: '/',               ariaLabel: 'Home',           rotation: -6, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'about',          href: '#about',          ariaLabel: 'About',          rotation:  5, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'skills',         href: '/skills',         ariaLabel: 'Skills',         rotation: -4, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'projects',       href: '/projects',       ariaLabel: 'Projects',       rotation:  6, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'client work',    href: '/client-work',    ariaLabel: 'Client Work',    rotation: -5, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'experience',     href: '/experience',     ariaLabel: 'Experience',     rotation:  7, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
+  { label: 'home',           href: '/',               ariaLabel: 'Home',           rotation: -6, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'about',          href: '#about',          ariaLabel: 'About',          rotation:  5, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'skills',         href: '/skills',         ariaLabel: 'Skills',         rotation: -4, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'projects',       href: '/projects',       ariaLabel: 'Projects',       rotation:  6, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'client work',    href: '/client-work',    ariaLabel: 'Client Work',    rotation: -5, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'experience',     href: '/experience',     ariaLabel: 'Experience',     rotation:  7, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
 ];
 
 export default function BubbleMenu({
@@ -22,7 +22,7 @@ export default function BubbleMenu({
   style,
   menuAriaLabel = 'Toggle navigation',
   menuBg = '#ffffff',
-  menuContentColor = '#0038FF',
+  menuContentColor = '#031714',
   useFixedPosition = true,
   animationEase = 'back.out(1.7)',
   animationDuration = 0.48,
@@ -231,8 +231,8 @@ export default function BubbleMenu({
                       '--item-rot': `${item.rotation ?? 0}deg`,
                       '--item-ty': `${item.translateY ?? 0}px`,
                       '--pill-bg': active ? '#000000' : 'rgba(255,255,255,0.08)',
-                      '--pill-color': active ? '#CCFF00' : '#ffffff',
-                      '--hover-bg': item.hoverStyles?.bgColor || '#CCFF00',
+                      '--pill-color': active ? '#00F5A0' : '#ffffff',
+                      '--hover-bg': item.hoverStyles?.bgColor || '#00F5A0',
                       '--hover-color': item.hoverStyles?.textColor || '#000000'
                     }}
                     ref={el => {

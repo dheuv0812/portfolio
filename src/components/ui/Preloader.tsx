@@ -9,27 +9,18 @@ export function Preloader({ onComplete }: PreloaderProps) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Skip preloader if already viewed during session or if search engine bot
+    // Skip preloader only for search engine crawlers
     const isBot =
       typeof navigator !== 'undefined' &&
       /Lighthouse|Googlebot|Chrome-Lighthouse|HeadlessChrome/i.test(navigator.userAgent);
-    const alreadySeen =
-      typeof sessionStorage !== 'undefined' &&
-      sessionStorage.getItem('portfolio_preloader_seen') === 'true';
 
-    if (isBot || alreadySeen) {
+    if (isBot) {
       onComplete();
       return;
     }
 
-    try {
-      sessionStorage.setItem('portfolio_preloader_seen', 'true');
-    } catch {
-      // Ignore if storage access is restricted
-    }
-
     // Snappy intro progress counter from 0 to 100
-    const duration = 800;
+    const duration = 900;
     const intervalTime = 16;
     const totalSteps = duration / intervalTime;
     let step = 0;
@@ -66,7 +57,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
   };
 
   const shadow3D =
-    '1px 1px 0 #001A99, 2px 2px 0 #001A99, 3px 3px 0 #001A99, 4px 4px 0 #001A99, 5px 5px 0 #001A99';
+    '2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000, 8px 8px 0 #00F5A0';
 
   return (
     <motion.div
@@ -78,10 +69,10 @@ export function Preloader({ onComplete }: PreloaderProps) {
           ease: [0.85, 0, 0.15, 1] as [number, number, number, number]
         }
       }}
-      className="fixed inset-0 z-[999] bg-[#00083A] flex flex-col items-center justify-center select-none"
+      className="fixed inset-0 z-[999] bg-[#031714] flex flex-col items-center justify-center select-none"
     >
       {/* Subtle grid pattern matching website theme */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00f5a008_1px,transparent_1px),linear-gradient(to_bottom,#00f5a008_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
 
       {/* Main initials R.D. */}
       <div className="relative flex items-center justify-center mb-8 z-10" style={{ letterSpacing: 0 }}>
@@ -102,7 +93,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
               fontSize: isDot ? 'clamp(3rem, 8vw, 7rem)' : 'clamp(5rem, 12vw, 10rem)',
               lineHeight: 1,
               textShadow: !isDot ? shadow3D : undefined,
-              color: isDot ? '#CCFF00' : 'white',
+              color: isDot ? '#00F5A0' : 'white',
               marginLeft: isDot ? '-0.05em' : index > 0 ? '-0.05em' : 0,
             }}
           >
@@ -114,9 +105,9 @@ export function Preloader({ onComplete }: PreloaderProps) {
       {/* Progress indicators */}
       <div className="relative z-10 flex flex-col items-center gap-3">
         {/* Loading bar */}
-        <div className="w-40 h-[3px] bg-white/10 rounded-full overflow-hidden border border-white/5">
+        <div className="w-48 h-[4px] bg-white/10 rounded-full overflow-hidden border border-[#00F5A0]/20">
           <motion.div 
-            className="h-full bg-[#CCFF00]"
+            className="h-full bg-[#00F5A0] shadow-[0_0_12px_#00F5A0]"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ ease: 'easeOut', duration: 0.1 }}
@@ -125,8 +116,8 @@ export function Preloader({ onComplete }: PreloaderProps) {
 
         {/* Monospace progress percent */}
         <span 
-          className="text-xs font-bold tracking-widest text-[#CCFF00] font-mono"
-          style={{ textShadow: '0 0 10px rgba(204,255,0,0.3)' }}
+          className="text-xs font-black tracking-widest text-[#00F5A0] font-mono"
+          style={{ textShadow: '0 0 10px rgba(0, 245, 160, 0.4)' }}
         >
           {String(progress).padStart(3, '0')}%
         </span>

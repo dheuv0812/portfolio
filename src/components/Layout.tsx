@@ -8,13 +8,12 @@ import { ResumeModal } from '@/components/ui/ResumeModal';
 import BubbleMenu from '@/components/ui/BubbleMenu';
 import { ScrollVelocity } from '@/components/ui/ScrollVelocity';
 import ProfileCard from '@/components/ui/ProfileCard';
-import { fetchVisitorCount } from '@/lib/visitorCounter';
 
 const Logo = () => (
   <div className="p-0.5 rounded-full bg-white shadow-sm flex items-center justify-center border border-black/5">
     <Link
       to="/"
-      className="inline-flex items-center text-[#CCFF00] font-black text-[12px] px-4 py-1.5 rounded-full tracking-wider hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+      className="inline-flex items-center text-[#00F5A0] font-black text-[12px] px-4 py-1.5 rounded-full tracking-wider hover:scale-105 transition-all duration-300 relative overflow-hidden group"
       style={{
         background: 'linear-gradient(135deg, #18181B 0%, #09090B 100%)',
         boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.25), inset 0 -2px 6px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.2)',
@@ -29,24 +28,19 @@ const Logo = () => (
 );
 
 const menuItems = [
-  { label: 'home',           href: '/',               ariaLabel: 'Home',           rotation: -6, translateY: -14, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'about',          href: '#about',          ariaLabel: 'About',          rotation:  5, translateY:  12, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'skills',         href: '/skills',         ariaLabel: 'Skills',         rotation: -4, translateY:  -8, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'projects',       href: '/projects',       ariaLabel: 'Projects',       rotation:  6, translateY:  16, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'client work',    href: '/client-work',    ariaLabel: 'Client Work',    rotation: -5, translateY: -12, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'experience',     href: '/experience',     ariaLabel: 'Experience',     rotation:  7, translateY:  10, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, translateY:  -8, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
-  { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, translateY:  14, hoverStyles: { bgColor: '#CCFF00', textColor: '#000000' } },
+  { label: 'home',           href: '/',               ariaLabel: 'Home',           rotation: -6, translateY: -14, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'about',          href: '#about',          ariaLabel: 'About',          rotation:  5, translateY:  12, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'skills',         href: '/skills',         ariaLabel: 'Skills',         rotation: -4, translateY:  -8, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'projects',       href: '/projects',       ariaLabel: 'Projects',       rotation:  6, translateY:  16, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'client work',    href: '/client-work',    ariaLabel: 'Client Work',    rotation: -5, translateY: -12, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'experience',     href: '/experience',     ariaLabel: 'Experience',     rotation:  7, translateY:  10, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, translateY:  -8, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, translateY:  14, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [resumeOpen, setResumeOpen] = useState(false);
-  const [visitorCount, setVisitorCount] = useState<number | null>(null);
-
-  useEffect(() => {
-    fetchVisitorCount().then(setVisitorCount);
-  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -57,13 +51,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="w-full relative min-h-screen flex flex-col bg-white">
       {/* Top scroll velocity ticker */}
-      <div className="w-full bg-black text-[#CCFF00] py-2 border-b-2 border-black z-30 overflow-hidden relative h-8 flex items-center">
+      <div className="w-full bg-[#031714] text-[#00F5A0] py-2 border-b border-[#00F5A0]/20 z-30 overflow-hidden relative h-8 flex items-center">
         <ScrollVelocity
           texts={[
             "BUILD • LEARN • ITERATE • SHIP • BUILD • LEARN • ITERATE • SHIP"
           ]}
           velocity={20}
-          className="text-[10px] font-black tracking-widest uppercase"
+          className="text-[10px] font-black tracking-widest uppercase text-[#00F5A0]"
           parallaxClassName="py-0.5"
           numCopies={8}
         />
@@ -74,7 +68,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         items={menuItems}
         menuAriaLabel="Toggle navigation"
         menuBg="#ffffff"
-        menuContentColor="#0038FF"
+        menuContentColor="#031714"
         useFixedPosition={true}
         animationEase="back.out(1.7)"
         animationDuration={0.48}
@@ -86,7 +80,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="fixed top-24 left-4 md:left-8 z-40">
           <Link
             to="/"
-            className="flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 border-2 border-black rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-wider hover:bg-[#CCFF00] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200"
+            className="flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 border-2 border-black rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-wider hover:bg-[#00F5A0] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200"
           >
             <span>← Back <span className="hidden sm:inline">to Home</span></span>
           </Link>
@@ -101,7 +95,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <motion.button
           onClick={scrollToTop}
           whileHover={{ scale: 1.1 }}
-          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-black bg-white flex items-center justify-center text-black hover:bg-[#CCFF00] shadow-lg transition-colors duration-300 cursor-pointer"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-black bg-white flex items-center justify-center text-black hover:bg-[#00F5A0] shadow-lg transition-colors duration-300 cursor-pointer"
           aria-label="Back to top"
           title="Back to Top"
         >
@@ -128,7 +122,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
             {/* Branding Column */}
             <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
-              <span className="inline-block bg-[#CCFF00] text-black font-black text-xs px-4 py-1.5 rounded-full w-fit tracking-wider uppercase">
+              <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full w-fit tracking-wider uppercase">
                 ROHIT DUBEY
               </span>
               <p className="text-white/50 text-sm max-w-sm font-medium leading-relaxed">
@@ -148,7 +142,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       href={social.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#CCFF00] hover:text-black transition-all duration-300"
+                      className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#00F5A0] hover:text-black transition-all duration-300"
                     >
                       <Icon className="w-4 h-4" />
                     </a>
@@ -159,7 +153,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Quick Links Column */}
             <div className="flex flex-col gap-3">
-              <h4 className="text-[#CCFF00] font-black text-xs tracking-widest uppercase mb-1">
+              <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
                 NAVIGATE
               </h4>
               <Link to="/" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Home / About</Link>
@@ -171,7 +165,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Resumes Column */}
             <div className="flex flex-col gap-3">
-              <h4 className="text-[#CCFF00] font-black text-xs tracking-widest uppercase mb-1">
+              <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
                 DOCUMENTS
               </h4>
               <button
@@ -207,9 +201,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 enableTilt={true}
                 enableMobileTilt={false}
                 behindGlowEnabled={true}
-                behindGlowColor="rgba(204, 255, 0, 0.15)"
+                behindGlowColor="rgba(0, 245, 160, 0.15)"
                 innerGradient="transparent"
                 onContactClick={() => {
+                  if (window.location.pathname !== '/') {
+                    window.location.href = '/#contact';
+                    return;
+                  }
                   const el = document.getElementById('contact');
                   if (el) {
                     el.scrollIntoView({ behavior: 'smooth' });
@@ -225,12 +223,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <p className="font-bold uppercase tracking-wider">
               © {new Date().getFullYear()} ROHIT DUBEY. ALL RIGHTS RESERVED.
             </p>
-            {visitorCount !== null && (
-              <p className="font-black uppercase tracking-wider text-white/70 flex items-center gap-1.5 bg-white/5 px-3.5 py-1.5 rounded-full border border-white/10 text-[10px] sm:text-xs">
-                <span className="text-[#CCFF00]">👁</span> {visitorCount} VISITORS SINCE LAUNCH
-              </p>
-            )}
-            <p className="font-black uppercase tracking-widest text-[#CCFF00]/60">
+            <p className="font-black uppercase tracking-widest text-[#00F5A0]/60">
               v3.1 • BUILT WITH REACT, THREE.JS, &amp; GSAP
             </p>
           </div>

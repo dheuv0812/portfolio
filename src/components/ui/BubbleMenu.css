@@ -95,7 +95,7 @@
 .bubble-menu .menu-line {
   width: 18px;
   height: 2.2px;
-  background: #0038FF;
+  background: #031714;
   border-radius: 2px;
   display: block;
   margin: 0 auto;
@@ -137,7 +137,7 @@
   justify-content: space-between;
   pointer-events: auto;
   z-index: 98;
-  background: #0038FF;
+  background: #031714;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 80px 20px 24px 20px;
@@ -175,7 +175,7 @@
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.22em;
-  color: #CCFF00;
+  color: #00F5A0;
   text-transform: uppercase;
 }
 
@@ -226,8 +226,8 @@
   width: 6.5px;
   height: 6.5px;
   border-radius: 50%;
-  background: #CCFF00;
-  box-shadow: 0 0 10px #CCFF00, 0 0 4px #CCFF00;
+  background: #00F5A0;
+  box-shadow: 0 0 10px #00F5A0, 0 0 4px #00F5A0;
   display: inline-block;
   flex-shrink: 0;
 }
@@ -317,8 +317,8 @@
 /* === 2. Active Page Standout Style === */
 .bubble-menu-items .pill-link.active-pill {
   background: #000000 !important;
-  color: #CCFF00 !important;
-  border: 2.5px solid #CCFF00 !important;
+  color: #00F5A0 !important;
+  border: 2.5px solid #00F5A0 !important;
   box-shadow: 0 0 20px rgba(204, 255, 0, 0.45), inset 0 0 12px rgba(204, 255, 0, 0.15) !important;
 }
 
@@ -335,7 +335,7 @@
   font-size: 0.45em;
   font-weight: 900;
   letter-spacing: 0.1em;
-  color: #CCFF00;
+  color: #00F5A0;
   opacity: 0.85;
   background: rgba(0, 0, 0, 0.4);
   padding: 3px 8px;
@@ -347,8 +347,8 @@
 
 .bubble-menu-items .pill-link.active-pill .pill-num {
   color: #000000;
-  background: #CCFF00;
-  border-color: #CCFF00;
+  background: #00F5A0;
+  border-color: #00F5A0;
 }
 
 .bubble-menu-items .active-badge {
@@ -356,7 +356,7 @@
   font-weight: 900;
   letter-spacing: 0.15em;
   color: #000000;
-  background: #CCFF00;
+  background: #00F5A0;
   padding: 2px 7px;
   border-radius: 999px;
   margin-left: 6px;
@@ -400,9 +400,9 @@
 }
 
 .bubble-menu-items .overlay-cta-bar .primary-cta {
-  background: #CCFF00 !important;
+  background: #00F5A0 !important;
   color: #000000 !important;
-  border-color: #CCFF00 !important;
+  border-color: #00F5A0 !important;
   box-shadow: 0 4px 14px rgba(204, 255, 0, 0.3);
 }
 
@@ -437,7 +437,7 @@
 }
 
 .bubble-menu-items .overlay-domain-footer .domain-text strong {
-  color: #CCFF00;
+  color: #00F5A0;
 }
 
 /* === Mobile Layout Optimization (iPhone SE, S20, Pixel 7, iPhone 14) === */

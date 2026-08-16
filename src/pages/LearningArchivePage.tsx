@@ -42,7 +42,7 @@ export function LearningArchivePage() {
         
         {/* Header */}
         <div className="mb-6 sm:mb-10 border-b border-black/5 pb-6">
-          <span className="inline-block bg-[#CCFF00] text-black font-black text-xs px-3.5 py-1.5 rounded-full mb-3 tracking-widest uppercase border border-black shadow-sm">
+          <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-3.5 py-1.5 rounded-full mb-3 tracking-widest uppercase border border-black shadow-sm">
             LEARNING LOG
           </span>
           <h1
@@ -50,7 +50,7 @@ export function LearningArchivePage() {
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
           >
             CONTINUOUS<br />
-            <span className="text-[#0038FF]">LEARNING</span>
+            <span className="text-[#0D9488]">LEARNING</span>
           </h1>
           <p className="text-black/50 text-xs sm:text-sm max-w-md font-medium leading-relaxed mt-3">
             A structured repository of verified certifications, deep specialized training courses, and academic milestones.
@@ -67,7 +67,7 @@ export function LearningArchivePage() {
             }}
             className={`px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer whitespace-nowrap ${
               activeCategory === 'featured'
-                ? 'bg-black text-[#CCFF00] border-black shadow-[2px_2px_0_#0038FF]'
+                ? 'bg-black text-[#00F5A0] border-black shadow-[2px_2px_0_#0D9488]'
                 : 'bg-white text-black border-black/10 hover:border-black'
             }`}
           >
@@ -81,7 +81,7 @@ export function LearningArchivePage() {
             }}
             className={`px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer whitespace-nowrap ${
               activeCategory === 'collections'
-                ? 'bg-black text-[#CCFF00] border-black shadow-[2px_2px_0_#0038FF]'
+                ? 'bg-black text-[#00F5A0] border-black shadow-[2px_2px_0_#0D9488]'
                 : 'bg-white text-black border-black/10 hover:border-black'
             }`}
           >
@@ -95,7 +95,7 @@ export function LearningArchivePage() {
             }}
             className={`px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer whitespace-nowrap ${
               activeCategory === 'other'
-                ? 'bg-black text-[#CCFF00] border-black shadow-[2px_2px_0_#0038FF]'
+                ? 'bg-black text-[#00F5A0] border-black shadow-[2px_2px_0_#0D9488]'
                 : 'bg-white text-black border-black/10 hover:border-black'
             }`}
           >
@@ -118,7 +118,7 @@ export function LearningArchivePage() {
                   }}
                   className={`px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer border-2 flex-shrink-0 ${
                     isActive
-                      ? 'bg-black text-[#CCFF00] border-black shadow-[2px_2px_0_#0038FF]'
+                      ? 'bg-black text-[#00F5A0] border-black shadow-[2px_2px_0_#0D9488]'
                       : 'bg-white text-black border-black/10 hover:border-black'
                   }`}
                 >
@@ -140,10 +140,10 @@ export function LearningArchivePage() {
                 className="border-[3px] border-black rounded-[2rem] overflow-hidden shadow-[8px_8px_0px_0px_#000000] bg-white/70 backdrop-blur-md"
               >
                 {/* Card Header */}
-                <div className="p-5 border-b-2 border-black bg-[#CCFF00]/10 flex items-start gap-3">
+                <div className="p-5 border-b-2 border-black bg-[#00F5A0]/10 flex items-start gap-3">
                   <span className="text-3xl leading-none flex-shrink-0">{activeCert.icon}</span>
                   <div>
-                    <span className="text-[8.5px] font-black uppercase bg-[#0038FF] text-white px-2 py-0.5 rounded-full tracking-wider inline-block mb-1">
+                    <span className="text-[8.5px] font-black uppercase bg-[#0D9488] text-white px-2 py-0.5 rounded-full tracking-wider inline-block mb-1">
                       {activeCert.issuer} • {activeCert.issueDate}
                     </span>
                     <h3 className="font-black text-lg uppercase leading-tight text-black">
@@ -160,7 +160,7 @@ export function LearningArchivePage() {
                       onClick={() => setActiveMobileTab(tab.id as any)}
                       className={`px-3 py-1.5 rounded-xl text-[10px] font-black uppercase transition-all cursor-pointer ${
                         activeMobileTab === tab.id
-                          ? 'bg-black text-[#CCFF00] border border-black shadow-sm'
+                          ? 'bg-black text-[#00F5A0] border border-black shadow-sm'
                           : 'text-black/60 hover:text-black'
                       }`}
                     >
@@ -174,7 +174,7 @@ export function LearningArchivePage() {
                   {activeMobileTab === 'overview' && (
                     <div className="flex flex-col gap-3 text-xs">
                       <div>
-                        <span className="text-[8.5px] font-black text-[#0038FF] uppercase tracking-wider block mb-1">
+                        <span className="text-[8.5px] font-black text-[#0D9488] uppercase tracking-wider block mb-1">
                           Overview
                         </span>
                         <p className="text-black/75 font-medium leading-relaxed bg-[#F8F9FA] p-3 rounded-xl border border-black/5">
@@ -184,7 +184,7 @@ export function LearningArchivePage() {
                       {activeCert.hours && (
                         <div className="flex items-center justify-between text-[11px] font-extrabold text-black/60 pt-1">
                           <span>Course Duration:</span>
-                          <span className="text-[#0038FF]">{activeCert.hours}</span>
+                          <span className="text-[#0D9488]">{activeCert.hours}</span>
                         </div>
                       )}
                     </div>
@@ -192,7 +192,7 @@ export function LearningArchivePage() {
 
                   {activeMobileTab === 'learnt' && (
                     <div className="flex flex-col gap-3 text-xs">
-                      <span className="text-[8.5px] font-black text-[#0038FF] uppercase tracking-wider">
+                      <span className="text-[8.5px] font-black text-[#0D9488] uppercase tracking-wider">
                         Key Learnings
                       </span>
                       <p className="text-black/75 font-medium leading-relaxed bg-[#F8F9FA] p-3 rounded-xl border border-black/5">
@@ -222,9 +222,9 @@ export function LearningArchivePage() {
                       setActiveItem(activeCert);
                       setShowPdf(false);
                     }}
-                    className="w-full mt-2 py-2.5 rounded-xl bg-black text-[#CCFF00] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                    className="w-full mt-2 py-2.5 rounded-xl bg-black text-[#00F5A0] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
                   >
-                    View Official Certificate <FaExternalLinkAlt className="w-3 h-3 text-[#CCFF00]" />
+                    View Official Certificate <FaExternalLinkAlt className="w-3 h-3 text-[#00F5A0]" />
                   </button>
                 </div>
               </motion.div>
@@ -237,7 +237,7 @@ export function LearningArchivePage() {
           {/* Featured Section */}
           <div className="mb-16">
             <h3 className="text-xl font-black text-black uppercase tracking-tight mb-6 pb-2 border-b-2 border-black/10 flex items-center gap-2">
-              <FaAward className="text-[#0038FF] w-5 h-5" /> Featured Certifications
+              <FaAward className="text-[#0D9488] w-5 h-5" /> Featured Certifications
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {featuredItems.map((item) => (
@@ -248,27 +248,27 @@ export function LearningArchivePage() {
                     setActiveItem(item);
                     setShowPdf(false);
                   }}
-                  className="text-left bg-white border-[3px] border-black rounded-[2rem] p-6 shadow-[8px_8px_0px_0px_#000000] hover:shadow-[12px_12px_0px_0px_#0038FF] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 cursor-pointer group relative w-full"
+                  className="text-left bg-white border-[3px] border-black rounded-[2rem] p-6 shadow-[8px_8px_0px_0px_#000000] hover:shadow-[12px_12px_0px_0px_#0D9488] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 cursor-pointer group relative w-full"
                 >
                   <div className="text-3xl flex-shrink-0 bg-black/5 w-12 h-12 rounded-full flex items-center justify-center border-2 border-black/10 group-hover:border-black transition-all">
                     {item.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <span className="text-[8px] font-black uppercase bg-[#0038FF]/10 text-[#0038FF] border border-[#0038FF]/10 px-2 py-0.5 rounded-full tracking-wider block w-fit mb-1.5">
+                    <span className="text-[8px] font-black uppercase bg-[#0D9488]/10 text-[#0D9488] border border-[#0D9488]/10 px-2 py-0.5 rounded-full tracking-wider block w-fit mb-1.5">
                       {item.issuer} • {item.issueDate}
                     </span>
-                    <h4 className="font-black text-black text-sm uppercase leading-tight group-hover:text-[#0038FF] transition-colors pr-6">
+                    <h4 className="font-black text-black text-sm uppercase leading-tight group-hover:text-[#0D9488] transition-colors pr-6">
                       {item.title}
                     </h4>
                     <div className="flex flex-wrap gap-1 mt-4">
                       {item.skills && item.skills.map((s, i) => (
-                        <span key={i} className="text-[8px] font-black uppercase bg-[#CCFF00] text-black border border-black px-2.5 py-0.5 rounded-full">
+                        <span key={i} className="text-[8px] font-black uppercase bg-[#00F5A0] text-black border border-black px-2.5 py-0.5 rounded-full">
                           {s}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="absolute top-6 right-6 text-black/30 group-hover:text-[#0038FF] transition-colors">
+                  <div className="absolute top-6 right-6 text-black/30 group-hover:text-[#0D9488] transition-colors">
                     <FaExternalLinkAlt className="w-3.5 h-3.5" />
                   </div>
                 </button>
@@ -284,9 +284,9 @@ export function LearningArchivePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               
               {/* GitHub Learning Series */}
-              <div className="border-[3px] border-black rounded-[2.5rem] p-6 bg-white shadow-[8px_8px_0px_0px_#000000] hover:shadow-[12px_12px_0px_0px_#0038FF] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+              <div className="border-[3px] border-black rounded-[2.5rem] p-6 bg-white shadow-[8px_8px_0px_0px_#000000] hover:shadow-[12px_12px_0px_0px_#0D9488] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <div>
-                  <span className="text-[9px] font-black uppercase bg-[#CCFF00] text-black border border-black px-2.5 py-1 rounded-full tracking-wider block w-fit mb-3">
+                  <span className="text-[9px] font-black uppercase bg-[#00F5A0] text-black border border-black px-2.5 py-1 rounded-full tracking-wider block w-fit mb-3">
                     GITHUB LEARNING SERIES ({githubSeries.items.length})
                   </span>
                   <h4 className="font-black text-lg text-black uppercase leading-tight">
@@ -307,7 +307,7 @@ export function LearningArchivePage() {
                       className="text-left py-2.5 px-3.5 hover:bg-black/5 rounded-xl flex items-center justify-between text-xs font-black uppercase text-black/70 hover:text-black transition-all group cursor-pointer border border-transparent hover:border-black/10 w-full"
                     >
                       <span className="truncate max-w-[260px] tracking-wide">{item.icon} {item.title}</span>
-                      <span className="text-[9px] font-black uppercase text-black/40 group-hover:text-[#0038FF] flex items-center gap-1.5 flex-shrink-0">
+                      <span className="text-[9px] font-black uppercase text-black/40 group-hover:text-[#0D9488] flex items-center gap-1.5 flex-shrink-0">
                         Details ➔
                       </span>
                     </button>
@@ -316,9 +316,9 @@ export function LearningArchivePage() {
               </div>
 
               {/* Data Analytics Series */}
-              <div className="border-[3px] border-black rounded-[2.5rem] p-6 bg-white shadow-[8px_8px_0px_0px_#000000] hover:shadow-[12px_12px_0px_0px_#0038FF] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+              <div className="border-[3px] border-black rounded-[2.5rem] p-6 bg-white shadow-[8px_8px_0px_0px_#000000] hover:shadow-[12px_12px_0px_0px_#0D9488] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <div>
-                  <span className="text-[9px] font-black uppercase bg-[#CCFF00] text-black border border-black px-2.5 py-1 rounded-full tracking-wider block w-fit mb-3">
+                  <span className="text-[9px] font-black uppercase bg-[#00F5A0] text-black border border-black px-2.5 py-1 rounded-full tracking-wider block w-fit mb-3">
                     DATA ANALYTICS & VISUALIZATION ({dataAnalyticsSeries.items.length})
                   </span>
                   <h4 className="font-black text-lg text-black uppercase leading-tight">
@@ -339,7 +339,7 @@ export function LearningArchivePage() {
                       className="text-left py-2.5 px-3.5 hover:bg-black/5 rounded-xl flex items-center justify-between text-xs font-black uppercase text-black/70 hover:text-black transition-all group cursor-pointer border border-transparent hover:border-black/10 w-full"
                     >
                       <span className="truncate max-w-[260px] tracking-wide">{item.icon} {item.title}</span>
-                      <span className="text-[9px] font-black uppercase text-black/40 group-hover:text-[#0038FF] flex items-center gap-1.5 flex-shrink-0">
+                      <span className="text-[9px] font-black uppercase text-black/40 group-hover:text-[#0D9488] flex items-center gap-1.5 flex-shrink-0">
                         Details ➔
                       </span>
                     </button>
@@ -363,23 +363,23 @@ export function LearningArchivePage() {
                     setActiveItem(item);
                     setShowPdf(false);
                   }}
-                  className="text-left bg-white border-[3px] border-black rounded-[2rem] p-6 shadow-[8px_8px_0px_0px_#000000] hover:shadow-[12px_12px_0px_0px_#CCFF00] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 cursor-pointer group relative w-full"
+                  className="text-left bg-white border-[3px] border-black rounded-[2rem] p-6 shadow-[8px_8px_0px_0px_#000000] hover:shadow-[12px_12px_0px_0px_#00F5A0] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 cursor-pointer group relative w-full"
                 >
                   <div className="text-3xl flex-shrink-0 bg-black/5 w-12 h-12 rounded-full flex items-center justify-center border-2 border-black/10 group-hover:border-black transition-all">
                     {item.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <span className="text-[8px] font-black uppercase bg-[#CCFF00] text-black border border-black px-2 py-0.5 rounded-full tracking-wider block w-fit mb-1.5">
+                    <span className="text-[8px] font-black uppercase bg-[#00F5A0] text-black border border-black px-2 py-0.5 rounded-full tracking-wider block w-fit mb-1.5">
                       {item.issuer} • {item.issueDate}
                     </span>
-                    <h4 className="font-black text-black text-sm uppercase leading-tight group-hover:text-[#0038FF] transition-colors pr-6">
+                    <h4 className="font-black text-black text-sm uppercase leading-tight group-hover:text-[#0D9488] transition-colors pr-6">
                       {item.title}
                     </h4>
                     <span className="inline-block mt-3 text-[9px] font-black uppercase bg-black/5 text-black px-2.5 py-0.5 rounded-full border border-black/10">
                       Quiz Participation Certificate
                     </span>
                   </div>
-                  <div className="absolute top-6 right-6 text-black/30 group-hover:text-[#CCFF00] transition-colors">
+                  <div className="absolute top-6 right-6 text-black/30 group-hover:text-[#00F5A0] transition-colors">
                     <FaExternalLinkAlt className="w-3.5 h-3.5" />
                   </div>
                 </button>
@@ -413,7 +413,7 @@ export function LearningArchivePage() {
                 className="relative w-full max-w-xl bg-white border-[3px] border-black rounded-[2.5rem] shadow-2xl overflow-hidden z-[70] flex flex-col max-h-[80vh] my-auto"
               >
                 {/* Header */}
-                <div className="flex items-center justify-between px-6 py-5 border-b-2 border-black bg-[#CCFF00]/10">
+                <div className="flex items-center justify-between px-6 py-5 border-b-2 border-black bg-[#00F5A0]/10">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl sm:text-3xl leading-none">{activeItem.icon}</span>
                     <div className="text-left">
@@ -447,7 +447,7 @@ export function LearningArchivePage() {
                     <div className="flex justify-between items-center text-white text-xs font-bold px-2">
                       <button
                         onClick={() => setShowPdf(false)}
-                        className="text-[#CCFF00] hover:text-white transition-colors cursor-pointer uppercase font-black tracking-wider"
+                        className="text-[#00F5A0] hover:text-white transition-colors cursor-pointer uppercase font-black tracking-wider"
                       >
                         ◀ Back to Details
                       </button>
@@ -460,7 +460,7 @@ export function LearningArchivePage() {
                     <div className="p-6 sm:p-8 flex flex-col gap-5 text-left">
                       {/* Overview */}
                       <div>
-                        <h4 className="text-[#0038FF] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                        <h4 className="text-[#0D9488] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
                           <FaAward /> Overview
                         </h4>
                         <p className="text-black/70 text-xs font-medium leading-relaxed">
@@ -471,7 +471,7 @@ export function LearningArchivePage() {
                       {/* What I Learnt */}
                       {activeItem.learnt && (
                         <div>
-                          <h4 className="text-[#0038FF] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                          <h4 className="text-[#0D9488] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
                             <FaBookOpen /> What I Learnt
                           </h4>
                           <p className="text-black/70 text-xs font-medium leading-relaxed">
@@ -483,7 +483,7 @@ export function LearningArchivePage() {
                       {/* Skills Gained */}
                       {activeItem.skills && (
                         <div>
-                          <h4 className="text-[#0038FF] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
+                          <h4 className="text-[#0D9488] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
                             <FaCompass /> Skills Gained
                           </h4>
                           <div className="flex flex-wrap gap-1.5">
@@ -499,7 +499,7 @@ export function LearningArchivePage() {
                       {/* Hours completed */}
                       {activeItem.hours && (
                         <div>
-                          <h4 className="text-[#0038FF] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                          <h4 className="text-[#0D9488] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
                             <FaHourglassHalf /> Course Time
                           </h4>
                           <p className="text-black/70 text-xs font-bold">
@@ -514,9 +514,9 @@ export function LearningArchivePage() {
                       <span>ID: {activeItem.id}</span>
                       <button
                         onClick={() => setShowPdf(true)}
-                        className="flex items-center gap-1.5 text-black hover:text-[#0038FF] transition-colors cursor-pointer uppercase font-black tracking-wider"
+                        className="flex items-center gap-1.5 text-black hover:text-[#0D9488] transition-colors cursor-pointer uppercase font-black tracking-wider"
                       >
-                        View Certificate <FaExternalLinkAlt className="w-3 h-3 text-[#0038FF]" />
+                        View Certificate <FaExternalLinkAlt className="w-3 h-3 text-[#0D9488]" />
                       </button>
                     </div>
                   </div>

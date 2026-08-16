@@ -3,7 +3,7 @@
     "id": "devinterio",
     "client": "Devinterio",
     "industry": "Interior Design",
-    "timeline": "3 Weeks (Completed)",
+    "timeline": "3 Weeks",
     "role": "Frontend Developer (Freelance)",
     "responsibilities": [
       "Redesigned the entire landing experience.",
@@ -30,7 +30,7 @@
   {
     "id": "jaas-visual",
     "client": "Jaas Visual",
-    "industry": "Architectural CGI & Renders",
+    "industry": "Architectural CGI",
     "timeline": "In Development",
     "role": "Frontend Developer (Freelance)",
     "responsibilities": [
@@ -50,6 +50,32 @@
     "logo": "/jaas-logo.png",
     "links": [
       { "label": "jaasvisual.com", "url": "#" }
+    ]
+  },
+  {
+    "id": "taneesh-patel",
+    "client": "Taneesh Patel",
+    "industry": "Software Developer Portfolio",
+    "timeline": "3 Days",
+    "role": "Full-Stack Developer (Freelance)",
+    "responsibilities": [
+      "Built custom personal portfolio website.",
+      "Coded responsive case studies and skill matrix.",
+      "Configured SEO, OpenGraph tags, and domain DNS."
+    ],
+    "deliverables": [
+      "Responsive React & Vite web application.",
+      "Custom project case study modals.",
+      "Deployed live on custom domain taneeshpatel.me."
+    ],
+    "stack": ["React", "Tailwind CSS", "Vite", "JavaScript"],
+    "challenges": "Replicating modular portfolio architecture with custom client branding and SEO schemas.",
+    "outcome": "Paid freelance project live at taneeshpatel.me showcasing AI & SDE projects.",
+    "lessons": "Learnt fast client delivery, domain configuration, and structured JSON-LD SEO integration.",
+    "img": "https://taneeshpatel.me/taneesh.png",
+    "logo": "https://taneeshpatel.me/taneesh.png",
+    "links": [
+      { "label": "taneeshpatel.me", "url": "https://taneeshpatel.me" }
     ]
   }
 ]

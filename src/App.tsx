@@ -39,7 +39,7 @@ function ScrollToTop() {
 function LoadingFallback() {
   return (
     <div className="w-full min-h-[60vh] bg-white flex flex-col items-center justify-center gap-4">
-      <span className="inline-block bg-[#CCFF00] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase border border-black animate-pulse">
+      <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase border border-black animate-pulse">
         LOADING PAGE...
       </span>
     </div>

@@ -21,7 +21,7 @@ const AvailabilityPill = () => (
       Building
     </span>
     <span className="text-white/30 text-xs font-bold">•</span>
-    <span className="text-[#CCFF00] text-xs font-bold uppercase tracking-widest whitespace-nowrap">
+    <span className="text-[#00F5A0] text-xs font-bold uppercase tracking-widest whitespace-nowrap">
       Iterating
     </span>
   </div>
@@ -29,7 +29,7 @@ const AvailabilityPill = () => (
 
 // ── Circular spinning badge ──────────────────────────────────────────────────
 const CircularBadge = () => (
-  <div className="relative w-28 h-28 md:w-32 md:h-32 bg-[#CCFF00] rounded-full flex items-center justify-center shadow-xl rotate-12 hover:scale-105 transition-transform cursor-pointer border-[3px] border-black/5 flex-shrink-0">
+  <div className="relative w-28 h-28 md:w-32 md:h-32 bg-[#00F5A0] rounded-full flex items-center justify-center shadow-xl rotate-12 hover:scale-105 transition-transform cursor-pointer border-[3px] border-black/5 flex-shrink-0">
     <div className="absolute inset-1 animate-[spin_10s_linear_infinite]">
       <svg viewBox="0 0 100 100" className="w-full h-full" aria-hidden="true">
         <path id="heroBadgePath" d="M 50,50 m -36,0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="none" />
@@ -49,7 +49,7 @@ const CircularBadge = () => (
   </div>
 );
 
-const shadow = '1px 1px 0 #001A99,2px 2px 0 #001A99,3px 3px 0 #001A99,4px 4px 0 #001A99,5px 5px 0 #001A99,6px 6px 0 #001A99,7px 7px 0 #001A99,8px 8px 0 #001A99,9px 9px 0 #001A99,10px 10px 0 #001A99,11px 11px 0 #001A99,12px 12px 0 #001A99';
+const shadow = '1px 1px 0 #021412,2px 2px 0 #021412,3px 3px 0 #021412,4px 4px 0 #021412,5px 5px 0 #021412,6px 6px 0 #021412,7px 7px 0 #021412,8px 8px 0 #021412,9px 9px 0 #021412,10px 10px 0 #021412,11px 11px 0 #021412,12px 12px 0 #021412';
 const headFont: React.CSSProperties = { fontFamily: '"Arial Black", Impact, sans-serif', textShadow: shadow };
 
 export const HeroSection = () => {
@@ -58,10 +58,10 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="bg-[#0038FF] font-sans selection:bg-[#CCFF00] selection:text-black relative overflow-hidden w-full min-h-[calc(100svh-32px)] flex flex-col justify-between"
+      className="bg-[#031714] font-sans selection:bg-[#00F5A0] selection:text-black relative overflow-hidden w-full min-h-[calc(100svh-32px)] flex flex-col justify-between"
     >
       {/* Background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,245,160,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,245,160,0.07)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
 
       {/* ── Text layer ── */}
       <div className="relative z-10 pointer-events-none w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 pt-16 md:pt-20 pb-8 flex flex-col justify-between flex-1 h-full">
@@ -84,11 +84,11 @@ export const HeroSection = () => {
                 loop={false}
                 showCursor={true}
                 cursorCharacter="|"
-                className="text-[clamp(2.4rem,9.2vw,130px)] font-black leading-[0.88] tracking-tighter text-[#CCFF00] m-0 p-0 uppercase"
+                className="text-[clamp(2.4rem,9.2vw,130px)] font-black leading-[0.88] tracking-tighter text-[#00F5A0] m-0 p-0 uppercase"
                 style={headFont}
               />
             )}
-            {!preloaderDone && <h2 className="text-[clamp(2.4rem,9.2vw,130px)] font-black leading-[0.88] tracking-tighter text-[#CCFF00] m-0 p-0 uppercase opacity-0" style={headFont}>&nbsp;</h2>}
+            {!preloaderDone && <h2 className="text-[clamp(2.4rem,9.2vw,130px)] font-black leading-[0.88] tracking-tighter text-[#00F5A0] m-0 p-0 uppercase opacity-0" style={headFont}>&nbsp;</h2>}
           </div>
 
           <div className="flex justify-center">
@@ -118,11 +118,11 @@ export const HeroSection = () => {
                 initialDelay={2400}
                 loop={false}
                 showCursor={false}
-                className="text-[clamp(0.85rem,2.5vw,32px)] font-black uppercase tracking-[0.22em] text-white/35"
+                className="text-[clamp(0.85rem,2.5vw,32px)] font-black uppercase tracking-[0.22em] text-[#0D9488]"
                 style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
               />
             )}
-            <span className="text-[#CCFF00]/60 text-[clamp(0.85rem,2vw,24px)] font-black">+</span>
+            <span className="text-[#00F5A0]/60 text-[clamp(0.85rem,2vw,24px)] font-black">+</span>
             {preloaderDone && (
               <TextType
                 text="IN PROGRESS"

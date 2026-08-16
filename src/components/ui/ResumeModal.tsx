@@ -93,7 +93,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                     <button
                       onClick={() => setActivePreview(null)}
-                      className="px-3 py-1.5 rounded-full border border-white/30 text-[10px] sm:text-xs font-black uppercase text-white hover:bg-[#CCFF00] hover:text-black transition-all cursor-pointer flex-shrink-0"
+                      className="px-3 py-1.5 rounded-full border border-white/30 text-[10px] sm:text-xs font-black uppercase text-white hover:bg-[#00F5A0] hover:text-black transition-all cursor-pointer flex-shrink-0"
                     >
                       ← Back
                     </button>
@@ -105,7 +105,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <button
                       onClick={() => handleDownload(activePreview)}
-                      className="flex items-center gap-1 px-3 py-1.5 bg-[#CCFF00] text-black font-black text-[10px] sm:text-xs rounded-full border border-black hover:scale-105 transition-all cursor-pointer"
+                      className="flex items-center gap-1 px-3 py-1.5 bg-[#00F5A0] text-black font-black text-[10px] sm:text-xs rounded-full border border-black hover:scale-105 transition-all cursor-pointer"
                     >
                       <FaDownload className="w-3 h-3" /> Download
                     </button>
@@ -123,7 +123,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   <div className="bg-[#242731] border border-white/10 rounded-2xl p-5 shadow-lg">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4 mb-4">
                       <div>
-                        <span className="text-[9px] font-black uppercase tracking-widest text-[#CCFF00] block mb-1">
+                        <span className="text-[9px] font-black uppercase tracking-widest text-[#00F5A0] block mb-1">
                           ROHIT DUBEY • {activePreview.role.toUpperCase()}
                         </span>
                         <h4 className="text-lg font-black uppercase text-white leading-tight">
@@ -132,7 +132,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                       </div>
                       <button
                         onClick={() => handleDownload(activePreview)}
-                        className="px-4 py-2 rounded-xl bg-[#CCFF00] text-black font-black text-xs uppercase tracking-wider flex items-center gap-1.5 w-fit cursor-pointer"
+                        className="px-4 py-2 rounded-xl bg-[#00F5A0] text-black font-black text-xs uppercase tracking-wider flex items-center gap-1.5 w-fit cursor-pointer"
                       >
                         <FaDownload /> Get Official PDF
                       </button>
@@ -148,7 +148,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                       </span>
                       <div className="flex flex-wrap gap-1.5">
                         {activePreview.skills.map((skill) => (
-                          <span key={skill} className="text-[9.5px] font-black uppercase bg-[#0038FF]/20 text-[#CCFF00] border border-[#0038FF]/40 px-2.5 py-1 rounded-full">
+                          <span key={skill} className="text-[9.5px] font-black uppercase bg-[#0D9488]/20 text-[#00F5A0] border border-[#0D9488]/40 px-2.5 py-1 rounded-full">
                             {skill}
                           </span>
                         ))}
@@ -169,9 +169,9 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             ) : (
               <>
                 {/* Header */}
-                <div className="flex items-center justify-between px-6 sm:px-8 py-4 sm:py-5 border-b-2 border-black bg-[#0038FF]/5">
+                <div className="flex items-center justify-between px-6 sm:px-8 py-4 sm:py-5 border-b-2 border-black bg-[#0D9488]/5">
                   <div>
-                    <span className="inline-block bg-[#CCFF00] text-black text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-1 border border-black">
+                    <span className="inline-block bg-[#00F5A0] text-black text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-1 border border-black">
                       RECRUITER HUB
                     </span>
                     <h3 className="text-lg sm:text-2xl font-black text-black tracking-tight uppercase" style={{ fontFamily: '"Arial Black", sans-serif' }}>
@@ -195,7 +195,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                       className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl border-2 border-black/10 hover:border-black bg-[#F8F9FA] hover:bg-white transition-all duration-200"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-9 h-9 rounded-xl bg-[#0038FF] text-white flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
+                        <div className="w-9 h-9 rounded-xl bg-[#0D9488] text-white flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
                           <FaFilePdf className="w-4 h-4" />
                         </div>
                         <div>
@@ -219,7 +219,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                         </button>
                         <button
                           onClick={() => handleDownload(version)}
-                          className="flex-1 sm:flex-initial px-3.5 py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#CCFF00] hover:bg-black border-2 border-black text-black hover:text-white rounded-full flex items-center justify-center gap-1 transition-colors shadow-sm cursor-pointer"
+                          className="flex-1 sm:flex-initial px-3.5 py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#00F5A0] hover:bg-black border-2 border-black text-black hover:text-white rounded-full flex items-center justify-center gap-1 transition-colors shadow-sm cursor-pointer"
                         >
                           <FaDownload className="w-3 h-3" />
                           Download

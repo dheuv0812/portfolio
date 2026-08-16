@@ -14,6 +14,7 @@ import { useSEO } from '@/hooks/useSEO';
 
 import projectsData from '@/data/projects.json';
 import clientWorkData from '@/data/client-work.json';
+import internshipData from '@/data/experience.json';
 import certificationsData from '@/data/certifications.json';
 import siteData from '@/data/site.json';
 
@@ -57,6 +58,7 @@ export function HomePage() {
 
   const featuredProject = projectsData.find(p => p.featured) || projectsData[0];
   const latestClient = clientWorkData[0];
+  const latestInternship = internshipData[0];
   const featuredCerts = certificationsData.featured.slice(0, 2);
 
   // Duplicated cards for seamless infinite horizontal loop
@@ -100,20 +102,20 @@ export function HomePage() {
       <div className="relative">
         <HeroSection />
         {/* Gradient fade OUT of hero → into Origin, no hard cut */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#0038FF] pointer-events-none z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#031714] pointer-events-none z-20" />
       </div>
 
       {/* 2. Origin — Infinite & Manual Horizontal Scrolling Deck */}
       <section
         id="about"
-        className="relative py-20 md:py-28 w-full z-30 overflow-hidden bg-[#0038FF]"
+        className="relative py-20 md:py-28 w-full z-30 overflow-hidden bg-[#031714]"
       >
         {/* WebGL Grainient Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Grainient
-            color1="#3b82f6"
-            color2="#fcfcfc"
-            color3="#54f63b"
+            color1="#00F5A0"
+            color2="#0D9488"
+            color3="#000000"
             timeSpeed={1.2}
             colorBalance={0.06}
             warpStrength={1.2}
@@ -141,7 +143,7 @@ export function HomePage() {
           className="absolute top-0 left-0 right-0 z-10 pointer-events-none"
           style={{
             height: '120px',
-            background: 'linear-gradient(to bottom, #0038FF 0%, rgba(0, 56, 255, 0.6) 50%, transparent 100%)'
+            background: 'linear-gradient(to bottom, #031714 0%, rgba(3, 23, 20, 0.6) 50%, transparent 100%)'
           }}
         />
         <div
@@ -154,7 +156,7 @@ export function HomePage() {
 
         {/* Section Header */}
         <div className="max-w-6xl mx-auto px-6 md:px-10 relative z-20 mb-8 text-center flex flex-col items-center">
-          <span className="inline-block bg-[#CCFF00] text-black font-black text-[10px] px-4 py-1.5 rounded-full mb-3 tracking-widest uppercase border border-black shadow-[3px_3px_0_#000]">
+          <span className="inline-block bg-[#00F5A0] text-black font-black text-[10px] px-4 py-1.5 rounded-full mb-3 tracking-widest uppercase border border-black shadow-[3px_3px_0_#000]">
             ⚡ ORIGIN DECK • AUTO &amp; MANUAL SCROLL
           </span>
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white leading-none mb-3" style={{ fontFamily: '"Arial Black", Impact, sans-serif', textShadow: '2px 2px 0 #000' }}>
@@ -168,7 +170,7 @@ export function HomePage() {
           <div className="flex items-center gap-2.5 z-30">
             <button
               onClick={() => handleManualScroll('left')}
-              className="w-9 h-9 rounded-full border-2 border-black bg-white hover:bg-[#CCFF00] text-black flex items-center justify-center font-black text-sm shadow-[3px_3px_0_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+              className="w-9 h-9 rounded-full border-2 border-black bg-white hover:bg-[#00F5A0] text-black flex items-center justify-center font-black text-sm shadow-[3px_3px_0_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
               aria-label="Scroll Left"
               title="Scroll Left"
             >
@@ -176,13 +178,13 @@ export function HomePage() {
             </button>
             <button
               onClick={() => setIsAutoScrolling(prev => !prev)}
-              className="px-4 py-1.5 rounded-full border-2 border-black bg-white hover:bg-[#CCFF00] text-black font-black text-[10px] uppercase tracking-wider shadow-[3px_3px_0_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+              className="px-4 py-1.5 rounded-full border-2 border-black bg-white hover:bg-[#00F5A0] text-black font-black text-[10px] uppercase tracking-wider shadow-[3px_3px_0_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
             >
               {isAutoScrolling ? '⏸ Pause Auto-Scroll' : '▶ Auto-Scroll'}
             </button>
             <button
               onClick={() => handleManualScroll('right')}
-              className="w-9 h-9 rounded-full border-2 border-black bg-white hover:bg-[#CCFF00] text-black flex items-center justify-center font-black text-sm shadow-[3px_3px_0_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+              className="w-9 h-9 rounded-full border-2 border-black bg-white hover:bg-[#00F5A0] text-black flex items-center justify-center font-black text-sm shadow-[3px_3px_0_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
               aria-label="Scroll Right"
               title="Scroll Right"
             >
@@ -194,8 +196,8 @@ export function HomePage() {
         {/* Horizontal Scroll Deck Container */}
         <div className="relative w-full py-4 z-20">
           {/* Left & Right gradient edge masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 md:w-24 bg-gradient-to-r from-[#0038FF] to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-8 md:w-24 bg-gradient-to-l from-[#0038FF] to-transparent z-20 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 md:w-24 bg-gradient-to-r from-[#031714] to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 md:w-24 bg-gradient-to-l from-[#031714] to-transparent z-20 pointer-events-none" />
 
           <div
             ref={originScrollRef}
@@ -211,10 +213,10 @@ export function HomePage() {
               return (
                 <div
                   key={`${card.id}-${idx}`}
-                  className="w-[300px] sm:w-[380px] md:w-[460px] flex-shrink-0 bg-white border-[3px] border-black rounded-[2.5rem] p-7 md:p-9 shadow-[8px_8px_0_#000] flex flex-col justify-between text-left h-[420px] overflow-y-auto no-scrollbar hover:border-[#CCFF00] transition-colors"
+                  className="w-[300px] sm:w-[380px] md:w-[460px] flex-shrink-0 bg-white border-[3px] border-black rounded-[2.5rem] p-7 md:p-9 shadow-[8px_8px_0_#000] flex flex-col justify-between text-left h-[420px] overflow-y-auto no-scrollbar hover:border-[#00F5A0] transition-colors"
                 >
                   <div>
-                    <span className="inline-block bg-[#CCFF00] text-black font-black text-[9px] px-3 py-1 rounded-full mb-3 tracking-widest uppercase border border-black">
+                    <span className="inline-block bg-[#00F5A0] text-black font-black text-[9px] px-3 py-1 rounded-full mb-3 tracking-widest uppercase border border-black">
                       SECTION 0{realIdx + 1}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-black leading-none mb-1 text-left" style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
@@ -230,7 +232,7 @@ export function HomePage() {
                         <p key={i} className={realIdx === 0 && i === 0 ? "font-bold text-black text-xs sm:text-sm" : ""}>
                           {isCurrentMission ? (
                             <span className="font-black text-black text-xs sm:text-sm uppercase leading-snug tracking-tight">
-                              Building a strong foundation in <span className="text-[#0038FF]">Full-Stack Development</span> and <span className="text-[#0038FF]">Artificial Intelligence</span> through consistent learning, real-world projects, and continuous improvement.
+                              Building a strong foundation in <span className="text-[#0D9488]">Full-Stack Development</span> and <span className="text-[#0D9488]">Artificial Intelligence</span> through consistent learning, real-world projects, and continuous improvement.
                             </span>
                           ) : p}
                         </p>
@@ -246,7 +248,7 @@ export function HomePage() {
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[11px] sm:text-xs text-black/80 font-bold">
                         {siteData.homeStatus.currentObjectives.map((focus, i) => (
                           <li key={i} className="flex items-center gap-1.5 bg-[#F8F9FA] border border-black/5 p-1.5 rounded-xl">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] border border-black/40 flex-shrink-0" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#00F5A0] border border-black/40 flex-shrink-0" />
                             <span className="truncate">{focus}</span>
                           </li>
                         ))}
@@ -254,7 +256,7 @@ export function HomePage() {
                     </div>
                   ) : (
                     card.footer && (
-                      <p className="font-bold text-[#0038FF] text-xs sm:text-sm mt-4 text-left">
+                      <p className="font-bold text-[#0D9488] text-xs sm:text-sm mt-4 text-left">
                         {card.footer}
                       </p>
                     )
@@ -280,12 +282,12 @@ export function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
             <div>
               <div
-                className="inline-flex items-center px-4 py-1.5 rounded-full text-[#0038FF] font-black text-[10px] tracking-widest uppercase border border-[#0038FF]/30 relative overflow-hidden mb-3"
+                className="inline-flex items-center px-4 py-1.5 rounded-full text-[#0D9488] font-black text-[10px] tracking-widest uppercase border border-[#0D9488]/30 relative overflow-hidden mb-3"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(0, 56, 255, 0.1) 0%, rgba(0, 56, 255, 0.03) 50%, rgba(0, 0, 0, 0.05) 100%)',
+                  background: 'linear-gradient(135deg, rgba(13, 148, 136, 0.1) 0%, rgba(13, 148, 136, 0.03) 50%, rgba(0, 0, 0, 0.05) 100%)',
                   backdropFilter: 'blur(8px)',
                   WebkitBackdropFilter: 'blur(8px)',
-                  boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 2px 8px rgba(0, 56, 255, 0.08)',
+                  boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 2px 8px rgba(13, 148, 136, 0.08)',
                 }}
               >
                 CURRENT MISSION: LEARNING • BUILDING • IMPROVING
@@ -299,7 +301,7 @@ export function HomePage() {
             </div>
             <Link
               to="/skills"
-              className="px-6 py-3 bg-[#CCFF00] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
             >
               <span>Explore My Toolkit</span>
               <FaArrowRight className="w-3.5 h-3.5" />
@@ -319,7 +321,7 @@ export function HomePage() {
                   <div className="relative flex items-center justify-center">
                     <AnimatedSkillGauge
                       value={styleObj.level}
-                      gaugePrimaryColor="#0038FF"
+                      gaugePrimaryColor="#0D9488"
                       gaugeSecondaryColor="#E8EEFF"
                     />
                   </div>
@@ -339,13 +341,13 @@ export function HomePage() {
       </section>
 
       {/* 5. Featured Project preview */}
-      <section className="py-24 px-6 md:px-10 bg-white border-t-2 border-black/5 relative z-30 overflow-hidden">
+      <section className="py-24 px-6 md:px-10 bg-[#031714] border-t-2 border-black/10 relative z-30 overflow-hidden">
         {/* WebGL Grainient Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Grainient
-            color1="#3b82f6"
-            color2="#fcfcfc"
-            color3="#54f63b"
+            color1="#00F5A0"
+            color2="#0D9488"
+            color3="#000000"
             timeSpeed={1.0}
             colorBalance={0.06}
             warpStrength={1.2}
@@ -366,16 +368,16 @@ export function HomePage() {
             centerY={0.0}
             zoom={1.05}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#031714]/40 via-transparent to-[#031714]/40 pointer-events-none" />
         </div>
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
-            <div className="inline-flex items-center px-6 py-3 bg-[#CCFF00] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_#000] self-start">
+            <div className="inline-flex items-center px-6 py-3 bg-[#00F5A0] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_#000] self-start">
               FEATURED BUILD
             </div>
             <Link
               to="/projects"
-              className="px-6 py-3 bg-[#CCFF00] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
             >
               <span>Explore Projects</span>
               <FaArrowRight className="w-3.5 h-3.5" />
@@ -391,7 +393,7 @@ export function HomePage() {
             }}
           >
             <div className="flex-1 flex flex-col gap-4 text-left">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#0038FF]">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#0D9488]">
                 {featuredProject.projectType}
               </span>
               <h4 className="text-2xl font-black uppercase leading-tight text-black">
@@ -410,7 +412,7 @@ export function HomePage() {
             </div>
             <Link
               to="/projects"
-              className="px-6 py-3 bg-[#CCFF00] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 self-stretch md:self-center justify-center transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] flex-shrink-0"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 self-stretch md:self-center justify-center transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] flex-shrink-0"
             >
               <span>Read Case Study</span>
               <FaArrowRight className="w-3.5 h-3.5" />
@@ -419,7 +421,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 6. Client Work preview */}
+      {/* 5. Experience / Career Timeline preview */}
       <section className="py-24 px-6 md:px-10 bg-[#F8F9FA] border-t-2 border-black/5 relative z-30 overflow-hidden">
         {/* Interactive Grid Background */}
         <InteractiveGridPattern
@@ -430,14 +432,14 @@ export function HomePage() {
         />
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
-            <div className="inline-flex items-center px-6 py-3 bg-[#CCFF00] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_#000] self-start">
-              CLIENT WORK PREVIEW
+            <div className="inline-flex items-center px-6 py-3 bg-[#00F5A0] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_#000] self-start">
+              WORK TIMELINE PREVIEW
             </div>
             <Link
-              to="/client-work"
-              className="px-6 py-3 bg-[#CCFF00] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
+              to="/experience"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
             >
-              <span>Explore Client Work</span>
+              <span>Explore Career Timeline</span>
               <FaArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -451,17 +453,27 @@ export function HomePage() {
             }}
           >
             <div className="flex-1 flex flex-col gap-4 text-left">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#0038FF]">
-                {latestClient.industry}
-              </span>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#0D9488]">
+                  {latestInternship.type}
+                </span>
+                <span className="text-[10px] font-bold text-black/60 bg-black/5 px-3 py-1 rounded-full border border-black/5">
+                  {latestInternship.duration}
+                </span>
+              </div>
               <h4 className="text-2xl font-black uppercase leading-tight text-black">
-                {latestClient.client} – {latestClient.role}
+                {latestInternship.role} @ {latestInternship.company}
               </h4>
-              <p className="text-black/75 text-xs font-medium leading-relaxed max-w-lg">
-                {latestClient.outcome}
-              </p>
+              <ul className="flex flex-col gap-2 text-black/75 text-xs font-medium leading-relaxed max-w-xl">
+                {latestInternship.responsibilities.slice(0, 3).map((point, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] mt-1.5 flex-shrink-0" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="flex flex-wrap gap-1.5 mt-2">
-                {latestClient.stack.map(t => (
+                {latestInternship.technologies.map(t => (
                   <span key={t} className="text-[9px] font-black uppercase border border-black/10 bg-[#F8F9FA] px-2.5 py-1 rounded-full text-black/70">
                     {t}
                   </span>
@@ -469,24 +481,24 @@ export function HomePage() {
               </div>
             </div>
             <Link
-              to="/client-work"
-              className="px-6 py-3 bg-[#CCFF00] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 self-stretch md:self-center justify-center transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] flex-shrink-0"
+              to="/experience"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 self-stretch md:self-center justify-center transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] flex-shrink-0"
             >
-              <span>Read Case Study</span>
+              <span>View Experience</span>
               <FaArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 7. Learning Archive preview */}
-      <section className="py-24 px-6 md:px-10 bg-white border-t-2 border-black/5 relative z-30 overflow-hidden">
+      {/* 6. Client Work preview */}
+      <section className="py-24 px-6 md:px-10 bg-[#031714] border-t-2 border-black/10 relative z-30 overflow-hidden">
         {/* WebGL Grainient Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Grainient
-            color1="#3b82f6"
-            color2="#fcfcfc"
-            color3="#54f63b"
+            color1="#00F5A0"
+            color2="#0D9488"
+            color3="#000000"
             timeSpeed={1.0}
             colorBalance={0.06}
             warpStrength={1.2}
@@ -507,16 +519,76 @@ export function HomePage() {
             centerY={0.0}
             zoom={1.05}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#031714]/40 via-transparent to-[#031714]/40 pointer-events-none" />
         </div>
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
-            <div className="inline-flex items-center px-6 py-3 bg-[#CCFF00] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_#000] self-start">
+            <div className="inline-flex items-center px-6 py-3 bg-[#00F5A0] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_#000] self-start">
+              CLIENT WORK PREVIEW
+            </div>
+            <Link
+              to="/client-work"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
+            >
+              <span>Explore Client Work</span>
+              <FaArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div
+            className="border-[3px] border-black rounded-[2.5rem] p-8 flex flex-col md:flex-row justify-between items-start gap-8 shadow-[8px_8px_0_#000]"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+            }}
+          >
+            <div className="flex-1 flex flex-col gap-4 text-left">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#0D9488]">
+                {latestClient.industry}
+              </span>
+              <h4 className="text-2xl font-black uppercase leading-tight text-black">
+                {latestClient.client} – {latestClient.role}
+              </h4>
+              <p className="text-black/75 text-xs font-medium leading-relaxed max-w-lg">
+                {latestClient.outcome}
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                {latestClient.stack.map(t => (
+                  <span key={t} className="text-[9px] font-black uppercase border border-black/10 bg-[#F8F9FA] px-2.5 py-1 rounded-full text-black/70">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <Link
+              to="/client-work"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 self-stretch md:self-center justify-center transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] flex-shrink-0"
+            >
+              <span>Read Case Study</span>
+              <FaArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Learning Archive preview */}
+      <section className="py-24 px-6 md:px-10 bg-[#F8F9FA] border-t-2 border-black/5 relative z-30 overflow-hidden">
+        {/* Interactive Grid Background */}
+        <InteractiveGridPattern
+          className="opacity-40"
+          width={45}
+          height={45}
+          squares={[32, 20]}
+        />
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
+            <div className="inline-flex items-center px-6 py-3 bg-[#00F5A0] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_#000] self-start">
               CONTINUOUS LEARNING
             </div>
             <Link
               to="/certifications"
-              className="px-6 py-3 bg-[#CCFF00] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
+              className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
             >
               <span>Explore Learning Archive</span>
               <FaArrowRight className="w-3.5 h-3.5" />
@@ -574,7 +646,7 @@ export function HomePage() {
               className="relative w-full max-w-lg bg-white border-[3px] border-black rounded-[2.5rem] shadow-2xl overflow-hidden z-10"
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-8 py-6 border-b-2 border-black bg-[#CCFF00]/10">
+              <div className="flex items-center justify-between px-8 py-6 border-b-2 border-black bg-[#00F5A0]/10">
                 <div className="flex items-center gap-3">
                   <span className="text-3xl leading-none">{activeCert.icon}</span>
                   <div className="text-left">
@@ -605,7 +677,7 @@ export function HomePage() {
                   <div className="flex justify-between items-center text-white text-xs font-bold px-2">
                     <button
                       onClick={() => setShowPdf(false)}
-                      className="text-[#CCFF00] hover:text-white transition-colors cursor-pointer uppercase font-black tracking-wider"
+                      className="text-[#00F5A0] hover:text-white transition-colors cursor-pointer uppercase font-black tracking-wider"
                     >
                       ◀ Back to Details
                     </button>
@@ -618,7 +690,7 @@ export function HomePage() {
                   <div className="p-8 flex flex-col gap-5 text-left">
                     {/* Overview */}
                     <div>
-                      <h4 className="text-[#0038FF] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                      <h4 className="text-[#0D9488] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
                         <FaAward /> Overview
                       </h4>
                       <p className="text-black/70 text-xs font-medium leading-relaxed">
@@ -628,7 +700,7 @@ export function HomePage() {
 
                     {/* What I Learnt */}
                     <div>
-                      <h4 className="text-[#0038FF] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                      <h4 className="text-[#0D9488] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
                         <FaBookOpen /> What I Learnt
                       </h4>
                       <p className="text-black/70 text-xs font-medium leading-relaxed">
@@ -638,7 +710,7 @@ export function HomePage() {
 
                     {/* Skills Gained */}
                     <div>
-                      <h4 className="text-[#0038FF] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
+                      <h4 className="text-[#0D9488] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
                         <FaCompass /> Skills Gained
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
@@ -652,7 +724,7 @@ export function HomePage() {
 
                     {/* Hours completed */}
                     <div>
-                      <h4 className="text-[#0038FF] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                      <h4 className="text-[#0D9488] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
                         <FaHourglassHalf /> Course Time
                       </h4>
                       <p className="text-black/70 text-xs font-bold">
@@ -666,9 +738,9 @@ export function HomePage() {
                     <span>ID: {activeCert.id}</span>
                     <button
                       onClick={() => setShowPdf(true)}
-                      className="flex items-center gap-1.5 text-black hover:text-[#0038FF] transition-colors cursor-pointer uppercase font-black tracking-wider"
+                      className="flex items-center gap-1.5 text-black hover:text-[#0D9488] transition-colors cursor-pointer uppercase font-black tracking-wider"
                     >
-                      View Certificate <FaExternalLinkAlt className="w-3 h-3 text-[#0038FF]" />
+                      View Certificate <FaExternalLinkAlt className="w-3 h-3 text-[#0D9488]" />
                     </button>
                   </div>
                 </>

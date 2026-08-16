@@ -16,7 +16,7 @@ export function NotFoundPage() {
         className="max-w-lg bg-white border-[3px] border-black rounded-[2.5rem] p-8 md:p-12 shadow-[8px_8px_0px_0px_#000] flex flex-col items-center gap-6"
       >
         <span className="text-6xl animate-bounce">🛰️</span>
-        <span className="inline-block bg-[#CCFF00] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase border border-black">
+        <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase border border-black">
           ERROR 404
         </span>
         <h1
@@ -24,14 +24,14 @@ export function NotFoundPage() {
           style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
         >
           LOST IN <br />
-          <span className="text-[#0038FF]">THE GRID</span>
+          <span className="text-[#0D9488]">THE GRID</span>
         </h1>
         <p className="text-black/60 text-xs font-semibold leading-relaxed max-w-sm">
           The coordinate page you are looking for has been moved, deleted, or never existed in the data layer grid.
         </p>
         <Link
           to="/"
-          className="px-6 py-3 bg-[#CCFF00] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] cursor-pointer"
+          className="px-6 py-3 bg-[#00F5A0] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full transition-all duration-300 shadow-[4px_4px_0_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] cursor-pointer"
         >
           Return to Home
         </Link>

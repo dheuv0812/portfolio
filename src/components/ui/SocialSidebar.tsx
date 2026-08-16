@@ -71,7 +71,7 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
         handleResumeClick();
         setIsFabOpen(false);
       },
-      color: 'bg-[#CCFF00] text-black border-black',
+      color: 'bg-[#00F5A0] text-black border-black',
     },
     {
       id: 'linkedin',
@@ -115,21 +115,21 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
         <div 
           className="flex flex-col items-center gap-2 sm:gap-3 px-1.5 py-3 sm:px-3 sm:py-5 rounded-full border border-white/25 bg-black/25 hover:bg-black/50 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 relative"
           style={{
-            boxShadow: '0 8px 32px 0 rgba(0, 56, 255, 0.15)',
+            boxShadow: '0 8px 32px 0 rgba(0, 245, 160, 0.15)',
           }}
         >
           {/* Glow indicator at the top */}
-          <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] mx-auto animate-pulse mb-0.5" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#00F5A0] mx-auto animate-pulse mb-0.5" />
 
           {/* Resume button */}
           <motion.button
             onClick={handleResumeClick}
             whileHover={{ scale: 1.15, x: -2 }}
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[#CCFF00] hover:text-black bg-black/30 hover:bg-[#CCFF00] border border-white/20 hover:border-transparent transition-all duration-300 relative group cursor-pointer"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[#00F5A0] hover:text-black bg-black/30 hover:bg-[#00F5A0] border border-white/20 hover:border-transparent transition-all duration-300 relative group cursor-pointer"
             aria-label="Open Resume Hub"
           >
-            <FaFilePdf className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#CCFF00] group-hover:text-black transition-colors" />
-            <span className="absolute right-12 sm:right-14 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 px-3 py-1.5 rounded-lg bg-black text-[#CCFF00] text-[10px] font-black uppercase tracking-widest pointer-events-none transition-all duration-200 shadow-xl border border-[#CCFF00]/20 whitespace-nowrap">
+            <FaFilePdf className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#00F5A0] group-hover:text-black transition-colors" />
+            <span className="absolute right-12 sm:right-14 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 px-3 py-1.5 rounded-lg bg-black text-[#00F5A0] text-[10px] font-black uppercase tracking-widest pointer-events-none transition-all duration-200 shadow-xl border border-[#00F5A0]/20 whitespace-nowrap">
               RESUME
             </span>
           </motion.button>
@@ -152,10 +152,10 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.08, duration: 0.3 }}
                 whileHover={{ scale: 1.15, x: -2 }}
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white/80 hover:text-black bg-black/30 hover:bg-[#CCFF00] border border-white/20 hover:border-transparent transition-all duration-300 relative group"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[#00F5A0] hover:text-black bg-black/30 hover:bg-[#00F5A0] border border-white/20 hover:border-transparent transition-all duration-300 relative group"
               >
-                <Icon className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
-                <span className="absolute right-12 sm:right-14 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 px-3 py-1.5 rounded-lg bg-black text-[#CCFF00] text-[10px] font-black uppercase tracking-widest pointer-events-none transition-all duration-200 shadow-xl border border-[#CCFF00]/20 whitespace-nowrap">
+                <Icon className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#00F5A0] group-hover:text-black transition-colors" />
+                <span className="absolute right-12 sm:right-14 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 px-3 py-1.5 rounded-lg bg-black text-[#00F5A0] text-[10px] font-black uppercase tracking-widest pointer-events-none transition-all duration-200 shadow-xl border border-[#00F5A0]/20 whitespace-nowrap">
                   {social.label}
                 </span>
               </motion.a>
@@ -191,7 +191,7 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
                 >
                   <Icon className="w-4 h-4" />
                   {/* Tooltip Label (Appears ONLY on hover/focus) */}
-                  <span className="absolute bottom-12 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-black text-[#CCFF00] text-[9px] font-black uppercase tracking-wider border border-[#CCFF00]/30 shadow-xl whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none transition-all duration-200">
+                  <span className="absolute bottom-12 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-black text-[#00F5A0] text-[9px] font-black uppercase tracking-wider border border-[#00F5A0]/30 shadow-xl whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none transition-all duration-200">
                     {action.label}
                   </span>
                 </button>
@@ -245,14 +245,11 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
           whileTap={{ scale: 0.92 }}
           aria-expanded={isFabOpen}
           aria-label={isFabOpen ? 'Close Quick Actions' : 'Open Quick Actions'}
-          className="w-10 h-10 rounded-full border-2 border-black bg-white flex items-center justify-center text-black shadow-lg hover:bg-[#CCFF00] transition-colors relative cursor-pointer z-50"
+          className="w-10 h-10 rounded-full border-2 border-black bg-white flex items-center justify-center text-black shadow-lg hover:bg-[#00F5A0] transition-colors relative cursor-pointer z-50"
           style={{
-            boxShadow: '0 6px 20px rgba(0, 56, 255, 0.3)',
+            boxShadow: '0 6px 20px rgba(0, 245, 160, 0.3)',
           }}
         >
-          {/* Neon green active indicator dot */}
-          <span className="w-2 h-2 rounded-full bg-[#CCFF00] border border-black absolute top-0.5 right-0.5 animate-pulse" />
-          
           <AnimatePresence mode="wait">
             {isFabOpen ? (
               <motion.div

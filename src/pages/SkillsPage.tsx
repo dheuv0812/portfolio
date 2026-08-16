@@ -41,7 +41,7 @@ const skillStyles: Record<string, { icon: any; color: string }> = {
   'Git & GitHub': { icon: SiGit, color: '#F05032' },
   'AWS': { icon: FaAws, color: '#FF9900' },
   'OpenAI / Claude API': { icon: FaRobot, color: '#10A37F' },
-  'Prompt Engineering': { icon: FaRobot, color: '#0038FF' },
+  'Prompt Engineering': { icon: FaRobot, color: '#0D9488' },
   'NumPy / Pandas': { icon: SiNumpy || SiPandas || VscCode, color: '#013243' },
   'Supabase': { icon: SiSupabase || VscCode, color: '#3ECF8E' },
   'Prisma ORM': { icon: SiPrisma || VscCode, color: '#2D3748' },
@@ -75,13 +75,13 @@ export function SkillsPage() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-white bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] pt-24 sm:pt-32 pb-24 px-3 sm:px-6 md:px-20 lg:px-28 font-sans selection:bg-[#CCFF00] selection:text-black relative overflow-x-hidden">
+    <div className="w-full min-h-screen bg-white bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] pt-24 sm:pt-32 pb-24 px-3 sm:px-6 md:px-20 lg:px-28 font-sans selection:bg-[#00F5A0] selection:text-black relative overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6 sm:mb-10 border-b border-black/5 pb-6">
           <div className="max-w-2xl">
-            <span className="inline-block bg-[#CCFF00] text-black font-black text-xs px-3.5 py-1.5 rounded-full mb-3 tracking-widest uppercase border border-black shadow-sm">
+            <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-3.5 py-1.5 rounded-full mb-3 tracking-widest uppercase border border-black shadow-sm">
               ENGINEERING TOOLKIT
             </span>
             <h1
@@ -89,7 +89,7 @@ export function SkillsPage() {
               style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
             >
               SKILLS &amp;<br />
-              <span className="text-[#0038FF]">CAPABILITIES</span>
+              <span className="text-[#0D9488]">CAPABILITIES</span>
             </h1>
             <p className="text-black/50 text-xs sm:text-sm max-w-xl font-medium leading-relaxed mt-3">
               A breakdown of languages, frameworks, AI platforms, databases, and tooling I work with. Tap any card to inspect live project experience.
@@ -110,7 +110,7 @@ export function SkillsPage() {
             <div className="w-[2px] bg-black/10 self-stretch" />
             <div>
               <span className="text-[10px] font-black uppercase text-black/40 block mb-1">Status</span>
-              <span className="text-3xl sm:text-4xl font-black text-[#0038FF] leading-none">ACTIVE</span>
+              <span className="text-3xl sm:text-4xl font-black text-[#0D9488] leading-none">ACTIVE</span>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@ export function SkillsPage() {
                   }}
                   className={`px-3 sm:px-4 py-1.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-wider border-2 transition-all cursor-pointer whitespace-nowrap flex-shrink-0 ${
                     isActive
-                      ? 'bg-black text-[#CCFF00] border-black shadow-md'
+                      ? 'bg-black text-[#00F5A0] border-black shadow-md'
                       : 'bg-white text-black border-black/10 hover:border-black'
                   }`}
                 >
@@ -161,7 +161,7 @@ export function SkillsPage() {
                   setSelectedSkill(matches[0]);
                 }
               }}
-              className="w-full bg-[#F8F9FA] text-black font-bold text-xs px-3.5 py-2.5 rounded-xl border border-black/15 focus:border-[#0038FF] focus:outline-none transition-all placeholder:text-black/30"
+              className="w-full bg-[#F8F9FA] text-black font-bold text-xs px-3.5 py-2.5 rounded-xl border border-black/15 focus:border-[#0D9488] focus:outline-none transition-all placeholder:text-black/30"
             />
             {searchQuery && (
               <button
@@ -186,10 +186,10 @@ export function SkillsPage() {
               const isSelected = finalSelected.name === skill.name;
               
               const stageColors: Record<string, string> = {
-                'Project Ready': 'bg-[#0038FF]/10 text-[#0038FF] border-[#0038FF]/20',
-                'Comfortable': 'bg-[#CCFF00] text-black border-black',
+                'Project Ready': 'bg-[#0D9488]/10 text-[#0D9488] border-[#0D9488]/20',
+                'Comfortable': 'bg-[#00F5A0] text-black border-black',
                 'Learning': 'bg-amber-500/10 text-amber-700 border-amber-500/20',
-                'Comfortable (basic integration)': 'bg-[#CCFF00] text-black border-black'
+                'Comfortable (basic integration)': 'bg-[#00F5A0] text-black border-black'
               };
 
               return (
@@ -198,7 +198,7 @@ export function SkillsPage() {
                   onClick={() => handleSkillClick(skill)}
                   className={`group flex flex-col justify-between text-left bg-white/50 backdrop-blur-md rounded-2xl p-3 sm:p-4 border-2 transition-all duration-200 cursor-pointer ${
                     isSelected
-                      ? 'border-[#0038FF] shadow-[3px_3px_0_#0038FF] bg-white/80 -translate-x-0.5 -translate-y-0.5'
+                      ? 'border-[#0D9488] shadow-[3px_3px_0_#0D9488] bg-white/80 -translate-x-0.5 -translate-y-0.5'
                       : 'border-black/5 hover:border-black/10 hover:shadow-[3px_3px_0_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5'
                   }`}
                   style={{ minHeight: '95px' }}
@@ -243,11 +243,11 @@ export function SkillsPage() {
                 
                 {/* Header */}
                 <div className="flex items-center gap-4">
-                  <div className="w-13 h-13 rounded-2xl bg-[#CCFF00] flex items-center justify-center text-black shadow-lg">
+                  <div className="w-13 h-13 rounded-2xl bg-[#00F5A0] flex items-center justify-center text-black shadow-lg">
                     {React.createElement(
                       (skillStyles[finalSelected.name] || { icon: VscCode }).icon,
                       {
-                        style: { color: (skillStyles[finalSelected.name] || { color: '#0038FF' }).color },
+                        style: { color: (skillStyles[finalSelected.name] || { color: '#0D9488' }).color },
                         className: 'w-6.5 h-6.5',
                       }
                     )}
@@ -256,7 +256,7 @@ export function SkillsPage() {
                     <h3 className="font-black text-xl uppercase leading-none mb-1">
                       {finalSelected.name}
                     </h3>
-                    <span className="text-[7.5px] font-black uppercase tracking-widest bg-[#0038FF] text-white px-2 py-0.5 rounded-full">
+                    <span className="text-[7.5px] font-black uppercase tracking-widest bg-[#0D9488] text-white px-2 py-0.5 rounded-full">
                       {finalSelected.category}
                     </span>
                   </div>
@@ -266,7 +266,7 @@ export function SkillsPage() {
                 <div className="grid grid-cols-3 gap-2 border-y border-white/10 py-3.5">
                   <div>
                     <span className="text-[8.5px] font-black text-white/35 block uppercase tracking-wider mb-0.5">Status</span>
-                    <span className="text-[10px] font-black text-[#CCFF00] uppercase tracking-wider">{finalSelected.status}</span>
+                    <span className="text-[10px] font-black text-[#00F5A0] uppercase tracking-wider">{finalSelected.status}</span>
                   </div>
                   <div className="w-[1px] bg-white/10 self-stretch justify-self-center" />
                   <div>
@@ -282,7 +282,7 @@ export function SkillsPage() {
 
                 {/* Projects Used */}
                 <div>
-                  <h4 className="text-[#CCFF00] text-[10px] font-black uppercase tracking-wider mb-1.5">
+                  <h4 className="text-[#00F5A0] text-[10px] font-black uppercase tracking-wider mb-1.5">
                     PROJECTS / USE CASE
                   </h4>
                   <p className="text-white/75 text-xs font-semibold leading-relaxed">
@@ -292,7 +292,7 @@ export function SkillsPage() {
 
                 {/* Current Focus */}
                 <div>
-                  <h4 className="text-[#CCFF00] text-[10px] font-black uppercase tracking-wider mb-1">
+                  <h4 className="text-[#00F5A0] text-[10px] font-black uppercase tracking-wider mb-1">
                     CURRENT FOCUS
                   </h4>
                   <p className="text-white/70 text-xs font-bold leading-relaxed">
@@ -301,8 +301,8 @@ export function SkillsPage() {
                 </div>
 
                 {/* Next Goal */}
-                <div className="bg-[#CCFF00]/10 border border-[#CCFF00]/20 rounded-xl p-3">
-                  <h4 className="text-[#CCFF00] text-[10px] font-black uppercase tracking-wider mb-1">
+                <div className="bg-[#00F5A0]/10 border border-[#00F5A0]/20 rounded-xl p-3">
+                  <h4 className="text-[#00F5A0] text-[10px] font-black uppercase tracking-wider mb-1">
                     NEXT GOAL
                   </h4>
                   <p className="text-white text-xs font-black leading-relaxed">
@@ -314,7 +314,7 @@ export function SkillsPage() {
                 <div className="border-t border-white/10 pt-4 mt-2">
                   <div className="flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-white/40 mb-1">
                     <span>Interview Confidence</span>
-                    <span className="text-[#CCFF00]">{finalSelected.interviewConfidence}</span>
+                    <span className="text-[#00F5A0]">{finalSelected.interviewConfidence}</span>
                   </div>
                 </div>
 
@@ -339,17 +339,17 @@ export function SkillsPage() {
             >
               <button
                 onClick={() => setMobileDetailOpen(false)}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-[#CCFF00] hover:text-black flex items-center justify-center text-white transition-colors cursor-pointer"
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-[#00F5A0] hover:text-black flex items-center justify-center text-white transition-colors cursor-pointer"
               >
                 <IoClose className="w-5 h-5" />
               </button>
 
               <div className="flex items-center gap-3.5 mb-5 pr-8">
-                <div className="w-11 h-11 rounded-xl bg-[#CCFF00] flex items-center justify-center text-black shadow-md flex-shrink-0">
+                <div className="w-11 h-11 rounded-xl bg-[#00F5A0] flex items-center justify-center text-black shadow-md flex-shrink-0">
                   {React.createElement(
                     (skillStyles[finalSelected.name] || { icon: VscCode }).icon,
                     {
-                      style: { color: (skillStyles[finalSelected.name] || { color: '#0038FF' }).color },
+                      style: { color: (skillStyles[finalSelected.name] || { color: '#0D9488' }).color },
                       className: 'w-5.5 h-5.5',
                     }
                   )}
@@ -358,7 +358,7 @@ export function SkillsPage() {
                   <h3 className="font-black text-lg uppercase leading-tight mb-0.5">
                     {finalSelected.name}
                   </h3>
-                  <span className="text-[7px] font-black uppercase tracking-widest bg-[#0038FF] text-white px-2 py-0.5 rounded-full">
+                  <span className="text-[7px] font-black uppercase tracking-widest bg-[#0D9488] text-white px-2 py-0.5 rounded-full">
                     {finalSelected.category}
                   </span>
                 </div>
@@ -367,7 +367,7 @@ export function SkillsPage() {
               <div className="grid grid-cols-3 gap-2 border-y border-white/10 py-3 mb-4 text-center">
                 <div>
                   <span className="text-[8px] font-black text-white/40 block uppercase mb-0.5">Status</span>
-                  <span className="text-[9px] font-black text-[#CCFF00] uppercase">{finalSelected.status}</span>
+                  <span className="text-[9px] font-black text-[#00F5A0] uppercase">{finalSelected.status}</span>
                 </div>
                 <div>
                   <span className="text-[8px] font-black text-white/40 block uppercase mb-0.5">Last Used</span>
@@ -381,22 +381,22 @@ export function SkillsPage() {
 
               <div className="flex flex-col gap-3 text-xs">
                 <div>
-                  <h4 className="text-[#CCFF00] text-[9.5px] font-black uppercase tracking-wider mb-1">PROJECTS / USE CASE</h4>
+                  <h4 className="text-[#00F5A0] text-[9.5px] font-black uppercase tracking-wider mb-1">PROJECTS / USE CASE</h4>
                   <p className="text-white/80 font-medium leading-relaxed">{finalSelected.projectsUsed}</p>
                 </div>
                 <div>
-                  <h4 className="text-[#CCFF00] text-[9.5px] font-black uppercase tracking-wider mb-1">CURRENT FOCUS</h4>
+                  <h4 className="text-[#00F5A0] text-[9.5px] font-black uppercase tracking-wider mb-1">CURRENT FOCUS</h4>
                   <p className="text-white/75 font-medium leading-relaxed">{finalSelected.currentFocus}</p>
                 </div>
-                <div className="bg-[#CCFF00]/10 border border-[#CCFF00]/20 rounded-xl p-3">
-                  <h4 className="text-[#CCFF00] text-[9.5px] font-black uppercase tracking-wider mb-1">NEXT GOAL</h4>
+                <div className="bg-[#00F5A0]/10 border border-[#00F5A0]/20 rounded-xl p-3">
+                  <h4 className="text-[#00F5A0] text-[9.5px] font-black uppercase tracking-wider mb-1">NEXT GOAL</h4>
                   <p className="text-white font-bold leading-relaxed">{finalSelected.nextGoal}</p>
                 </div>
               </div>
 
               <button
                 onClick={() => setMobileDetailOpen(false)}
-                className="w-full mt-5 py-3 rounded-xl bg-[#CCFF00] text-black font-black text-xs uppercase tracking-wider border border-black cursor-pointer"
+                className="w-full mt-5 py-3 rounded-xl bg-[#00F5A0] text-black font-black text-xs uppercase tracking-wider border border-black cursor-pointer"
               >
                 CLOSE DETAILS
               </button>

@@ -7,24 +7,24 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #CCFF00;
-  border-left: 2px solid #000000;
+  background: #00F5A0;
+  border-left: 2px solid #031714;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: #031714;
   border-radius: 9999px;
-  border: 3px solid #CCFF00;
+  border: 3px solid #00F5A0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0038FF;
+  background: #0D9488;
 }
 
 /* Firefox support */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #000000 #CCFF00;
+  scrollbar-color: #031714 #00F5A0;
 }
 
 @layer base {
@@ -48,11 +48,11 @@
 /* Custom Brutalist Theme Mouse Pointer for Desktop / Fine-Pointer Devices */
 @media (pointer: fine) {
   body {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z' fill='%23CCFF00' stroke='%23000000' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='6' r='1.5' fill='%230038FF'/%3E%3C/svg%3E") 3 3, auto;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z' fill='%2300F5A0' stroke='%23000000' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='6' r='1.5' fill='%230D9488'/%3E%3C/svg%3E") 3 3, auto;
   }
 
   a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-pointer {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='11' fill='%230038FF' stroke='%23000000' stroke-width='2.5'/%3E%3Ccircle cx='14' cy='14' r='4' fill='%23CCFF00' stroke='%23000000' stroke-width='1.5'/%3E%3C/svg%3E") 14 14, pointer !important;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='11' fill='%23042420' stroke='%23000000' stroke-width='2.5'/%3E%3Ccircle cx='14' cy='14' r='4' fill='%2300F5A0' stroke='%23000000' stroke-width='1.5'/%3E%3C/svg%3E") 14 14, pointer !important;
   }
 }
 
@@ -70,14 +70,14 @@
     width: 12rem;
     margin-left: 0;
     background-color: transparent;
-    border-color: #0038FF;
+    border-color: #042420;
   }
   20% {
     color: transparent;
     transform: scale(1, 1);
   }
   40% {
-    border-color: #0038FF;
+    border-color: #042420;
     background-color: transparent;
     transform: scale(1, 1);
   }
@@ -87,8 +87,8 @@
     width: 2.5rem;
     text-indent: -9999px;
     color: transparent;
-    border-color: #0038FF;
-    background-color: #0038FF;
+    border-color: #042420;
+    background-color: #042420;
   }
   80% {
     transform: scale(1, 1);
@@ -96,8 +96,8 @@
   100% {
     margin-left: 4.75rem;
     width: 2.5rem;
-    background-color: #0038FF;
-    border-color: #0038FF;
+    background-color: #042420;
+    border-color: #042420;
     color: transparent;
   }
 }
@@ -106,12 +106,12 @@
   0% {
     margin-left: 4.75rem;
     width: 2.5rem;
-    background-color: #0038FF;
-    border-color: #0038FF;
+    background-color: #042420;
+    border-color: #042420;
   }
   10% {
-    background-color: #0038FF;
-    border-color: #0038FF;
+    background-color: #042420;
+    border-color: #042420;
   }
   70% {
     margin-left: -0.6rem;
@@ -157,8 +157,8 @@ button.submit-anim-btn {
   overflow: hidden;
   width: 12rem;
   height: 3rem;
-  color: #0038FF;
-  border: 2px solid #0038FF;
+  color: #042420;
+  border: 2px solid #042420;
   background-color: transparent;
   cursor: pointer;
   border-radius: 1.5rem;
@@ -217,7 +217,7 @@ button.submit-anim-btn.loading:after {
 button.submit-anim-btn.ready {
   text-indent: 0;
   color: transparent !important;
-  background-color: #0038FF;
+  background-color: #042420;
   animation: button-ready .333s forwards;
   pointer-events: none;
 }
@@ -261,7 +261,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid #0038FF !important;
+  outline: 3px solid #042420 !important;
   outline-offset: 3px !important;
 }
 

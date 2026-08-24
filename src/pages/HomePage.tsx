@@ -327,7 +327,7 @@ export function HomePage() {
                   </div>
                   <div className="flex flex-col items-center gap-1.5 mt-2 text-center">
                     <div className="flex items-center justify-center gap-2">
-                      <Icon style={{ color: styleObj.color }} className="w-5 h-5 flex-shrink-0" />
+                      <Icon style={{ color: styleObj.color }} className="w-5 h-5 flex-shrink-0" aria-label={`${name} icon`} title={`${name} icon`} />
                       <span className="font-black text-sm uppercase text-black">{name}</span>
                     </div>
                     <span className="text-xs text-black/50 font-bold uppercase tracking-wider">{styleObj.desc}</span>

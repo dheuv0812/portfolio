@@ -55,17 +55,18 @@ export default function BubbleMenu({
   const handleLinkClick = (e, href) => {
     setIsMenuOpen(false);
     
-    // Reset scroll to top immediately before page transition or navigation begins
-    if (!href.startsWith('#') || currentPath !== '/') {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    }
-
     if (href.startsWith('#')) {
       e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      } else if (currentPath !== '/') {
+      if (currentPath === '/') {
+        if (window.lenis) {
+          window.lenis.scrollTo(href, { offset: -20, duration: 1.2 });
+        } else {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      } else {
         navigate('/' + href);
       }
     } else if (href.startsWith('/')) {

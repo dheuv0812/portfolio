@@ -63,37 +63,7 @@ export default function App() {
     initGA();
   }, []);
 
-  // Block devtools inspection in production builds, while allowing it in development
-  useEffect(() => {
-    if (!import.meta.env.PROD) return;
 
-    const blockInspect = (e: MouseEvent) => {
-      e.preventDefault();
-    };
-
-    const blockKeys = (e: KeyboardEvent) => {
-      // Disable F12
-      if (e.key === 'F12' || e.keyCode === 123) {
-        e.preventDefault();
-      }
-      // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
-        e.preventDefault();
-      }
-      // Disable Ctrl+U (View Source)
-      if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) {
-        e.preventDefault();
-      }
-    };
-
-    document.addEventListener('contextmenu', blockInspect);
-    document.addEventListener('keydown', blockKeys);
-
-    return () => {
-      document.removeEventListener('contextmenu', blockInspect);
-      document.removeEventListener('keydown', blockKeys);
-    };
-  }, []);
 
   const handlePreloaderComplete = () => {
     setLoading(false);

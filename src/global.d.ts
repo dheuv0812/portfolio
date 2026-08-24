@@ -1,3 +1,5 @@
+declare module '@barba/core';
+
 export { };
 
 declare module '*.glb';
@@ -8,6 +10,13 @@ declare module 'meshline' {
   export const MeshLineMaterial: any;
 }
 
+declare module '@react-three/fiber' {
+  interface ThreeElements {
+    meshLineGeometry: any;
+    meshLineMaterial: any;
+  }
+}
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -16,3 +25,4 @@ declare global {
     }
   }
 }
+

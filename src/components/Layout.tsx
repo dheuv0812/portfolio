@@ -38,6 +38,9 @@ const menuItems = [
   { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, translateY:  14, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
 ];
 
+import { PageTransition } from '@/components/ui/PageTransition';
+import { SmoothScroll } from '@/components/ui/SmoothScroll';
+
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [resumeOpen, setResumeOpen] = useState(false);
@@ -46,128 +49,121 @@ export function Layout({ children }: { children: React.ReactNode }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-
-
   return (
-    <div className="w-full relative min-h-screen flex flex-col bg-white">
-      {/* Top scroll velocity ticker */}
-      <div className="w-full bg-[#031714] text-[#00F5A0] py-2 border-b border-[#00F5A0]/20 z-30 overflow-hidden relative h-8 flex items-center">
-        <ScrollVelocity
-          texts={[
-            "BUILD • LEARN • ITERATE • SHIP • BUILD • LEARN • ITERATE • SHIP"
-          ]}
-          velocity={20}
-          className="text-[10px] font-black tracking-widest uppercase text-[#00F5A0]"
-          parallaxClassName="py-0.5"
-          numCopies={8}
-        />
-      </div>
-      {/* Dynamic BubbleMenu linked to routes */}
-      <BubbleMenu
-        logo={<Logo />}
-        items={menuItems}
-        menuAriaLabel="Toggle navigation"
-        menuBg="#ffffff"
-        menuContentColor="#031714"
-        useFixedPosition={true}
-        animationEase="back.out(1.7)"
-        animationDuration={0.48}
-        onOpenResume={() => setResumeOpen(true)}
-      />
-
-      {/* Global "← Back to Home" button on subpages */}
-      {location.pathname !== '/' && (
-        <div className="fixed top-24 left-4 md:left-8 z-40">
-          <Link
-            to="/"
-            className="flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 border-2 border-black rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-wider hover:bg-[#00F5A0] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <span>← Back <span className="hidden sm:inline">to Home</span></span>
-          </Link>
+    <SmoothScroll>
+      <div className="w-full relative min-h-screen flex flex-col bg-white">
+        {/* Top scroll velocity ticker */}
+        <div className="w-full bg-[#031714] text-[#00F5A0] py-2 border-b border-[#00F5A0]/20 z-30 overflow-hidden relative h-8 flex items-center">
+          <ScrollVelocity
+            texts={[
+              "BUILD • LEARN • ITERATE • SHIP • BUILD • LEARN • ITERATE • SHIP"
+            ]}
+            velocity={20}
+            className="text-[10px] font-black tracking-widest uppercase text-[#00F5A0]"
+            parallaxClassName="py-0.5"
+            numCopies={8}
+          />
         </div>
-      )}
+        {/* Dynamic BubbleMenu linked to routes */}
+        <BubbleMenu
+          logo={<Logo />}
+          items={menuItems}
+          menuAriaLabel="Toggle navigation"
+          menuBg="#ffffff"
+          menuContentColor="#031714"
+          useFixedPosition={true}
+          animationEase="back.out(1.7)"
+          animationDuration={0.48}
+          onOpenResume={() => setResumeOpen(true)}
+        />
 
-      {/* Persistent Right Action Dock (Resume + Social Channels) */}
-      <RightActionDock onResumeOpen={() => setResumeOpen(true)} />
+        {/* Global "← Back to Home" button on subpages */}
+        {location.pathname !== '/' && (
+          <div className="fixed top-24 left-4 md:left-8 z-40">
+            <Link
+              to="/"
+              className="flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 border-2 border-black rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-wider hover:bg-[#00F5A0] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200"
+            >
+              <span>← Back <span className="hidden sm:inline">to Home</span></span>
+            </Link>
+          </div>
+        )}
 
-      {/* Persistent Floating Back-to-Top Button (Bottom Right) */}
-      <div className="fixed right-3 sm:right-6 bottom-4 sm:bottom-6 z-40">
-        <motion.button
-          onClick={scrollToTop}
-          whileHover={{ scale: 1.1 }}
-          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-black bg-white flex items-center justify-center text-black hover:bg-[#00F5A0] shadow-lg transition-colors duration-300 cursor-pointer"
-          aria-label="Back to top"
-          title="Back to Top"
-        >
-          <FaArrowUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-        </motion.button>
-      </div>
+        {/* Persistent Right Action Dock (Resume + Social Channels) */}
+        <RightActionDock onResumeOpen={() => setResumeOpen(true)} />
 
-      {/* Main Page Content Wrapper with smooth entry transition */}
-      <motion.main
-        key={location.pathname}
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -16 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        className="flex-1 w-full"
-      >
-        {children}
-      </motion.main>
+        {/* Persistent Floating Back-to-Top Button (Bottom Right) */}
+        <div className="fixed right-3 sm:right-6 bottom-4 sm:bottom-6 z-40">
+          <motion.button
+            onClick={scrollToTop}
+            whileHover={{ scale: 1.1 }}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-black bg-white flex items-center justify-center text-black hover:bg-[#00F5A0] shadow-lg transition-colors duration-300 cursor-pointer"
+            aria-label="Back to top"
+            title="Back to Top"
+          >
+            <FaArrowUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+          </motion.button>
+        </div>
 
-      {/* Persistent Action Hub Footer */}
-      <footer className="bg-black text-white py-16 px-6 md:px-10 border-t-4 border-black relative z-10 w-full mt-auto">
-        <div className="max-w-6xl mx-auto flex flex-col gap-12">
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
-            {/* Branding Column */}
-            <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
-              <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full w-fit tracking-wider uppercase">
-                ROHIT DUBEY
-              </span>
-              <p className="text-white/50 text-sm max-w-sm font-medium leading-relaxed">
-                A personal product and portfolio hub built to demonstrate engineering case studies, client outcomes, and core competencies.
-              </p>
-              <div className="flex gap-2.5 mt-2">
-                {[
-                  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/' },
-                  { icon: FaGithub, href: 'https://github.com/anakinskywalker0903' },
-                  { icon: MdEmail, href: 'mailto:rohitdubey39005@gmail.com' },
-                  { icon: FaWhatsapp, href: 'https://wa.me/918777453162' },
-                ].map((social, i) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={i}
-                      href={social.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#00F5A0] hover:text-black transition-all duration-300"
-                    >
-                      <Icon className="w-4 h-4" />
-                    </a>
-                  );
-                })}
+        {/* Barba.js + GSAP Page Transition Container */}
+        <div className="flex-1 w-full">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </div>
+
+        {/* Persistent Action Hub Footer */}
+        <footer className="bg-black text-white py-16 px-6 md:px-10 border-t-4 border-black relative z-10 w-full mt-auto">
+          <div className="max-w-6xl mx-auto flex flex-col gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
+              {/* Branding Column */}
+              <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
+                <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full w-fit tracking-wider uppercase">
+                  ROHIT DUBEY
+                </span>
+                <p className="text-white/50 text-sm max-w-sm font-medium leading-relaxed">
+                  A personal product and portfolio hub built to demonstrate engineering case studies, client outcomes, and core competencies.
+                </p>
+                <div className="flex gap-2.5 mt-2">
+                  {[
+                    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/', label: 'LinkedIn Profile' },
+                    { icon: FaGithub, href: 'https://github.com/anakinskywalker0903', label: 'GitHub Profile' },
+                    { icon: MdEmail, href: 'mailto:rohitdubey39005@gmail.com', label: 'Email Contact' },
+                    { icon: FaWhatsapp, href: 'https://wa.me/918777453162', label: 'WhatsApp Chat' },
+                  ].map((social, i) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={i}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                        className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#00F5A0] hover:text-black transition-all duration-300"
+                      >
+                        <Icon className="w-4 h-4" />
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
 
-            {/* Quick Links Column */}
-            <div className="flex flex-col gap-3">
-              <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
-                NAVIGATE
-              </h4>
-              <Link to="/" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Home / About</Link>
-              <Link to="/skills" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Toolkit</Link>
-              <Link to="/experience" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Timeline</Link>
-              <Link to="/client-work" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Client Work</Link>
-              <Link to="/certifications" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Learning Archive</Link>
-            </div>
+              {/* Quick Links Column */}
+              <div className="flex flex-col gap-3">
+                <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
+                  NAVIGATE
+                </h4>
+                <Link to="/" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Home / About</Link>
+                <Link to="/skills" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Toolkit</Link>
+                <Link to="/experience" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Timeline</Link>
+                <Link to="/client-work" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Client Work</Link>
+                <Link to="/certifications" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Learning Archive</Link>
+              </div>
 
-            {/* Resumes Column */}
-            <div className="flex flex-col gap-3">
-              <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
-                DOCUMENTS
-              </h4>
+              <div className="flex flex-col gap-3">
+                <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
+                  DOCUMENTS
+                </h4>
               <button
                 onClick={() => setResumeOpen(true)}
                 className="text-left text-white/60 hover:text-white text-sm font-bold w-fit transition-colors cursor-pointer animate-none"
@@ -233,5 +229,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       {/* Global Resume Picker Modal */}
       <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
     </div>
+    </SmoothScroll>
   );
 }

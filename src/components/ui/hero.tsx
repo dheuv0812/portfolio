@@ -1,5 +1,8 @@
+import { Suspense, lazy } from 'react';
 import { TextType } from './TextType';
 import { usePreloaderDone } from './PreloaderContext';
+
+const Lanyard = lazy(() => import('./Lanyard').then(module => ({ default: module.Lanyard })));
 
 // ── Glassmorphic status pill ─────────────────────────────────────────────────
 const AvailabilityPill = () => (
@@ -62,6 +65,13 @@ export const HeroSection = () => {
     >
       {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,245,160,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,245,160,0.07)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
+
+      {/* Interactive 3D Lanyard Layer (Desktop / Large Screens Only) */}
+      <div className="hidden lg:flex absolute right-0 top-0 bottom-0 w-[50%] h-full z-20 pointer-events-none items-center justify-center">
+        <Suspense fallback={null}>
+          <Lanyard className="w-full h-full" />
+        </Suspense>
+      </div>
 
       {/* ── Text layer ── */}
       <div className="relative z-10 pointer-events-none w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 pt-16 md:pt-20 pb-8 flex flex-col justify-between flex-1 h-full">

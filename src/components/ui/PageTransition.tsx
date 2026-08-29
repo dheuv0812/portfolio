@@ -128,17 +128,20 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
       {/* Barba.js Curtain Transition Overlay Elements */}
       <div
         ref={greenBarRef}
-        className="fixed inset-0 z-[9998] bg-[#00F5A0] pointer-events-none scale-y-0 origin-bottom"
+        className="fixed inset-0 z-[9998] pointer-events-none scale-y-0 origin-bottom"
+        style={{ background: 'var(--c-curtain-1)' }}
       />
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-[9999] bg-[#031714] pointer-events-none scale-y-0 origin-bottom flex items-center justify-center border-b-4 border-[#00F5A0]"
+        className="fixed inset-0 z-[9999] pointer-events-none scale-y-0 origin-bottom flex items-center justify-center"
+        style={{ background: 'var(--c-curtain-2)', borderBottom: '4px solid var(--c-accent)' }}
       >
         <div
           ref={textRef}
           className="opacity-0 translate-y-5 flex flex-col items-center justify-center gap-2 pointer-events-none text-center"
         >
-          <span className="text-[#00F5A0] font-black text-xs uppercase tracking-[0.3em] border border-[#00F5A0]/40 px-4 py-1.5 rounded-full bg-black/40">
+          <span className="font-black text-xs uppercase tracking-[0.3em] border px-4 py-1.5 rounded-full"
+            style={{ color: 'var(--c-accent)', borderColor: 'var(--c-border)', background: 'rgba(0,0,0,0.4)' }}>
             ROHIT DUBEY • PORTFOLIO
           </span>
           <span className="text-white text-2xl font-black uppercase tracking-tight">

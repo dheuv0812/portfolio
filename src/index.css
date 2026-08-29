@@ -1,24 +1,81 @@
 @import "tailwindcss";
 
-/* Custom Thematic Scrollbar */
+/* ── Theme tokens ────────────────────────────────────────────────────────────
+   Defaults match Cyber Green. Overridden at runtime by ThemeContext.
+   Every component must read these instead of hardcoded hex values.
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --c-bg:              #031714;
+  --c-bg-alt:          #042420;
+  --c-bg-surface:      #F8F9FA;
+  --c-bg-page:         #FFFFFF;
+  --c-bg-footer:       #000000;
+
+  --c-accent:          #00F5A0;
+  --c-accent-2:        #0D9488;
+  --c-accent-text:     #000000;
+
+  --c-text:            #FFFFFF;
+  --c-text-muted:      rgba(255,255,255,0.55);
+  --c-text-dark:       #0A0A0A;
+  --c-text-dark-muted: rgba(0,0,0,0.45);
+
+  --c-border:          rgba(0,245,160,0.18);
+  --c-border-dark:     rgba(0,0,0,0.08);
+  --c-shadow:          #000000;
+
+  --c-ticker-bg:       #031714;
+  --c-ticker-text:     #00F5A0;
+  --c-ticker-border:   rgba(0,245,160,0.2);
+
+  --c-nav-bg:          #ffffff;
+  --c-nav-content:     #031714;
+
+  --c-panel-bg:        #1E2026;
+  --c-panel-text:      #FFFFFF;
+
+  --scrollbar-track:   #031714;
+  --scrollbar-thumb:   #00F5A0;
+
+  --c-preloader-bg:    #031714;
+  --c-preloader-text:  #00F5A0;
+
+  --c-curtain-1:       #00F5A0;
+  --c-curtain-2:       #031714;
+
+  --c-hero-shadow:     #021412;
+  --c-grid:            rgba(0,245,160,0.07);
+
+  --c-selection-bg:    #00F5A0;
+  --c-selection-text:  #000000;
+}
+
+/* Selection follows theme */
+::selection {
+  background: var(--c-selection-bg);
+  color: var(--c-selection-text);
+}
+
+/* Custom Thematic Scrollbar — follows active skin */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #031714;
-  border-left: 1px solid rgba(0, 245, 160, 0.2);
+  background: var(--scrollbar-track, #031714);
+  border-left: 1px solid rgba(255,255,255,0.08);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #00F5A0;
+  background: var(--scrollbar-thumb, #00F5A0);
   border-radius: 9999px;
-  border: 2px solid #031714;
+  border: 2px solid var(--scrollbar-track, #031714);
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #00D088;
+  filter: brightness(1.15);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb, #00F5A0) var(--scrollbar-track, #031714);
 }
 
 .pdf-thematic-scrollbar::-webkit-scrollbar {
@@ -55,11 +112,7 @@
   background: #00D088;
 }
 
-/* Firefox support */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #00F5A0 #031714;
-}
+/* Firefox scrollbar — handled by * selector using --scrollbar-* vars above */
 
 @layer base {
   * {
@@ -79,14 +132,30 @@
   }
 }
 
-/* Custom Brutalist Theme Mouse Pointer for Desktop / Fine-Pointer Devices */
+/* Custom Brutalist Theme Mouse Pointer for Desktop / Fine-Pointer Devices (Cyber Green) */
 @media (pointer: fine) {
-  body {
+  html:not([data-theme="starwars"]):not([data-theme="sith"]) body {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z' fill='%2300F5A0' stroke='%23000000' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='6' r='1.5' fill='%230D9488'/%3E%3C/svg%3E") 3 3, auto;
   }
 
-  a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-pointer {
+  html:not([data-theme="starwars"]):not([data-theme="sith"]) a,
+  html:not([data-theme="starwars"]):not([data-theme="sith"]) button,
+  html:not([data-theme="starwars"]):not([data-theme="sith"]) [role="button"],
+  html:not([data-theme="starwars"]):not([data-theme="sith"]) input[type="submit"],
+  html:not([data-theme="starwars"]):not([data-theme="sith"]) input[type="button"],
+  html:not([data-theme="starwars"]):not([data-theme="sith"]) .cursor-pointer {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='11' fill='%23042420' stroke='%23000000' stroke-width='2.5'/%3E%3Ccircle cx='14' cy='14' r='4' fill='%2300F5A0' stroke='%23000000' stroke-width='1.5'/%3E%3C/svg%3E") 14 14, pointer !important;
+  }
+
+  html[data-theme="starwars"],
+  html[data-theme="starwars"] *,
+  html[data-theme="starwars"] *::before,
+  html[data-theme="starwars"] *::after,
+  html[data-theme="sith"],
+  html[data-theme="sith"] *,
+  html[data-theme="sith"] *::before,
+  html[data-theme="sith"] *::after {
+    cursor: none !important;
   }
 }
 

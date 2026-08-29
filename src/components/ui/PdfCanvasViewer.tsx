@@ -119,9 +119,9 @@ export const PdfCanvasViewer: React.FC<PdfCanvasViewerProps> = ({ url, zoomLevel
     >
       <div ref={contentRef} className="w-full flex flex-col items-center justify-start my-auto min-h-full py-4">
         {loading && (
-          <div className="flex flex-col items-center justify-center my-auto py-16 gap-3 text-[#00F5A0]">
-            <div className="w-10 h-10 border-4 border-[#00F5A0] border-t-transparent rounded-full animate-spin" />
-            <span className="text-xs font-black uppercase tracking-widest text-[#00F5A0]">
+          <div className="flex flex-col items-center justify-center my-auto py-16 gap-3 text-[var(--c-accent)]">
+            <div className="w-10 h-10 border-4 border-[var(--c-accent)] border-t-transparent rounded-full animate-spin" />
+            <span className="text-xs font-black uppercase tracking-widest text-[var(--c-accent)]">
               Rendering Full PDF Document...
             </span>
           </div>

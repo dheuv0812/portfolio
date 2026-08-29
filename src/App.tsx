@@ -1,11 +1,15 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import { Layout } from '@/components/Layout';
 import { HomePage } from '@/pages/HomePage';
 import { Preloader } from '@/components/ui/Preloader';
+import { StarWarsPreloader } from '@/components/ui/StarWarsPreloader';
 import { PreloaderDoneContext } from '@/components/ui/PreloaderContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { useTheme } from '@/lib/ThemeContext';
+import type { Theme } from '@/lib/themes';
+import { isSameFamily } from '@/lib/themes';
 
 // Lazy load pages to decrease initial chunk bundle weights
 const SkillsPage = lazy(() => import('@/pages/SkillsPage').then(m => ({ default: m.SkillsPage })));
@@ -39,14 +43,13 @@ function ScrollToTop() {
 function LoadingFallback() {
   return (
     <div className="w-full min-h-[60vh] bg-white flex flex-col items-center justify-center gap-4">
-      <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase border border-black animate-pulse">
+      <span className="inline-block bg-[var(--c-accent)] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase border border-black animate-pulse">
         LOADING PAGE...
       </span>
     </div>
   );
 }
 
-// Helper to determine if preloader should show on initial mount
 function shouldShowPreloader(): boolean {
   if (typeof window === 'undefined') return false;
   const isBot = /Lighthouse|Googlebot|Chrome-Lighthouse|HeadlessChrome/i.test(navigator.userAgent);
@@ -54,50 +57,88 @@ function shouldShowPreloader(): boolean {
   return !isBot && !alreadySeen;
 }
 
-export default function App() {
-  const [loading, setLoading] = useState(() => shouldShowPreloader());
+// Inner app — has access to ThemeContext so it can choose the right preloader
+function AppInner() {
+  const [loading, setLoading]             = useState(() => shouldShowPreloader());
   const [preloaderDone, setPreloaderDone] = useState(() => !shouldShowPreloader());
+  const [switchingTheme, setSwitchingTheme] = useState<Theme | null>(null);
+  const { activeTheme, onThemeChange }    = useTheme();
+  const isFirstMount                      = useRef(true);
 
-  // Initialize GA4 once on mount
+  useEffect(() => { initGA(); }, []);
+
+  // Listen for skin changes — show preloader on every switch EXCEPT same-family toggles
   useEffect(() => {
-    initGA();
-  }, []);
+    const unsub = onThemeChange((next, prev) => {
+      // Skip very first apply on mount
+      if (isFirstMount.current) {
+        isFirstMount.current = false;
+        return;
+      }
+      // Same family (e.g. starwars ↔ sith) = just a colour swap, no preloader
+      if (isSameFamily(next, prev)) return;
 
-
+      // Different skin family → show preloader
+      setSwitchingTheme(next);
+      setLoading(true);
+      setPreloaderDone(false);
+    });
+    return unsub;
+  }, [onThemeChange]);
 
   const handlePreloaderComplete = () => {
+    sessionStorage.setItem('portfolio_preloader_seen', 'true');
     setLoading(false);
+    setSwitchingTheme(null);
     setTimeout(() => setPreloaderDone(true), 100);
   };
 
+  // Determine which skin the preloader should use
+  // (switchingTheme during a skin switch, activeTheme on first load)
+  const preloaderTheme = switchingTheme ?? activeTheme;
+  const isSwPreloader  = preloaderTheme.id === 'starwars' || preloaderTheme.id === 'sith';
+
+  return (
+    <PreloaderDoneContext.Provider value={preloaderDone}>
+      <Router>
+        <ScrollToTop />
+
+        {/* Preloader — skin-aware, fires on first load AND every skin switch */}
+        <AnimatePresence mode="wait">
+          {loading && isSwPreloader && (
+            <StarWarsPreloader
+              key={`sw-pre-${preloaderTheme.id}`}
+              onComplete={handlePreloaderComplete}
+              accentColour={preloaderTheme.crawlAccent ?? '#FFE81F'}
+            />
+          )}
+          {loading && !isSwPreloader && (
+            <Preloader key={`pre-${preloaderTheme.id}`} onComplete={handlePreloaderComplete} />
+          )}
+        </AnimatePresence>
+
+        <Layout>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              <Route path="/"               element={<HomePage />} />
+              <Route path="/skills"         element={<SkillsPage />} />
+              <Route path="/projects"       element={<ProjectsPage />} />
+              <Route path="/client-work"    element={<ClientWorkPage />} />
+              <Route path="/experience"     element={<ExperiencePage />} />
+              <Route path="/certifications" element={<LearningArchivePage />} />
+              <Route path="*"               element={<NotFoundPage />} />
+            </Routes>
+          </Suspense>
+        </Layout>
+      </Router>
+    </PreloaderDoneContext.Provider>
+  );
+}
+
+export default function App() {
   return (
     <ErrorBoundary>
-      <PreloaderDoneContext.Provider value={preloaderDone}>
-        <Router>
-          <ScrollToTop />
-
-          {/* Global Cinematic Preloader */}
-          <AnimatePresence mode="wait">
-            {loading && (
-              <Preloader onComplete={handlePreloaderComplete} />
-            )}
-          </AnimatePresence>
-
-          <Layout>
-            <Suspense fallback={<LoadingFallback />}>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/skills" element={<SkillsPage />} />
-                <Route path="/projects" element={<ProjectsPage />} />
-                <Route path="/client-work" element={<ClientWorkPage />} />
-                <Route path="/experience" element={<ExperiencePage />} />
-                <Route path="/certifications" element={<LearningArchivePage />} />
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-            </Suspense>
-          </Layout>
-        </Router>
-      </PreloaderDoneContext.Provider>
+      <AppInner />
     </ErrorBoundary>
   );
 }

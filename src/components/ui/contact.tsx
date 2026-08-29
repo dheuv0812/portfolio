@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { FaCopy, FaCheck, FaPaperPlane, FaClock, FaMapMarkerAlt, FaBolt, FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { Grainient } from '@/components/ui/Grainient';
 import { trackContactFormSubmit } from '@/lib/analytics';
+import { useTheme } from '@/lib/ThemeContext';
 
 const TOPICS = [
   { id: 'freelance', label: '⚡ Freelance Project' },
@@ -12,6 +13,10 @@ const TOPICS = [
 ];
 
 export const ContactSection = () => {
+  const { activeTheme } = useTheme();
+  const g1 = activeTheme.vars['--c-accent'];
+  const g2 = activeTheme.vars['--c-accent-2'];
+  const g3 = activeTheme.vars['--c-bg'];
   const [form, setForm] = useState({ name: '', email: '', subject: 'freelance', message: '' });
   const [copied, setCopied] = useState(false);
   const [sent, setSent] = useState(false);
@@ -92,14 +97,15 @@ export const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="bg-[#031714] w-full py-16 md:py-24 px-4 sm:px-6 md:px-20 lg:px-28 relative overflow-hidden z-30 min-h-screen flex items-center border-t-2 border-black/10"
+      className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-20 lg:px-28 relative overflow-hidden z-30 min-h-screen flex items-center border-t-2 border-black/10"
+      style={{ background: 'var(--c-bg)' }}
     >
       {/* WebGL Grainient Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Grainient
-          color1="#00F5A0"
-          color2="#0D9488"
-          color3="#000000"
+          color1={g1}
+          color2={g2}
+          color3={g3}
           timeSpeed={1.0}
           colorBalance={0.06}
           warpStrength={1.2}
@@ -120,7 +126,7 @@ export const ContactSection = () => {
           centerY={0.0}
           zoom={1.05}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#031714]/40 via-transparent to-[#031714]/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--c-bg)]/40 via-transparent to-[var(--c-bg)]/40 pointer-events-none" />
       </div>
 
       <div className="max-w-6xl w-full mx-auto relative z-10">
@@ -128,7 +134,7 @@ export const ContactSection = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
-            <span className="inline-block bg-[#00F5A0] text-black font-black text-[10px] px-3.5 py-1.5 rounded-full mb-3 tracking-widest uppercase border border-black shadow-[3px_3px_0_#000]">
+            <span className="inline-block bg-[var(--c-accent)] text-black font-black text-[10px] px-3.5 py-1.5 rounded-full mb-3 tracking-widest uppercase border border-black shadow-[3px_3px_0_var(--c-shadow)]">
               GET IN TOUCH
             </span>
             <h2
@@ -152,15 +158,15 @@ export const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 border-[3px] border-black rounded-[2.5rem] p-6 bg-white shadow-[8px_8px_0_#000] flex flex-col justify-between gap-6"
+            className="lg:col-span-2 border-[3px] border-black rounded-[2.5rem] p-6 bg-[var(--c-bg-surface)] shadow-[8px_8px_0_var(--c-shadow)] flex flex-col justify-between gap-6"
           >
             {/* Direct Channel: Email Card with Quick Copy */}
-            <div className="bg-[#042420] text-white p-5 rounded-[1.8rem] border-2 border-black relative overflow-hidden group shadow-md">
+            <div className="bg-[var(--c-bg-alt)] text-white p-5 rounded-[1.8rem] border-2 border-black relative overflow-hidden group shadow-md">
               <div className="flex items-center justify-between mb-3">
-                <span className="inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-[#00F5A0] bg-black/40 px-3 py-1 rounded-full border border-[#00F5A0]/30">
-                  <FaEnvelope className="w-3 h-3 text-[#00F5A0]" /> DIRECT EMAIL CHANNEL
+                <span className="inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-[var(--c-accent)] bg-black/40 px-3 py-1 rounded-full border border-[var(--c-accent)]/30">
+                  <FaEnvelope className="w-3 h-3 text-[var(--c-accent)]" /> DIRECT EMAIL CHANNEL
                 </span>
-                <span className="w-2.5 h-2.5 rounded-full bg-[#00F5A0] animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--c-accent)] animate-pulse" />
               </div>
               
               <p className="font-black text-sm md:text-base text-white tracking-tight break-all mb-4 select-all">
@@ -171,7 +177,7 @@ export const ContactSection = () => {
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#00F5A0] text-black font-black text-xs px-4 py-2.5 rounded-xl border border-black hover:bg-white transition-all duration-200 shadow-sm cursor-pointer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-[var(--c-accent)] text-black font-black text-xs px-4 py-2.5 rounded-xl border border-black hover:bg-[var(--c-bg-surface)] transition-all duration-200 shadow-sm cursor-pointer"
                 >
                   {copied ? (
                     <>
@@ -187,7 +193,7 @@ export const ContactSection = () => {
                 </button>
                 <a
                   href="mailto:rohitdubey39005@gmail.com"
-                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white hover:text-black border border-white/20 flex items-center justify-center text-white transition-colors"
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[var(--c-bg-surface)] hover:text-black border border-white/20 flex items-center justify-center text-white transition-colors"
                   title="Open in Mail app"
                 >
                   <FaPaperPlane className="w-3.5 h-3.5" />
@@ -197,9 +203,9 @@ export const ContactSection = () => {
 
             {/* Live Telemetry & Location Card */}
             <div className="flex flex-col gap-3">
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[#F8F9FA] border-2 border-black/5 hover:border-black/20 transition-all">
+              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[var(--c-bg-surface)] border-2 border-black/5 hover:border-black/20 transition-all">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-[#00F5A0] border border-black/10 flex items-center justify-center text-black flex-shrink-0">
+                  <div className="w-8 h-8 rounded-xl bg-[var(--c-accent)] border border-black/10 flex items-center justify-center text-black flex-shrink-0">
                     <FaMapMarkerAlt className="w-4 h-4" />
                   </div>
                   <div>
@@ -207,15 +213,15 @@ export const ContactSection = () => {
                     <p className="font-extrabold text-xs text-black">India • Working Worldwide</p>
                   </div>
                 </div>
-                <span className="text-[9px] font-black text-[#0D9488] bg-[#0D9488]/10 px-2.5 py-1 rounded-full uppercase">
+                <span className="text-[9px] font-black text-[var(--c-accent-2)] bg-[var(--c-accent-2)]/10 px-2.5 py-1 rounded-full uppercase">
                   Remote
                 </span>
               </div>
 
               {/* Live IST Time */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[#F8F9FA] border-2 border-black/5 hover:border-black/20 transition-all">
+              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[var(--c-bg-surface)] border-2 border-black/5 hover:border-black/20 transition-all">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-black flex items-center justify-center text-[#00F5A0] flex-shrink-0">
+                  <div className="w-8 h-8 rounded-xl bg-black flex items-center justify-center text-[var(--c-accent)] flex-shrink-0">
                     <FaClock className="w-4 h-4" />
                   </div>
                   <div>
@@ -229,9 +235,9 @@ export const ContactSection = () => {
               </div>
 
               {/* Response Time Guarantee */}
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#F8F9FA] border-2 border-black/5">
-                <div className="w-8 h-8 rounded-xl bg-[#042420] text-white flex items-center justify-center flex-shrink-0">
-                  <FaBolt className="w-4 h-4 text-[#00F5A0]" />
+              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-[var(--c-bg-surface)] border-2 border-black/5">
+                <div className="w-8 h-8 rounded-xl bg-[var(--c-bg-alt)] text-white flex items-center justify-center flex-shrink-0">
+                  <FaBolt className="w-4 h-4 text-[var(--c-accent)]" />
                 </div>
                 <div>
                   <p className="text-[8px] font-black uppercase tracking-widest text-black/40">GUARANTEED RESPONSE</p>
@@ -258,7 +264,7 @@ export const ContactSection = () => {
                       href={s.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border-2 border-black text-[10px] font-black bg-white text-black hover:bg-[#00F5A0] hover:shadow-[3px_3px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border-2 border-black text-[10px] font-black bg-[var(--c-bg-surface)] text-black hover:bg-[var(--c-accent)] hover:shadow-[3px_3px_0_var(--c-shadow)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
                     >
                       <Icon className="w-3.5 h-3.5" />
                       <span>{s.label}</span>
@@ -276,11 +282,11 @@ export const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 bg-white border-[3px] border-black rounded-[2.5rem] p-6 md:p-8 shadow-[8px_8px_0_#000] flex flex-col justify-between"
+            className="lg:col-span-3 bg-[var(--c-bg-surface)] border-[3px] border-black rounded-[2.5rem] p-6 md:p-8 shadow-[8px_8px_0_var(--c-shadow)] flex flex-col justify-between"
           >
             {sent ? (
               <div className="h-full flex flex-col items-center justify-center gap-4 py-12">
-                <div className="w-20 h-20 bg-[#00F5A0] rounded-full flex items-center justify-center text-3xl border-3 border-black shadow-[4px_4px_0_#000]">
+                <div className="w-20 h-20 bg-[var(--c-accent)] rounded-full flex items-center justify-center text-3xl border-3 border-black shadow-[4px_4px_0_var(--c-shadow)]">
                   ✓
                 </div>
                 <h3 className="font-black text-2xl text-black text-center uppercase tracking-tight">Message Received!</h3>
@@ -304,8 +310,8 @@ export const ContactSection = () => {
                         onClick={() => setForm({ ...form, subject: topic.id })}
                         className={`px-3 py-2.5 rounded-xl border-2 text-[10px] font-black uppercase text-left transition-all cursor-pointer ${
                           form.subject === topic.id
-                            ? 'bg-[#042420] text-[#00F5A0] border-black shadow-[2px_2px_0_#00F5A0]'
-                            : 'bg-[#F8F9FA] text-black border-black/10 hover:border-black'
+                            ? `bg-[var(--c-bg-alt)] text-[var(--c-accent)] border-black shadow-[2px_2px_0_var(--c-accent)]`
+                            : 'bg-[var(--c-bg-surface)] text-black border-black/10 hover:border-black'
                         }`}
                       >
                         {topic.label}
@@ -323,7 +329,7 @@ export const ContactSection = () => {
                       onChange={handleChange}
                       required
                       placeholder="e.g. Alex Morgan"
-                      className="w-full bg-[#F8F9FA] focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-black border-2 border-black/10 focus:border-[#0D9488] focus:shadow-[3px_3px_0_#000] outline-none transition-all placeholder:text-black/30"
+                      className="w-full bg-[var(--c-bg-surface)] focus:bg-[var(--c-bg-surface)] rounded-xl px-4 py-3 text-xs font-bold text-black border-2 border-black/10 focus:border-[var(--c-accent-2)] focus:shadow-[3px_3px_0_var(--c-shadow)] outline-none transition-all placeholder:text-black/30"
                     />
                   </div>
                   <div>
@@ -335,7 +341,7 @@ export const ContactSection = () => {
                       onChange={handleChange}
                       required
                       placeholder="alex@company.com"
-                      className="w-full bg-[#F8F9FA] focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-black border-2 border-black/10 focus:border-[#0D9488] focus:shadow-[3px_3px_0_#000] outline-none transition-all placeholder:text-black/30"
+                      className="w-full bg-[var(--c-bg-surface)] focus:bg-[var(--c-bg-surface)] rounded-xl px-4 py-3 text-xs font-bold text-black border-2 border-black/10 focus:border-[var(--c-accent-2)] focus:shadow-[3px_3px_0_var(--c-shadow)] outline-none transition-all placeholder:text-black/30"
                     />
                   </div>
                 </div>
@@ -349,7 +355,7 @@ export const ContactSection = () => {
                     required
                     rows={4}
                     placeholder="Tell me about your scope, timelines, goals, or questions..."
-                    className="w-full bg-[#F8F9FA] focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-black border-2 border-black/10 focus:border-[#0D9488] focus:shadow-[3px_3px_0_#000] outline-none transition-all resize-none placeholder:text-black/30"
+                    className="w-full bg-[var(--c-bg-surface)] focus:bg-[var(--c-bg-surface)] rounded-xl px-4 py-3 text-xs font-bold text-black border-2 border-black/10 focus:border-[var(--c-accent-2)] focus:shadow-[3px_3px_0_var(--c-shadow)] outline-none transition-all resize-none placeholder:text-black/30"
                   />
                 </div>
 
@@ -363,7 +369,7 @@ export const ContactSection = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#042420] text-[#00F5A0] font-black text-xs px-8 py-3.5 rounded-2xl border-2 border-black hover:bg-[#00F5A0] hover:text-black shadow-[4px_4px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all cursor-pointer uppercase tracking-wider"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[var(--c-bg-alt)] text-[var(--c-accent)] font-black text-xs px-8 py-3.5 rounded-2xl border-2 border-black hover:bg-[var(--c-accent)] hover:text-black shadow-[4px_4px_0_var(--c-shadow)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all cursor-pointer uppercase tracking-wider"
                   >
                     {submitting ? (
                       <span>SENDING MESSAGE...</span>

@@ -114,16 +114,17 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             transition={{ type: 'spring', damping: 25, stiffness: 350 }}
             className={`relative w-full ${
               activePreview ? 'max-w-5xl w-[95vw] h-[90vh] max-h-[90vh]' : 'max-w-xl max-h-[85vh]'
-            } bg-white border-[3px] border-black rounded-[1.8rem] sm:rounded-[2.2rem] shadow-2xl overflow-hidden z-[70] flex flex-col my-auto transition-all duration-300`}
+            } bg-[var(--c-bg-surface)] border-[3px] border-black rounded-[1.8rem] sm:rounded-[2.2rem] shadow-2xl overflow-hidden z-[70] flex flex-col my-auto transition-all duration-300`}
           >
             {activePreview ? (
-              <div className="flex-1 flex flex-col h-full overflow-hidden bg-[#031714]">
+              <div className="flex-1 flex flex-col h-full overflow-hidden" style={{ background: 'var(--c-bg)' }}>
                 {/* PDF Header Controls */}
-                <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-[#02110F] border-b-2 border-[#00F5A0]/20 z-10 flex-shrink-0">
+                <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b-2 z-10 flex-shrink-0"
+                  style={{ background: 'var(--c-bg-alt)', borderColor: 'var(--c-border)' }}>
                   <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                     <button
                       onClick={() => setActivePreview(null)}
-                      className="px-3.5 py-1.5 rounded-full border border-[#00F5A0]/40 text-[10px] sm:text-xs font-black uppercase text-[#00F5A0] hover:bg-[#00F5A0] hover:text-black transition-all cursor-pointer flex-shrink-0"
+                      className="px-3.5 py-1.5 rounded-full border border-[var(--c-accent)]/40 text-[10px] sm:text-xs font-black uppercase text-[var(--c-accent)] hover:bg-[var(--c-accent)] hover:text-black transition-all cursor-pointer flex-shrink-0"
                     >
                       ← Versions
                     </button>
@@ -133,14 +134,14 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   </div>
 
                   {/* Custom Thematic PDF Controls Bar */}
-                  <div className="hidden sm:flex items-center gap-2 bg-[#031714] border border-[#00F5A0]/30 rounded-full px-3 py-1 text-xs text-white">
-                    <span className="text-[10px] font-black text-[#00F5A0] uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-black/40 border border-[#00F5A0]/20">
+                  <div className="hidden sm:flex items-center gap-2 bg-[var(--c-bg)] border border-[var(--c-accent)]/30 rounded-full px-3 py-1 text-xs text-white">
+                    <span className="text-[10px] font-black text-[var(--c-accent)] uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-black/40 border border-[var(--c-accent)]/20">
                       {totalPages} {totalPages > 1 ? 'PAGES' : 'PAGE'}
                     </span>
                     <div className="h-3 w-px bg-white/20" />
                     <button
                       onClick={handleZoomOut}
-                      className="w-6 h-6 rounded-full hover:bg-[#00F5A0] hover:text-black flex items-center justify-center font-black text-xs transition-colors cursor-pointer"
+                      className="w-6 h-6 rounded-full hover:bg-[var(--c-accent)] hover:text-black flex items-center justify-center font-black text-xs transition-colors cursor-pointer"
                       title="Zoom Out"
                     >
                       -
@@ -150,14 +151,14 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                     </span>
                     <button
                       onClick={handleZoomIn}
-                      className="w-6 h-6 rounded-full hover:bg-[#00F5A0] hover:text-black flex items-center justify-center font-black text-xs transition-colors cursor-pointer"
+                      className="w-6 h-6 rounded-full hover:bg-[var(--c-accent)] hover:text-black flex items-center justify-center font-black text-xs transition-colors cursor-pointer"
                       title="Zoom In"
                     >
                       +
                     </button>
                     <button
                       onClick={() => setZoomLevel(100)}
-                      className="text-[9px] font-black uppercase text-[#00F5A0] hover:underline ml-1 cursor-pointer"
+                      className="text-[9px] font-black uppercase text-[var(--c-accent)] hover:underline ml-1 cursor-pointer"
                     >
                       Fit
                     </button>
@@ -168,19 +169,19 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                       href={activePreview.fileUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hidden md:flex items-center gap-1 px-3 py-1.5 bg-white/10 text-white font-bold text-[10px] sm:text-xs rounded-full border border-white/20 hover:bg-white hover:text-black transition-all cursor-pointer"
+                      className="hidden md:flex items-center gap-1 px-3 py-1.5 bg-white/10 text-white font-bold text-[10px] sm:text-xs rounded-full border border-white/20 hover:bg-[var(--c-bg-surface)] hover:text-black transition-all cursor-pointer"
                     >
                       <FaEye className="w-3 h-3" /> Full Tab
                     </a>
                     <button
                       onClick={() => handleDownload(activePreview)}
-                      className="flex items-center gap-1 px-3.5 py-1.5 bg-[#00F5A0] text-black font-black text-[10px] sm:text-xs rounded-full border border-black hover:scale-105 transition-all cursor-pointer"
+                      className="flex items-center gap-1 px-3.5 py-1.5 bg-[var(--c-accent)] text-black font-black text-[10px] sm:text-xs rounded-full border border-black hover:scale-105 transition-all cursor-pointer"
                     >
                       <FaDownload className="w-3 h-3" /> Download
                     </button>
                     <button
                       onClick={handleClose}
-                      className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-[#00F5A0] hover:text-black transition-all cursor-pointer"
+                      className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-[var(--c-accent)] hover:text-black transition-all cursor-pointer"
                     >
                       <IoClose className="w-4 h-4" />
                     </button>
@@ -188,11 +189,11 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </div>
 
                 {/* Resume In-Modal Viewer with Custom Thematic Scrollbar */}
-                <div className="flex-1 w-full bg-[#031714] text-white p-3 sm:p-4 flex flex-col gap-3 overflow-hidden">
+                <div className="flex-1 w-full bg-[var(--c-bg)] text-white p-3 sm:p-4 flex flex-col gap-3 overflow-hidden">
                   {/* Compact Header Summary Bar */}
-                  <div className="bg-[#02110F] border border-[#00F5A0]/20 rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 flex-shrink-0">
+                  <div className="bg-[#02110F] border border-[var(--c-accent)]/20 rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 flex-shrink-0">
                     <div className="flex-1 min-w-0">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-[#00F5A0] block">
+                      <span className="text-[9px] font-black uppercase tracking-widest text-[var(--c-accent)] block">
                         ROHIT DUBEY • {activePreview.role.toUpperCase()}
                       </span>
                       <p className="text-white/80 text-xs font-medium truncate mt-0.5">
@@ -202,7 +203,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
                     <div className="flex flex-wrap gap-1 flex-shrink-0">
                       {activePreview.skills.slice(0, 4).map((skill) => (
-                        <span key={skill} className="text-[9px] font-black uppercase bg-[#00F5A0]/10 text-[#00F5A0] border border-[#00F5A0]/30 px-2 py-0.5 rounded-md">
+                        <span key={skill} className="text-[9px] font-black uppercase bg-[var(--c-accent)]/10 text-[var(--c-accent)] border border-[var(--c-accent)]/30 px-2 py-0.5 rounded-md">
                           {skill}
                         </span>
                       ))}
@@ -210,7 +211,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   </div>
 
                   {/* Thematic Canvas Multi-Page PDF Viewer */}
-                  <div className="flex-1 w-full rounded-xl overflow-hidden border border-[#00F5A0]/30 bg-[#02110F] relative">
+                  <div className="flex-1 w-full rounded-xl overflow-hidden border border-[var(--c-accent)]/30 bg-[#02110F] relative">
                     <PdfCanvasViewer url={activePreview.fileUrl} zoomLevel={zoomLevel} onNumPages={setTotalPages} />
                   </div>
                 </div>
@@ -218,9 +219,9 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             ) : (
               <>
                 {/* Header */}
-                <div className="flex items-center justify-between px-6 sm:px-8 py-4 sm:py-5 border-b-2 border-black bg-[#0D9488]/5">
+                <div className="flex items-center justify-between px-6 sm:px-8 py-4 sm:py-5 border-b-2 border-black bg-[var(--c-accent-2)]/5">
                   <div>
-                    <span className="inline-block bg-[#00F5A0] text-black text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-1 border border-black">
+                    <span className="inline-block bg-[var(--c-accent)] text-black text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-1 border border-black">
                       RECRUITER HUB
                     </span>
                     <h3 className="text-lg sm:text-2xl font-black text-black tracking-tight uppercase" style={{ fontFamily: '"Arial Black", sans-serif' }}>
@@ -241,10 +242,10 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   {resumeVersions.map((version) => (
                     <div
                       key={version.id}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl border-2 border-black/10 hover:border-black bg-[#F8F9FA] hover:bg-white transition-all duration-200"
+                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl border-2 border-black/10 hover:border-black bg-[var(--c-bg-surface)] hover:bg-[var(--c-bg-surface)] transition-all duration-200"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-9 h-9 rounded-xl bg-[#0D9488] text-white flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
+                        <div className="w-9 h-9 rounded-xl bg-[var(--c-accent-2)] text-white flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
                           <FaFilePdf className="w-4 h-4" />
                         </div>
                         <div>
@@ -268,7 +269,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                         </button>
                         <button
                           onClick={() => handleDownload(version)}
-                          className="flex-1 sm:flex-initial px-3.5 py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#00F5A0] hover:bg-black border-2 border-black text-black hover:text-white rounded-full flex items-center justify-center gap-1 transition-colors shadow-sm cursor-pointer"
+                          className="flex-1 sm:flex-initial px-3.5 py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[var(--c-accent)] hover:bg-black border-2 border-black text-black hover:text-white rounded-full flex items-center justify-center gap-1 transition-colors shadow-sm cursor-pointer"
                         >
                           <FaDownload className="w-3 h-3" />
                           Download
@@ -279,7 +280,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </div>
 
                 {/* Footer */}
-                <div className="p-3.5 bg-[#F8F9FA] border-t-2 border-black text-center text-black/50 text-[9px] sm:text-[10px] font-black uppercase tracking-wider">
+                <div className="p-3.5 bg-[var(--c-bg-surface)] border-t-2 border-black text-center text-black/50 text-[9px] sm:text-[10px] font-black uppercase tracking-wider">
                   Rohit Dubey • Engineering Portfolio 2026
                 </div>
               </>

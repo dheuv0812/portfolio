@@ -9,6 +9,12 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    hmr: {
+      // Prevent the "reload application" overlay from showing during skin switches
+      overlay: false,
+    },
+  },
   assetsInclude: ['**/*.glb'],
   resolve: {
     alias: {

@@ -27,7 +27,6 @@
     "react-ga4": "^3.0.1",
     "react-github-calendar": "^5.0.9",
     "react-icons": "^5.7.0",
-    "react-leetcode": "^1.0.3",
     "react-router-dom": "^7.18.1",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3",

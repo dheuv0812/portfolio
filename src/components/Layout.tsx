@@ -174,165 +174,282 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </PageTransition>
         </div>
 
-        {/* Neobrutalist Footer */}
-        <footer
-          className="py-16 px-6 md:px-10 border-t-4 relative z-10 w-full mt-auto"
-          style={{
-            background: 'var(--c-bg-footer)',
-            borderColor: shadow,
-            color: 'var(--c-text)',
-          }}
-        >
-          <div className="max-w-6xl mx-auto flex flex-col gap-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
+        {/* Footer — Skin Aware */}
+        {(activeTheme.id === 'starwars' || activeTheme.id === 'sith') ? (
+          /* Star Wars / Sith Neobrutalist Footer */
+          <footer
+            className="py-16 px-6 md:px-10 border-t-4 relative z-10 w-full mt-auto"
+            style={{
+              background: 'var(--c-bg-footer)',
+              borderColor: shadow,
+              color: 'var(--c-text)',
+            }}
+          >
+            <div className="max-w-6xl mx-auto flex flex-col gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
 
-              {/* Branding */}
-              <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
+                {/* Branding */}
+                <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
+                  <div
+                    className="inline-flex items-center gap-2 px-4 py-2 border-2 border-black rounded-lg w-fit"
+                    style={{
+                      background: accent,
+                      color: 'var(--c-accent-text)',
+                      boxShadow: `4px 4px 0 ${shadow}`,
+                      fontFamily: '"Arial Black", Impact, sans-serif',
+                    }}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
+                    <span className="text-xs font-black tracking-widest uppercase">ROHIT DUBEY</span>
+                  </div>
+                  <p className="text-xs sm:text-sm max-w-sm font-semibold leading-relaxed" style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}>
+                    // Full-Stack &amp; AI Engineer portfolio showcasing real-world engineering case studies, verified client outcomes, and core toolkit.
+                  </p>
+                  <div className="flex gap-3 mt-2">
+                    {[
+                      { icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/', label: 'LinkedIn Profile' },
+                      { icon: FaGithub,   href: 'https://github.com/anakinskywalker0903',      label: 'GitHub Profile' },
+                      { icon: MdEmail,    href: 'mailto:rohitdubey39005@gmail.com',             label: 'Email Contact' },
+                      { icon: FaWhatsapp, href: 'https://wa.me/918777453162',                   label: 'WhatsApp Chat' },
+                    ].map((s, i) => {
+                      const Icon = s.icon;
+                      return (
+                        <a
+                          key={i}
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={s.label}
+                          className="w-10 h-10 rounded-xl border-2 border-black flex items-center justify-center transition-all duration-200 cursor-pointer"
+                          style={{
+                            background: 'var(--c-bg-alt, #111)',
+                            color: accent,
+                            boxShadow: `3px 3px 0 ${shadow}`,
+                          }}
+                          onMouseEnter={e => {
+                            (e.currentTarget as HTMLElement).style.background = accent;
+                            (e.currentTarget as HTMLElement).style.color = 'var(--c-accent-text)';
+                            (e.currentTarget as HTMLElement).style.transform = 'translate(-2px, -2px)';
+                            (e.currentTarget as HTMLElement).style.boxShadow = `5px 5px 0 ${shadow}`;
+                          }}
+                          onMouseLeave={e => {
+                            (e.currentTarget as HTMLElement).style.background = 'var(--c-bg-alt, #111)';
+                            (e.currentTarget as HTMLElement).style.color = accent;
+                            (e.currentTarget as HTMLElement).style.transform = 'none';
+                            (e.currentTarget as HTMLElement).style.boxShadow = `3px 3px 0 ${shadow}`;
+                          }}
+                        >
+                          <Icon className="w-4 h-4" />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Navigate */}
+                <div className="flex flex-col gap-3">
+                  <div className="inline-flex items-center gap-1.5 mb-1">
+                    <span className="w-1.5 h-3.5 rounded-xs" style={{ background: accent }} />
+                    <h4 className="font-black text-xs tracking-widest uppercase" style={{ color: accent, fontFamily: 'monospace' }}>
+                      NAVIGATE
+                    </h4>
+                  </div>
+                  {[['/', 'Home / About'], ['/skills', 'Toolkit'], ['/experience', 'Timeline'], ['/client-work', 'Client Work'], ['/certifications', 'Learning Archive']].map(([to, label]) => (
+                    <Link
+                      key={to}
+                      to={to}
+                      className="text-xs font-bold w-fit transition-all hover:translate-x-1.5 flex items-center gap-1.5"
+                      style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = accent; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--c-text-muted)'; }}
+                    >
+                      <span>→</span>
+                      <span>{label}</span>
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Documents */}
+                <div className="flex flex-col gap-3">
+                  <div className="inline-flex items-center gap-1.5 mb-1">
+                    <span className="w-1.5 h-3.5 rounded-xs" style={{ background: accent }} />
+                    <h4 className="font-black text-xs tracking-widest uppercase" style={{ color: accent, fontFamily: 'monospace' }}>
+                      DOCUMENTS
+                    </h4>
+                  </div>
+                  {['AI Engineer Resume', 'Full Stack / SDE Resume', 'Frontend Developer Resume'].map(label => (
+                    <button
+                      key={label}
+                      onClick={() => setResumeOpen(true)}
+                      className="text-left text-xs font-bold w-fit transition-all hover:translate-x-1.5 flex items-center gap-1.5 cursor-pointer"
+                      style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = accent; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--c-text-muted)'; }}
+                    >
+                      <span>↗</span>
+                      <span>{label}</span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Profile card */}
+                <div className="flex justify-center xl:justify-end md:col-span-2 xl:col-span-1 overflow-visible mt-4 xl:mt-0 pr-8 xl:pr-0">
+                  <ProfileCard
+                    name="Rohit Dubey"
+                    title="AI & Full-Stack Developer"
+                    handle="rohitdubey"
+                    status="Building something"
+                    contactText="Hire Me"
+                    avatarUrl="/rohit.jpg"
+                    showUserInfo={true}
+                    enableTilt={true}
+                    enableMobileTilt={false}
+                    behindGlowEnabled={true}
+                    behindGlowColor={`${activeTheme.vars['--c-accent']}26`}
+                    innerGradient="transparent"
+                    onContactClick={() => {
+                      if (window.location.pathname !== '/') { window.location.href = '/#contact'; return; }
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Bottom Bar Strip */}
+              <div
+                className="flex flex-col sm:flex-row items-center justify-between pt-8 gap-4 text-[11px] border-t-2"
+                style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full" style={{ background: accent }} />
+                  <p className="font-bold uppercase tracking-wider">
+                    © {new Date().getFullYear()} ROHIT DUBEY. ALL RIGHTS RESERVED.
+                  </p>
+                </div>
                 <div
-                  className="inline-flex items-center gap-2 px-4 py-2 border-2 border-black rounded-lg w-fit"
-                  style={{
-                    background: accent,
-                    color: 'var(--c-accent-text)',
-                    boxShadow: `4px 4px 0 ${shadow}`,
-                    fontFamily: '"Arial Black", Impact, sans-serif',
-                  }}
+                  className="px-3 py-1 border border-black/20 rounded-md font-black uppercase tracking-widest text-[10px]"
+                  style={{ background: 'rgba(255,255,255,0.04)', color: accent }}
                 >
-                  <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
-                  <span className="text-xs font-black tracking-widest uppercase">ROHIT DUBEY</span>
+                  v3.2 • BUILT WITH REACT, THREE.JS, &amp; GSAP
                 </div>
-                <p className="text-xs sm:text-sm max-w-sm font-semibold leading-relaxed" style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}>
-                  // Full-Stack &amp; AI Engineer portfolio showcasing real-world engineering case studies, verified client outcomes, and core toolkit.
-                </p>
-                <div className="flex gap-3 mt-2">
-                  {[
-                    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/', label: 'LinkedIn Profile' },
-                    { icon: FaGithub,   href: 'https://github.com/anakinskywalker0903',      label: 'GitHub Profile' },
-                    { icon: MdEmail,    href: 'mailto:rohitdubey39005@gmail.com',             label: 'Email Contact' },
-                    { icon: FaWhatsapp, href: 'https://wa.me/918777453162',                   label: 'WhatsApp Chat' },
-                  ].map((s, i) => {
-                    const Icon = s.icon;
-                    return (
-                      <a
-                        key={i}
-                        href={s.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={s.label}
-                        className="w-10 h-10 rounded-xl border-2 border-black flex items-center justify-center transition-all duration-200 cursor-pointer"
-                        style={{
-                          background: 'var(--c-bg-alt, #111)',
-                          color: accent,
-                          boxShadow: `3px 3px 0 ${shadow}`,
-                        }}
-                        onMouseEnter={e => {
-                          (e.currentTarget as HTMLElement).style.background = accent;
-                          (e.currentTarget as HTMLElement).style.color = 'var(--c-accent-text)';
-                          (e.currentTarget as HTMLElement).style.transform = 'translate(-2px, -2px)';
-                          (e.currentTarget as HTMLElement).style.boxShadow = `5px 5px 0 ${shadow}`;
-                        }}
-                        onMouseLeave={e => {
-                          (e.currentTarget as HTMLElement).style.background = 'var(--c-bg-alt, #111)';
-                          (e.currentTarget as HTMLElement).style.color = accent;
-                          (e.currentTarget as HTMLElement).style.transform = 'none';
-                          (e.currentTarget as HTMLElement).style.boxShadow = `3px 3px 0 ${shadow}`;
-                        }}
-                      >
-                        <Icon className="w-4 h-4" />
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Navigate */}
-              <div className="flex flex-col gap-3">
-                <div className="inline-flex items-center gap-1.5 mb-1">
-                  <span className="w-1.5 h-3.5 rounded-xs" style={{ background: accent }} />
-                  <h4 className="font-black text-xs tracking-widest uppercase" style={{ color: accent, fontFamily: 'monospace' }}>
-                    NAVIGATE
-                  </h4>
-                </div>
-                {[['/', 'Home / About'], ['/skills', 'Toolkit'], ['/experience', 'Timeline'], ['/client-work', 'Client Work'], ['/certifications', 'Learning Archive']].map(([to, label]) => (
-                  <Link
-                    key={to}
-                    to={to}
-                    className="text-xs font-bold w-fit transition-all hover:translate-x-1.5 flex items-center gap-1.5"
-                    style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = accent; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--c-text-muted)'; }}
-                  >
-                    <span>→</span>
-                    <span>{label}</span>
-                  </Link>
-                ))}
-              </div>
-
-              {/* Documents */}
-              <div className="flex flex-col gap-3">
-                <div className="inline-flex items-center gap-1.5 mb-1">
-                  <span className="w-1.5 h-3.5 rounded-xs" style={{ background: accent }} />
-                  <h4 className="font-black text-xs tracking-widest uppercase" style={{ color: accent, fontFamily: 'monospace' }}>
-                    DOCUMENTS
-                  </h4>
-                </div>
-                {['AI Engineer Resume', 'Full Stack / SDE Resume', 'Frontend Developer Resume'].map(label => (
-                  <button
-                    key={label}
-                    onClick={() => setResumeOpen(true)}
-                    className="text-left text-xs font-bold w-fit transition-all hover:translate-x-1.5 flex items-center gap-1.5 cursor-pointer"
-                    style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = accent; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--c-text-muted)'; }}
-                  >
-                    <span>↗</span>
-                    <span>{label}</span>
-                  </button>
-                ))}
-              </div>
-
-              {/* Profile card */}
-              <div className="flex justify-center xl:justify-end md:col-span-2 xl:col-span-1 overflow-visible mt-4 xl:mt-0 pr-8 xl:pr-0">
-                <ProfileCard
-                  name="Rohit Dubey"
-                  title="AI & Full-Stack Developer"
-                  handle="rohitdubey"
-                  status="Building something"
-                  contactText="Hire Me"
-                  avatarUrl="/rohit.jpg"
-                  showUserInfo={true}
-                  enableTilt={true}
-                  enableMobileTilt={false}
-                  behindGlowEnabled={true}
-                  behindGlowColor={`${activeTheme.vars['--c-accent']}26`}
-                  innerGradient="transparent"
-                  onContactClick={() => {
-                    if (window.location.pathname !== '/') { window.location.href = '/#contact'; return; }
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                />
               </div>
             </div>
+          </footer>
+        ) : (
+          /* Original Cyber Green Sleek Footer */
+          <footer className="bg-black text-white py-16 px-6 md:px-10 border-t-4 border-black relative z-10 w-full mt-auto">
+            <div className="max-w-6xl mx-auto flex flex-col gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
+                {/* Branding Column */}
+                <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
+                  <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full w-fit tracking-wider uppercase">
+                    ROHIT DUBEY
+                  </span>
+                  <p className="text-white/50 text-sm max-w-sm font-medium leading-relaxed">
+                    A personal product and portfolio hub built to demonstrate engineering case studies, client outcomes, and core competencies.
+                  </p>
+                  <div className="flex gap-2.5 mt-2">
+                    {[
+                      { icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/', label: 'LinkedIn Profile' },
+                      { icon: FaGithub, href: 'https://github.com/anakinskywalker0903', label: 'GitHub Profile' },
+                      { icon: MdEmail, href: 'mailto:rohitdubey39005@gmail.com', label: 'Email Contact' },
+                      { icon: FaWhatsapp, href: 'https://wa.me/918777453162', label: 'WhatsApp Chat' },
+                    ].map((social, i) => {
+                      const Icon = social.icon;
+                      return (
+                        <a
+                          key={i}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={social.label}
+                          className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#00F5A0] hover:text-black transition-all duration-300"
+                        >
+                          <Icon className="w-4 h-4" />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
 
-            {/* Bottom Bar Strip */}
-            <div
-              className="flex flex-col sm:flex-row items-center justify-between pt-8 gap-4 text-[11px] border-t-2"
-              style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full" style={{ background: accent }} />
+                {/* Quick Links Column */}
+                <div className="flex flex-col gap-3">
+                  <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
+                    NAVIGATE
+                  </h4>
+                  <Link to="/" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Home / About</Link>
+                  <Link to="/skills" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Toolkit</Link>
+                  <Link to="/experience" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Timeline</Link>
+                  <Link to="/client-work" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Client Work</Link>
+                  <Link to="/certifications" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Learning Archive</Link>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
+                    DOCUMENTS
+                  </h4>
+                  <button
+                    onClick={() => setResumeOpen(true)}
+                    className="text-left text-white/60 hover:text-white text-sm font-bold w-fit transition-colors cursor-pointer animate-none"
+                  >
+                    AI Engineer Resume
+                  </button>
+                  <button
+                    onClick={() => setResumeOpen(true)}
+                    className="text-left text-white/60 hover:text-white text-sm font-bold w-fit transition-colors cursor-pointer animate-none"
+                  >
+                    Full Stack / SDE Resume
+                  </button>
+                  <button
+                    onClick={() => setResumeOpen(true)}
+                    className="text-left text-white/60 hover:text-white text-sm font-bold w-fit transition-colors cursor-pointer animate-none"
+                  >
+                    Frontend Developer Resume
+                  </button>
+                </div>
+
+                {/* Profile Card Column */}
+                <div className="flex justify-center xl:justify-end md:col-span-2 xl:col-span-1 overflow-visible mt-6 xl:mt-0 pr-8 xl:pr-0">
+                  <ProfileCard
+                    name="Rohit Dubey"
+                    title="AI & Full-Stack Developer"
+                    handle="rohitdubey"
+                    status="Building something"
+                    contactText="Hire Me"
+                    avatarUrl="/rohit.jpg"
+                    showUserInfo={true}
+                    enableTilt={true}
+                    enableMobileTilt={false}
+                    behindGlowEnabled={true}
+                    behindGlowColor="rgba(0, 245, 160, 0.15)"
+                    innerGradient="transparent"
+                    onContactClick={() => {
+                      if (window.location.pathname !== '/') {
+                        window.location.href = '/#contact';
+                        return;
+                      }
+                      const el = document.getElementById('contact');
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        window.location.href = '/#contact';
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-white/10 gap-4 text-white/40 text-xs">
                 <p className="font-bold uppercase tracking-wider">
                   © {new Date().getFullYear()} ROHIT DUBEY. ALL RIGHTS RESERVED.
                 </p>
-              </div>
-              <div
-                className="px-3 py-1 border border-black/20 rounded-md font-black uppercase tracking-widest text-[10px]"
-                style={{ background: 'rgba(255,255,255,0.04)', color: accent }}
-              >
-                v3.2 • BUILT WITH REACT, THREE.JS, &amp; GSAP
+                <p className="font-black uppercase tracking-widest text-[#00F5A0]/60">
+                  v3.1 • BUILT WITH REACT, THREE.JS, &amp; GSAP
+                </p>
               </div>
             </div>
-          </div>
-        </footer>
+          </footer>
+        )}
 
         <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
       </div>

@@ -77,25 +77,25 @@ export function HeroStarWars() {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden flex flex-col"
+      className="snap-start relative w-full overflow-hidden flex flex-col justify-between"
       style={{ background: 'var(--sw-bg)', minHeight: 'calc(100svh - 32px)' }}
     >
       <Starfield />
 
       {/* ── ISSUE badge & WIP Status Banner — top left ─────────────────────────── */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-16 md:pt-18 flex flex-wrap items-center gap-4">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-[60px] flex flex-wrap items-center gap-4">
         <div className="flex items-stretch gap-0 w-fit border-2"
           style={{ borderColor: 'var(--sw-yellow)', boxShadow: '4px 4px 0 var(--sw-yellow)' }}>
           <div className="px-3 py-2 border-r-2"
             style={{ background: 'var(--sw-yellow)', borderColor: 'var(--sw-yellow)' }}>
-            <p className="text-black font-black text-[9px] uppercase tracking-[0.2em] leading-none">ISSUE</p>
+            <p className="text-black font-black text-[10px] uppercase tracking-widest leading-none">ISSUE</p>
             <p className="text-black font-black text-2xl leading-none">#001</p>
           </div>
           <div className="px-4 py-2 flex flex-col justify-center">
-            <p className="font-black text-[9px] uppercase tracking-[0.2em] leading-none" style={{ color: 'var(--sw-yellow)' }}>
+            <p className="font-black text-xs uppercase tracking-wider leading-none" style={{ color: 'var(--sw-yellow)' }}>
               {isSith ? 'THE SITH LORD' : 'THE JEDI DEVELOPER'}
             </p>
-            <p className="font-black text-[9px] uppercase tracking-[0.15em] leading-none mt-1" style={{ color: 'var(--sw-white)', opacity: 0.6 }}>
+            <p className="font-bold text-[11px] uppercase tracking-wider leading-none mt-1" style={{ color: 'var(--sw-white)', opacity: 0.85 }}>
               EST. A LONG TIME AGO IN A GALAXY FAR AWAY
             </p>
           </div>
@@ -112,14 +112,14 @@ export function HeroStarWars() {
           }}
         >
           <span className="w-2 h-2 rounded-full animate-ping" style={{ background: 'var(--sw-yellow)' }} />
-          <span className="text-[10px] font-black uppercase tracking-wider" style={{ color: 'var(--sw-yellow)' }}>
+          <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--sw-yellow)' }}>
             🚧 FORCE SKIN (WIP PREVIEW) • {isSith ? 'SITH THEME MODE' : 'JEDI THEME MODE'}
           </span>
         </div>
       </div>
 
-      {/* ── Main content grid ───────────────────────────────────────────── */}
-      <div className="relative z-10 flex-1 w-full max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex flex-col justify-center gap-6">
+      {/* ── Main content grid ───────────────────────────────────────── */}
+      <div className="relative z-10 flex-1 w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-[26px] pb-4 flex flex-col justify-start gap-2">
 
         {/* BIG stacked headline */}
         <div className="flex flex-col gap-0">
@@ -196,51 +196,6 @@ export function HeroStarWars() {
           </div>
         </div>
 
-        {/* ── Bottom strip — saber + stats + bio ───────────────────────── */}
-        <div className="flex flex-col md:flex-row items-start md:items-end gap-6 mt-2">
-
-          {/* Left: saber + bio */}
-          <div className="flex flex-col gap-4 flex-1">
-            <SaberLine width={200} />
-            <p className="text-sm font-bold leading-relaxed max-w-[280px]"
-              style={{ color: 'var(--sw-white)', opacity: 0.7, fontFamily: 'monospace' }}>
-              Building polished, fast &amp; accessible digital products.<br />
-              <span style={{ color: 'var(--sw-yellow)' }}>// Based in India — working worldwide.</span>
-            </p>
-          </div>
-
-          {/* Right: brutalist stat boxes */}
-          <div className="flex items-end gap-0 flex-wrap">
-            <StatPill label="PROJECTS"   value="7+" />
-            <StatPill label="TECH STACK" value="24+" />
-            <StatPill label="FORCE"      value="100%" />
-          </div>
-
-          {/* Far right: BANG! / sound effect box — Nitin style */}
-          <div
-            className="hidden lg:flex flex-col items-center justify-center w-24 h-24 border-4 rotate-6 flex-shrink-0"
-            style={{
-              background: 'var(--sw-yellow)',
-              borderColor: 'var(--sw-yellow)',
-              boxShadow: '6px 6px 0 #000',
-              fontFamily: '"Arial Black", Impact, sans-serif',
-            }}
-          >
-            <span className="text-black font-black text-2xl leading-none">POW!</span>
-            <span className="text-black/50 text-[8px] font-black uppercase tracking-widest mt-0.5">code deployed</span>
-          </div>
-        </div>
-
-        {/* ── "ZAPPED BY AI" tagline — small, Nitin style ──────────────── */}
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-[2px]" style={{ background: 'var(--sw-yellow)' }} />
-          <span className="text-[9px] font-black uppercase tracking-[0.25em]"
-            style={{ color: 'var(--sw-white)', opacity: 0.45, fontFamily: 'monospace' }}>
-            zapped by an idea called AI · built his own lightsaber in the browser
-            zapped by an idea called AI · built his own lightsaber in the browser
-          </span>
-          <div className="flex-1 h-[1px] max-w-[120px]" style={{ background: 'var(--sw-yellow)', opacity: 0.3 }} />
-        </div>
 
       </div>
     </section>

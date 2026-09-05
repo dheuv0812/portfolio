@@ -13,10 +13,15 @@ import { isSameFamily } from '@/lib/themes';
 
 // Lazy load pages to decrease initial chunk bundle weights
 const SkillsPage = lazy(() => import('@/pages/SkillsPage').then(m => ({ default: m.SkillsPage })));
+const SkillsPageStarWars = lazy(() => import('@/pages/SkillsPageStarWars').then(m => ({ default: m.SkillsPageStarWars })));
 const ProjectsPage = lazy(() => import('@/pages/ProjectsPage').then(m => ({ default: m.ProjectsPage })));
+const ProjectsPageStarWars = lazy(() => import('@/pages/ProjectsPageStarWars').then(m => ({ default: m.ProjectsPageStarWars })));
 const ClientWorkPage = lazy(() => import('@/pages/ClientWorkPage').then(m => ({ default: m.ClientWorkPage })));
+const ClientWorkPageStarWars = lazy(() => import('@/pages/ClientWorkPageStarWars').then(m => ({ default: m.ClientWorkPageStarWars })));
 const ExperiencePage = lazy(() => import('@/pages/ExperiencePage').then(m => ({ default: m.ExperiencePage })));
+const ExperiencePageStarWars = lazy(() => import('@/pages/ExperiencePageStarWars').then(m => ({ default: m.ExperiencePageStarWars })));
 const LearningArchivePage = lazy(() => import('@/pages/LearningArchivePage').then(m => ({ default: m.LearningArchivePage })));
+const LearningArchivePageStarWars = lazy(() => import('@/pages/LearningArchivePageStarWars').then(m => ({ default: m.LearningArchivePageStarWars })));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 import { initGA, trackPageView } from '@/lib/analytics';
@@ -121,11 +126,11 @@ function AppInner() {
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               <Route path="/"               element={<HomePage />} />
-              <Route path="/skills"         element={<SkillsPage />} />
-              <Route path="/projects"       element={<ProjectsPage />} />
-              <Route path="/client-work"    element={<ClientWorkPage />} />
-              <Route path="/experience"     element={<ExperiencePage />} />
-              <Route path="/certifications" element={<LearningArchivePage />} />
+              <Route path="/skills"         element={(activeTheme.id === 'starwars' || activeTheme.id === 'sith') ? <SkillsPageStarWars /> : <SkillsPage />} />
+              <Route path="/projects"       element={(activeTheme.id === 'starwars' || activeTheme.id === 'sith') ? <ProjectsPageStarWars /> : <ProjectsPage />} />
+              <Route path="/client-work"    element={(activeTheme.id === 'starwars' || activeTheme.id === 'sith') ? <ClientWorkPageStarWars /> : <ClientWorkPage />} />
+              <Route path="/experience"     element={(activeTheme.id === 'starwars' || activeTheme.id === 'sith') ? <ExperiencePageStarWars /> : <ExperiencePage />} />
+              <Route path="/certifications" element={(activeTheme.id === 'starwars' || activeTheme.id === 'sith') ? <LearningArchivePageStarWars /> : <LearningArchivePage />} />
               <Route path="*"               element={<NotFoundPage />} />
             </Routes>
           </Suspense>

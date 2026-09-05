@@ -55,7 +55,7 @@ export function NavStarWars({ onResumeOpen }: { onResumeOpen: () => void }) {
     setOpen(false);
     if (href.startsWith('#')) {
       const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       else if (location.pathname !== '/') window.location.href = '/' + href;
     }
   };
@@ -92,6 +92,7 @@ export function NavStarWars({ onResumeOpen }: { onResumeOpen: () => void }) {
             .DEV
           </div>
         </Link>
+
 
         {/* Actions — top right */}
         <div className="flex items-center gap-2.5" style={{ pointerEvents: 'auto' }}>

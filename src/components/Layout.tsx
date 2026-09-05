@@ -178,34 +178,33 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {(activeTheme.id === 'starwars' || activeTheme.id === 'sith') ? (
           /* Star Wars / Sith Neobrutalist Footer */
           <footer
-            className="py-16 px-6 md:px-10 border-t-4 relative z-10 w-full mt-auto"
+            className="py-8 md:py-10 px-6 md:px-10 border-t-2 relative z-10 w-full mt-auto"
             style={{
               background: 'var(--c-bg-footer)',
               borderColor: shadow,
               color: 'var(--c-text)',
             }}
           >
-            <div className="max-w-6xl mx-auto flex flex-col gap-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
+            <div className="max-w-6xl mx-auto flex flex-col gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 items-start">
 
                 {/* Branding */}
-                <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
+                <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-3">
                   <div
-                    className="inline-flex items-center gap-2 px-4 py-2 border-2 border-black rounded-lg w-fit"
+                    className="inline-flex items-center px-3.5 py-1.5 border-2 border-black rounded-lg w-fit"
                     style={{
                       background: accent,
                       color: 'var(--c-accent-text)',
-                      boxShadow: `4px 4px 0 ${shadow}`,
+                      boxShadow: `3px 3px 0 ${shadow}`,
                       fontFamily: '"Arial Black", Impact, sans-serif',
                     }}
                   >
-                    <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
                     <span className="text-xs font-black tracking-widest uppercase">ROHIT DUBEY</span>
                   </div>
-                  <p className="text-xs sm:text-sm max-w-sm font-semibold leading-relaxed" style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}>
+                  <p className="text-xs max-w-sm font-semibold leading-relaxed" style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}>
                     // Full-Stack &amp; AI Engineer portfolio showcasing real-world engineering case studies, verified client outcomes, and core toolkit.
                   </p>
-                  <div className="flex gap-3 mt-2">
+                  <div className="flex gap-2.5 mt-1">
                     {[
                       { icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/', label: 'LinkedIn Profile' },
                       { icon: FaGithub,   href: 'https://github.com/anakinskywalker0903',      label: 'GitHub Profile' },
@@ -220,26 +219,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={s.label}
-                          className="w-10 h-10 rounded-xl border-2 border-black flex items-center justify-center transition-all duration-200 cursor-pointer"
+                          className="w-9 h-9 rounded-lg border-2 border-black flex items-center justify-center transition-all duration-200 cursor-pointer"
                           style={{
                             background: 'var(--c-bg-alt, #111)',
                             color: accent,
-                            boxShadow: `3px 3px 0 ${shadow}`,
+                            boxShadow: `2px 2px 0 ${shadow}`,
                           }}
                           onMouseEnter={e => {
                             (e.currentTarget as HTMLElement).style.background = accent;
                             (e.currentTarget as HTMLElement).style.color = 'var(--c-accent-text)';
                             (e.currentTarget as HTMLElement).style.transform = 'translate(-2px, -2px)';
-                            (e.currentTarget as HTMLElement).style.boxShadow = `5px 5px 0 ${shadow}`;
+                            (e.currentTarget as HTMLElement).style.boxShadow = `4px 4px 0 ${shadow}`;
                           }}
                           onMouseLeave={e => {
                             (e.currentTarget as HTMLElement).style.background = 'var(--c-bg-alt, #111)';
                             (e.currentTarget as HTMLElement).style.color = accent;
                             (e.currentTarget as HTMLElement).style.transform = 'none';
-                            (e.currentTarget as HTMLElement).style.boxShadow = `3px 3px 0 ${shadow}`;
+                            (e.currentTarget as HTMLElement).style.boxShadow = `2px 2px 0 ${shadow}`;
                           }}
                         >
-                          <Icon className="w-4 h-4" />
+                          <Icon className="w-3.5 h-3.5" />
                         </a>
                       );
                     })}
@@ -247,9 +246,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </div>
 
                 {/* Navigate */}
-                <div className="flex flex-col gap-3">
-                  <div className="inline-flex items-center gap-1.5 mb-1">
-                    <span className="w-1.5 h-3.5 rounded-xs" style={{ background: accent }} />
+                <div className="flex flex-col gap-2">
+                  <div className="inline-flex items-center gap-1.5 mb-0.5">
+                    <span className="w-1.5 h-3 rounded-xs" style={{ background: accent }} />
                     <h4 className="font-black text-xs tracking-widest uppercase" style={{ color: accent, fontFamily: 'monospace' }}>
                       NAVIGATE
                     </h4>
@@ -270,9 +269,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </div>
 
                 {/* Documents */}
-                <div className="flex flex-col gap-3">
-                  <div className="inline-flex items-center gap-1.5 mb-1">
-                    <span className="w-1.5 h-3.5 rounded-xs" style={{ background: accent }} />
+                <div className="flex flex-col gap-2">
+                  <div className="inline-flex items-center gap-1.5 mb-0.5">
+                    <span className="w-1.5 h-3 rounded-xs" style={{ background: accent }} />
                     <h4 className="font-black text-xs tracking-widest uppercase" style={{ color: accent, fontFamily: 'monospace' }}>
                       DOCUMENTS
                     </h4>
@@ -292,8 +291,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   ))}
                 </div>
 
-                {/* Profile card */}
-                <div className="flex justify-center xl:justify-end md:col-span-2 xl:col-span-1 overflow-visible mt-4 xl:mt-0 pr-8 xl:pr-0">
+                {/* Profile card with compact wrapper */}
+                <div className="flex justify-center xl:justify-end md:col-span-2 xl:col-span-1 overflow-visible pr-8 xl:pr-0 origin-top scale-90 sm:scale-95 xl:scale-100">
                   <ProfileCard
                     name="Rohit Dubey"
                     title="AI & Full-Stack Developer"
@@ -317,15 +316,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
               {/* Bottom Bar Strip */}
               <div
-                className="flex flex-col sm:flex-row items-center justify-between pt-8 gap-4 text-[11px] border-t-2"
+                className="flex flex-col sm:flex-row items-center justify-between pt-4 gap-3 text-[11px] border-t-2"
                 style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
               >
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{ background: accent }} />
-                  <p className="font-bold uppercase tracking-wider">
-                    © {new Date().getFullYear()} ROHIT DUBEY. ALL RIGHTS RESERVED.
-                  </p>
-                </div>
+                <p className="font-bold uppercase tracking-wider">
+                  © {new Date().getFullYear()} ROHIT DUBEY. ALL RIGHTS RESERVED.
+                </p>
                 <div
                   className="px-3 py-1 border border-black/20 rounded-md font-black uppercase tracking-widest text-[10px]"
                   style={{ background: 'rgba(255,255,255,0.04)', color: accent }}

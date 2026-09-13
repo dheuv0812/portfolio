@@ -10,6 +10,7 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
+    host: true,
     hmr: {
       // Prevent the "reload application" overlay from showing during skin switches
       overlay: false,

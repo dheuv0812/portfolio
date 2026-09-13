@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <!-- Outer Rounded Pill Container -->
-  <rect x="4" y="4" width="92" height="92" rx="46" fill="#031714" stroke="#000000" stroke-width="5"/>
-  <!-- Inner RD Initials in Signature Brutalist Typography -->
-  <text x="48" y="64" font-family="'Arial Black', Impact, sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#00F5A0" letter-spacing="-2">RD</text>
-  <!-- Active Status Indicator Dot -->
-  <circle cx="78" cy="28" r="7" fill="#00F5A0" stroke="#000000" stroke-width="2"/>
+  <defs>
+    <linearGradient id="dsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2A55"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Rounded Pill Container (Deep Midnight Obsidian) -->
+  <rect x="4" y="4" width="92" height="92" rx="46" fill="#070A13" stroke="#2563EB" stroke-width="4"/>
+  <!-- Inner DS Initials in Signature Brutalist Typography (Crimson Red) -->
+  <text x="49" y="64" font-family="'Arial Black', Impact, sans-serif" font-size="43" font-weight="900" text-anchor="middle" fill="#FF2A55" letter-spacing="-1">DS</text>
+  <!-- Cobalt Blue Active Status Indicator Dot -->
+  <circle cx="78" cy="28" r="7" fill="#2563EB" stroke="#FF2A55" stroke-width="2"/>
 </svg>

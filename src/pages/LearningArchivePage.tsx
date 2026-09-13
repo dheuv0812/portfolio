@@ -375,7 +375,7 @@ export function LearningArchivePage() {
                   onClick={() => {
                     setActiveItem(item);
                   }}
-                  className="text-left bg-[var(--c-bg-surface)] border-[3px] border-black rounded-[2rem] p-6 shadow-[8px_8px_0px_0px_var(--c-shadow)] hover:shadow-[12px_12px_0px_0px_#00F5A0] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 cursor-pointer group relative w-full"
+                  className="text-left bg-[var(--c-bg-surface)] border-[3px] border-black rounded-[2rem] p-6 shadow-[8px_8px_0px_0px_var(--c-shadow)] hover:shadow-[12px_12px_0px_0px_var(--c-accent)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 cursor-pointer group relative w-full"
                 >
                   <div className="text-3xl flex-shrink-0 bg-black/5 w-12 h-12 rounded-full flex items-center justify-center border-2 border-black/10 group-hover:border-black transition-all">
                     {item.icon}

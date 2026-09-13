@@ -19,76 +19,49 @@ export interface Theme {
 
 export const themes: Theme[] = [
   // ─────────────────────────────────────────────────────────────────────────
-  // 1. CRIMSON & COBALT (Default — Signature Red & Blue Theme)
+  // 1. CRIMSON & COBALT (Default — Signature Crimson Red & Cobalt Blue)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: 'default',
     name: 'Crimson & Cobalt',
-    subtitle: 'DEFAULT · VIBRANT RED & BLUE',
+    subtitle: 'DEFAULT · CRIMSON RED & COBALT BLUE',
     group: 'ACTIVE',
     swatches: ['#070A13', '#FF2A55', '#2563EB'],
     crawlAccent: '#FF2A55',
     tickerText: 'FULL-STACK DEVELOPER ✦ DHRUV SINGH ✦ TORONTO, CANADA ✦ BUILD • SHIP • ITERATE ✦ ',
     vars: {
-      // ── core backgrounds ──────────────────────────────────────────────────
-      '--c-bg':              '#070A13',   // hero, about, dark sections (rich midnight navy)
-      '--c-bg-alt':          '#0D1322',   // slightly lighter dark panels
-      '--c-bg-surface':      '#F8FAFC',   // light card / clean slate sections
-      '--c-bg-page':         '#FFFFFF',   // page root background
-      '--c-bg-footer':       '#03060D',   // void navy footer
-
-      // ── accent / brand ────────────────────────────────────────────────────
-      '--c-accent':          '#FF2A55',   // primary vibrant crimson red
-      '--c-accent-2':        '#2563EB',   // secondary electric navy / cobalt blue
-      '--c-accent-text':     '#FFFFFF',   // text ON red accent
-
-      // ── text ──────────────────────────────────────────────────────────────
-      '--c-text':            '#F8FAFC',   // text on dark bg
+      '--c-bg':              '#070A13',
+      '--c-bg-alt':          '#0D1322',
+      '--c-bg-surface':      '#F8FAFC',
+      '--c-bg-page':         '#FFFFFF',
+      '--c-bg-footer':       '#03060D',
+      '--c-accent':          '#FF2A55',
+      '--c-accent-2':        '#2563EB',
+      '--c-accent-text':     '#FFFFFF',
+      '--c-text':            '#F8FAFC',
       '--c-text-muted':      'rgba(248,250,252,0.65)',
-      '--c-text-dark':       '#090D16',   // text on light bg
+      '--c-text-dark':       '#090D16',
       '--c-text-dark-muted': 'rgba(9,13,22,0.5)',
-
-      // ── borders / shadows ─────────────────────────────────────────────────
       '--c-border':          'rgba(255,42,85,0.22)',
       '--c-border-dark':     'rgba(9,13,22,0.1)',
-      '--c-shadow':          '#070A13',   // brutalist offset shadow colour
-
-      // ── ticker ────────────────────────────────────────────────────────────
+      '--c-shadow':          '#070A13',
       '--c-ticker-bg':       '#070A13',
       '--c-ticker-text':     '#FF2A55',
       '--c-ticker-border':   'rgba(255,42,85,0.25)',
-
-      // ── nav / bubble menu ─────────────────────────────────────────────────
-      '--c-nav-bg':          '#FFFFFF',
-      '--c-nav-content':     '#070A13',
-
-      // ── skill/detail panel ────────────────────────────────────────────────
+      '--c-nav-bg':          '#070A13',
+      '--c-nav-content':     '#FF2A55',
       '--c-panel-bg':        '#0F172A',
       '--c-panel-text':      '#F8FAFC',
-
-      // ── scrollbar ─────────────────────────────────────────────────────────
       '--scrollbar-track':   '#070A13',
       '--scrollbar-thumb':   '#FF2A55',
-
-      // ── preloader ─────────────────────────────────────────────────────────
       '--c-preloader-bg':    '#070A13',
       '--c-preloader-text':  '#FF2A55',
-
-      // ── page transition curtain ───────────────────────────────────────────
       '--c-curtain-1':       '#FF2A55',
       '--c-curtain-2':       '#2563EB',
-
-      // ── hero text shadow ──────────────────────────────────────────────────
       '--c-hero-shadow':     '#04060C',
-
-      // ── grid overlay ──────────────────────────────────────────────────────
       '--c-grid':            'rgba(37,99,235,0.08)',
-
-      // ── selection ─────────────────────────────────────────────────────────
       '--c-selection-bg':    '#FF2A55',
       '--c-selection-text':  '#FFFFFF',
-
-      // ── gradients ─────────────────────────────────────────────────────────
       '--c-gradient-primary': 'linear-gradient(135deg, #FF2A55 0%, #2563EB 100%)',
       '--c-gradient-hover':   'linear-gradient(135deg, #FF1744 0%, #1D4ED8 100%)',
       '--c-gradient-subtle':  'linear-gradient(135deg, rgba(255,42,85,0.08) 0%, rgba(37,99,235,0.08) 100%)',
@@ -96,69 +69,7 @@ export const themes: Theme[] = [
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // 2. MIDNIGHT ELECTRIC (Full Dark Canvas with Red & Electric Cyan/Blue)
-  // ─────────────────────────────────────────────────────────────────────────
-  {
-    id: 'midnight-electric',
-    name: 'Midnight Azure',
-    subtitle: 'DARK CANVAS · ELECTRIC BLUE & RED',
-    group: 'ACTIVE',
-    swatches: ['#0A0F1D', '#38BDF8', '#FF2A55'],
-    crawlAccent: '#38BDF8',
-    tickerText: 'DHRUV SINGH ✦ COMPUTER ENGINEERING ✦ TORONTO METROPOLITAN UNIVERSITY ✦ ',
-    vars: {
-      '--c-bg':              '#0A0F1D',
-      '--c-bg-alt':          '#111827',
-      '--c-bg-surface':      '#131D33',
-      '--c-bg-page':         '#0A0F1D',
-      '--c-bg-footer':       '#050811',
-
-      '--c-accent':          '#38BDF8',
-      '--c-accent-2':        '#FF2A55',
-      '--c-accent-text':     '#000000',
-
-      '--c-text':            '#F8FAFC',
-      '--c-text-muted':      'rgba(248,250,252,0.65)',
-      '--c-text-dark':       '#F8FAFC',
-      '--c-text-dark-muted': 'rgba(248,250,252,0.5)',
-
-      '--c-border':          'rgba(56,189,248,0.25)',
-      '--c-border-dark':     'rgba(255,42,85,0.2)',
-      '--c-shadow':          '#FF2A55',
-
-      '--c-ticker-bg':       '#050811',
-      '--c-ticker-text':     '#38BDF8',
-      '--c-ticker-border':   'rgba(56,189,248,0.25)',
-
-      '--c-nav-bg':          '#111827',
-      '--c-nav-content':     '#38BDF8',
-
-      '--c-panel-bg':        '#111827',
-      '--c-panel-text':      '#F8FAFC',
-
-      '--scrollbar-track':   '#0A0F1D',
-      '--scrollbar-thumb':   '#38BDF8',
-
-      '--c-preloader-bg':    '#0A0F1D',
-      '--c-preloader-text':  '#38BDF8',
-
-      '--c-curtain-1':       '#38BDF8',
-      '--c-curtain-2':       '#FF2A55',
-
-      '--c-hero-shadow':     '#050811',
-      '--c-grid':            'rgba(56,189,248,0.06)',
-
-      '--c-selection-bg':    '#38BDF8',
-      '--c-selection-text':  '#000000',
-
-      '--c-gradient-primary': 'linear-gradient(135deg, #FF2A55 0%, #38BDF8 100%)',
-      '--c-gradient-hover':   'linear-gradient(135deg, #FF1744 0%, #0284C7 100%)',
-      '--c-gradient-subtle':  'linear-gradient(135deg, rgba(255,42,85,0.12) 0%, rgba(56,189,248,0.12) 100%)',
-    },
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────
-  // 3. FORCE THEME (Deep Space · Lightsaber Blue & Sith Red accents)
+  // 2. FORCE THEME (Deep Space · Lightsaber Blue & Sith Red accents)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: 'starwars',

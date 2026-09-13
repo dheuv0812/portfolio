@@ -111,10 +111,10 @@ export const PdfCanvasViewer: React.FC<PdfCanvasViewerProps> = ({ url, zoomLevel
   return (
     <div
       ref={containerRef}
-      className="w-full h-full flex flex-col items-center justify-start overflow-auto p-4 sm:p-6 bg-[#02110F] custom-pdf-scroll"
+      className="w-full h-full flex flex-col items-center justify-start overflow-auto p-4 sm:p-6 bg-[#070A13] custom-pdf-scroll"
       style={{
         scrollbarWidth: 'thin',
-        scrollbarColor: '#00F5A0 #031714',
+        scrollbarColor: 'var(--c-accent, #FF2A55) var(--c-bg, #070A13)',
       }}
     >
       <div ref={contentRef} className="w-full flex flex-col items-center justify-start my-auto min-h-full py-4">

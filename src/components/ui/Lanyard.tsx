@@ -407,14 +407,14 @@ function Band({ cardImageSrc }: { cardImageSrc: string }) {
             {/* Clip & Clamp Metal Meshes */}
             <mesh geometry={nodes.clip.geometry}>
               <meshPhysicalMaterial
-                color="#00F5A0"
+                color="#FF2A55"
                 roughness={0.2}
                 metalness={0.9}
               />
             </mesh>
             <mesh geometry={nodes.clamp.geometry}>
               <meshPhysicalMaterial
-                color="#00F5A0"
+                color="#FF2A55"
                 roughness={0.2}
                 metalness={0.9}
               />
@@ -427,7 +427,7 @@ function Band({ cardImageSrc }: { cardImageSrc: string }) {
       <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
-          color="#00F5A0"
+          color="#FF2A55"
           depthTest={false}
           resolution={[1000, 1000]}
           useMap={true}
@@ -493,7 +493,7 @@ export const Lanyard: React.FC<{ className?: string }> = ({ className = '' }) =>
           <Environment blur={0.75}>
             <Lightformer
               intensity={2}
-              color="#00F5A0"
+              color="#FF2A55"
               position={[0, -1, 5]}
               rotation={[0, 0, Math.PI / 3]}
               scale={[100, 0.1, 1]}
@@ -507,7 +507,7 @@ export const Lanyard: React.FC<{ className?: string }> = ({ className = '' }) =>
             />
             <Lightformer
               intensity={3}
-              color="#00F5A0"
+              color="#2563EB"
               position={[1, 1, 1]}
               rotation={[0, 0, Math.PI / 3]}
               scale={[100, 0.1, 1]}

@@ -173,13 +173,13 @@ export function HeroStarWars() {
             </h2>
           </div>
 
-          {/* AI ENGINEER + IN PROGRESS */}
+          {/* ENGINEER + IN PROGRESS */}
           <div className="flex flex-wrap items-baseline gap-2 md:gap-4 mt-1">
             <span
               className="text-[clamp(0.9rem,2.5vw,32px)] font-black uppercase tracking-[0.2em] border-b-4"
               style={{ fontFamily: '"Arial Black", Impact, sans-serif', color: 'var(--sw-saber)', borderColor: 'var(--sw-saber)' }}
             >
-              AI ENGINEER
+              ENGINEER
             </span>
             <span style={{ color: 'var(--sw-yellow)', opacity: 0.5, fontWeight: 900, fontSize: 'clamp(1rem,2vw,24px)' }}>✦</span>
             <h2

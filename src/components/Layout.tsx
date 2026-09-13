@@ -19,14 +19,14 @@ import { NavStarWars } from '@/components/ui/NavStarWars';
 const Logo = () => {
   const { activeTheme } = useTheme();
   return (
-    <div className="p-0.5 rounded-full shadow-sm flex items-center justify-center" style={{ background: 'var(--c-nav-bg)' }}>
+    <div className="p-0.5 rounded-full flex items-center justify-center" style={{ background: 'transparent' }}>
       <Link
         to="/"
-        className="inline-flex items-center font-black text-[12px] px-4 py-1.5 rounded-full tracking-wider hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+        className="inline-flex items-center font-black text-[12px] px-4 py-1.5 rounded-full tracking-wider hover:scale-105 transition-all duration-300 relative overflow-hidden group border border-white/10"
         style={{
-          background: 'linear-gradient(135deg, #18181B 0%, #09090B 100%)',
-          color: activeTheme.vars['--c-accent'],
-          boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.25), inset 0 -2px 6px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.2)',
+          background: 'linear-gradient(135deg, #070A13 0%, #0D1322 100%)',
+          color: activeTheme.vars['--c-accent'] || '#FF2A55',
+          boxShadow: `0 0 12px ${activeTheme.vars['--c-accent']}40`,
           textShadow: `0 0 8px ${activeTheme.vars['--c-accent']}99`,
         }}
       >
@@ -251,7 +251,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       NAVIGATE
                     </h4>
                   </div>
-                  {[['/', 'Home / About'], ['/skills', 'Toolkit'], ['/experience', 'Timeline'], ['/client-work', 'Client Work'], ['/certifications', 'Learning Archive']].map(([to, label]) => (
+                  {[['/', 'Home / About'], ['/skills', 'Toolkit'], ['/experience', 'Timeline'], ['/certifications', 'Learning Archive']].map(([to, label]) => (
                     <Link
                       key={to}
                       to={to}
@@ -274,19 +274,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       DOCUMENTS
                     </h4>
                   </div>
-                  {['AI Engineer Resume', 'Full Stack / SDE Resume', 'Frontend Developer Resume'].map(label => (
-                    <button
-                      key={label}
-                      onClick={() => setResumeOpen(true)}
-                      className="text-left text-xs font-bold w-fit transition-all hover:translate-x-1.5 flex items-center gap-1.5 cursor-pointer"
-                      style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = accent; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--c-text-muted)'; }}
-                    >
-                      <span>↗</span>
-                      <span>{label}</span>
-                    </button>
-                  ))}
+                  <button
+                    onClick={() => setResumeOpen(true)}
+                    className="text-left text-xs font-bold w-fit transition-all hover:translate-x-1.5 flex items-center gap-1.5 cursor-pointer"
+                    style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = accent; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--c-text-muted)'; }}
+                  >
+                    <span>↗</span>
+                    <span>Dhruv Singh — Master Resume (PDF)</span>
+                  </button>
                 </div>
 
                 {/* Profile card with compact wrapper */}
@@ -330,7 +327,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </footer>
         ) : (
-          /* Original Cyber Green Sleek Footer */
+          /* Original Crimson & Cobalt Sleek Footer */
           <footer className="bg-black text-white py-16 px-6 md:px-10 border-t-4 border-black relative z-10 w-full mt-auto">
             <div className="max-w-6xl mx-auto flex flex-col gap-12">
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
@@ -356,7 +353,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={social.label}
-                          className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#00F5A0] hover:text-black transition-all duration-300"
+                          className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[var(--c-accent,#FF2A55)] hover:text-white transition-all duration-300"
                         >
                           <Icon className="w-4 h-4" />
                         </a>
@@ -367,13 +364,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
                 {/* Quick Links Column */}
                 <div className="flex flex-col gap-3">
-                  <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
+                  <h4 className="font-black text-xs tracking-widest uppercase mb-1" style={{ color: accent }}>
                     NAVIGATE
                   </h4>
                   <Link to="/" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Home / About</Link>
                   <Link to="/skills" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Toolkit</Link>
-
-                  <Link to="/client-work" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Client Work</Link>
                   <Link to="/certifications" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Learning Archive</Link>
                 </div>
 

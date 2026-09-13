@@ -9,7 +9,6 @@ const DEFAULT_ITEMS = [
   { label: 'about',          href: '#about',          ariaLabel: 'About',          rotation:  5, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
   { label: 'skills',         href: '/skills',         ariaLabel: 'Skills',         rotation: -4, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
   { label: 'projects',       href: '/projects',       ariaLabel: 'Projects',       rotation:  6, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
-  { label: 'client work',    href: '/client-work',    ariaLabel: 'Client Work',    rotation: -5, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
   { label: 'experience',     href: '/experience',     ariaLabel: 'Experience',     rotation:  7, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
   { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
   { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
@@ -179,7 +178,15 @@ export default function BubbleMenu({
     <>
       <nav className={containerClassName} style={style} aria-label="Main navigation">
         {/* Logo Bubble */}
-        <div className="bubble logo-bubble" aria-label="Logo" style={{ background: menuBg }}>
+        <div
+          className="bubble logo-bubble"
+          aria-label="Logo"
+          style={{
+            background: isMenuOpen ? '#0D1322' : (menuBg || '#070A13'),
+            border: '1.5px solid rgba(255, 42, 85, 0.35)',
+            boxShadow: isMenuOpen ? '0 0 18px rgba(255, 42, 85, 0.35)' : '0 4px 18px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 42, 85, 0.2)',
+          }}
+        >
           <span className="logo-content">
             {typeof logo === 'string'
               ? <img src={logo} alt="Logo" className="bubble-logo" />
@@ -194,10 +201,14 @@ export default function BubbleMenu({
           onClick={handleToggle}
           aria-label={menuAriaLabel}
           aria-pressed={isMenuOpen}
-          style={{ background: menuBg }}
+          style={{
+            background: isMenuOpen ? '#0D1322' : (menuBg || '#070A13'),
+            border: '1.5px solid rgba(255, 42, 85, 0.4)',
+            boxShadow: isMenuOpen ? '0 0 18px rgba(255, 42, 85, 0.35)' : '0 4px 18px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 42, 85, 0.2)',
+          }}
         >
-          <span className="menu-line" style={{ background: menuContentColor }} />
-          <span className="menu-line short" style={{ background: menuContentColor }} />
+          <span className="menu-line" style={{ background: 'var(--c-accent, #FF2A55)' }} />
+          <span className="menu-line short" style={{ background: 'var(--c-accent, #FF2A55)' }} />
         </button>
       </nav>
 
@@ -231,10 +242,10 @@ export default function BubbleMenu({
                     style={{
                       '--item-rot': `${item.rotation ?? 0}deg`,
                       '--item-ty': `${item.translateY ?? 0}px`,
-                      '--pill-bg': active ? '#070A13' : 'rgba(255,255,255,0.08)',
-                      '--pill-color': active ? '#FF2A55' : '#ffffff',
-                      '--hover-bg': item.hoverStyles?.bgColor || '#FF2A55',
-                      '--hover-color': item.hoverStyles?.textColor || '#FFFFFF'
+                      '--pill-bg': active ? '#000000' : 'rgba(255,255,255,0.06)',
+                      '--pill-color': active ? 'var(--c-accent, #FF2A55)' : '#ffffff',
+                      '--hover-bg': item.hoverStyles?.bgColor || 'var(--c-accent, #FF2A55)',
+                      '--hover-color': item.hoverStyles?.textColor || '#ffffff'
                     }}
                     ref={el => {
                       if (el) bubblesRef.current[idx] = el;
@@ -265,7 +276,7 @@ export default function BubbleMenu({
               }}
               className="cta-btn primary-cta cursor-pointer"
             >
-              <FaFilePdf className="w-3 h-3 text-black" /> ↓ Resume
+              <FaFilePdf className="w-3 h-3 text-white" /> ↓ Resume
             </button>
             <a
               href="https://github.com/dheuv0812"

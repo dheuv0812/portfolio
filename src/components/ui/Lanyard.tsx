@@ -196,8 +196,31 @@ function generateCardCanvasTexture(avatarSrc = '/dhruv.jpg'): Promise<string> {
       ctx.closePath();
       ctx.clip();
 
+      const aspect = img.naturalWidth / (img.naturalHeight || 1);
+      let sx = 0;
+      let sy = 0;
+      let sWidth = img.naturalWidth;
+      let sHeight = img.naturalHeight;
+
+      if (aspect > 1) {
+        sWidth = img.naturalHeight;
+        sx = (img.naturalWidth - sWidth) / 2;
+      } else {
+        sHeight = img.naturalWidth;
+        sy = Math.max(0, (img.naturalHeight - sHeight) * 0.12);
+        if (sy + sHeight > img.naturalHeight) {
+          sy = img.naturalHeight - sHeight;
+        }
+      }
+
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
       ctx.drawImage(
         img,
+        sx,
+        sy,
+        sWidth,
+        sHeight,
         avatarX - avatarSize / 2,
         avatarY - avatarSize / 2,
         avatarSize,
@@ -298,6 +321,10 @@ function Band({ cardImageSrc }: { cardImageSrc: string }) {
     if (cardTexture) {
       cardTexture.wrapS = cardTexture.wrapT = THREE.RepeatWrapping;
       cardTexture.anisotropy = 16;
+      cardTexture.generateMipmaps = true;
+      cardTexture.minFilter = THREE.LinearMipmapLinearFilter;
+      cardTexture.magFilter = THREE.LinearFilter;
+      cardTexture.needsUpdate = true;
     }
   }, [cardTexture]);
 

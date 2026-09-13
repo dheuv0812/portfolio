@@ -335,13 +335,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
           /* Original Crimson & Cobalt Sleek Footer */
           <footer className="bg-black text-white py-16 px-6 md:px-10 border-t-4 border-black relative z-10 w-full mt-auto">
             <div className="max-w-6xl mx-auto flex flex-col gap-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-center">
                 {/* Branding Column */}
-                <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
+                <div className="flex flex-col gap-4 max-w-sm">
                   <span className="inline-block bg-[var(--c-accent)] text-white font-black text-xs px-4 py-1.5 rounded-full w-fit tracking-wider uppercase">
                     DHRUV SINGH
                   </span>
-                  <p className="text-white/70 text-sm max-w-sm font-medium leading-relaxed">
+                  <p className="text-white/70 text-sm font-medium leading-relaxed">
                     Full-stack developer building web applications and AI-integrated products, with hands-on range into embedded systems and hardware.
                   </p>
                   <div className="flex gap-2.5 mt-2">
@@ -368,19 +368,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </div>
 
                 {/* Quick Links Column */}
-                <div className="flex flex-col gap-3">
-                  <h4 className="font-black text-xs tracking-widest uppercase mb-1" style={{ color: accent }}>
-                    NAVIGATE
-                  </h4>
-                  <Link to="/" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Home / About</Link>
-                  <Link to="/skills" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Toolkit</Link>
-                  <Link to="/certifications" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Learning Archive</Link>
+                <div className="flex flex-col gap-3 items-start md:items-center">
+                  <div className="flex flex-col gap-2.5">
+                    <h4 className="font-black text-xs tracking-widest uppercase mb-1" style={{ color: accent }}>
+                      NAVIGATE
+                    </h4>
+                    <Link to="/" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Home / About</Link>
+                    <Link to="/skills" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Toolkit</Link>
+                    <Link to="/certifications" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Learning Archive</Link>
+                  </div>
                 </div>
 
-
-
                 {/* Profile Card Column */}
-                <div className="flex justify-center xl:justify-end md:col-span-2 xl:col-span-1 overflow-visible mt-6 xl:mt-0 pr-8 xl:pr-0">
+                <div className="flex justify-center md:justify-end overflow-visible">
                   <ProfileCard
                     name="Dhruv Singh"
                     title="Full-Stack Developer"

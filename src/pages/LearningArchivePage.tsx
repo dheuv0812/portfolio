@@ -20,7 +20,7 @@ export function LearningArchivePage() {
   const [activeMobileTab, setActiveMobileTab] = useState<'overview' | 'learnt' | 'skills'>('overview');
   
   const [activeItem, setActiveItem] = useState<any | null>(null);
-  const [showPdf, setShowPdf] = useState(false);
+
 
   const featuredItems = certificationsData.featured;
   const githubSeries = certificationsData.collections[0];
@@ -181,6 +181,23 @@ export function LearningArchivePage() {
                           {activeCert.desc}
                         </p>
                       </div>
+                      {activeCert.courses && activeCert.courses.length > 0 && (
+                        <div>
+                          <span className="text-[8.5px] font-black text-[var(--c-accent-2)] uppercase tracking-wider block mb-1">
+                            Coursework ({activeCert.courses.length})
+                          </span>
+                          <div className="flex flex-col gap-1.5">
+                            {activeCert.courses.map((course: { code: string; name: string }, i: number) => (
+                              <div key={i} className="flex items-center gap-2 p-1.5 bg-[var(--c-bg-surface)] rounded-lg border border-black/5 text-[10px]">
+                                <span className="font-black px-1.5 py-0.5 rounded bg-[var(--c-accent)] text-black border border-black text-[8px] flex-shrink-0">
+                                  {course.code}
+                                </span>
+                                <span className="font-bold text-black/80 truncate">{course.name}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                       {activeCert.hours && (
                         <div className="flex items-center justify-between text-[11px] font-extrabold text-black/60 pt-1">
                           <span>Course Duration:</span>
@@ -220,7 +237,6 @@ export function LearningArchivePage() {
                   <button
                     onClick={() => {
                       setActiveItem(activeCert);
-                      setShowPdf(false);
                     }}
                     className="w-full mt-2 py-2.5 rounded-xl bg-black text-[var(--c-accent)] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
                   >
@@ -246,7 +262,6 @@ export function LearningArchivePage() {
                   onClick={() => {
                     trackCertificateView(item.title);
                     setActiveItem(item);
-                    setShowPdf(false);
                   }}
                   className="text-left bg-[var(--c-bg-surface)] border-[3px] border-black rounded-[2rem] p-6 shadow-[8px_8px_0px_0px_var(--c-shadow)] hover:shadow-[12px_12px_0px_0px_var(--c-accent-2)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 cursor-pointer group relative w-full"
                 >
@@ -283,11 +298,11 @@ export function LearningArchivePage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               
-              {/* GitHub Learning Series */}
+              {/* GitHub / Honors Series */}
               <div className="border-[3px] border-black rounded-[2.5rem] p-6 bg-[var(--c-bg-surface)] shadow-[8px_8px_0px_0px_var(--c-shadow)] hover:shadow-[12px_12px_0px_0px_var(--c-accent-2)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <div>
                   <span className="text-[9px] font-black uppercase bg-[var(--c-accent)] text-black border border-black px-2.5 py-1 rounded-full tracking-wider block w-fit mb-3">
-                    GITHUB LEARNING SERIES ({githubSeries.items.length})
+                    {githubSeries.name.toUpperCase()} ({githubSeries.items.length})
                   </span>
                   <h4 className="font-black text-lg text-black uppercase leading-tight">
                     {githubSeries.name}
@@ -302,7 +317,6 @@ export function LearningArchivePage() {
                       key={item.id}
                       onClick={() => {
                         setActiveItem(item);
-                        setShowPdf(false);
                       }}
                       className="text-left py-2.5 px-3.5 hover:bg-black/5 rounded-xl flex items-center justify-between text-xs font-black uppercase text-black/70 hover:text-black transition-all group cursor-pointer border border-transparent hover:border-black/10 w-full"
                     >
@@ -315,11 +329,11 @@ export function LearningArchivePage() {
                 </div>
               </div>
 
-              {/* Data Analytics Series */}
+              {/* Software Engineering & Systems Track */}
               <div className="border-[3px] border-black rounded-[2.5rem] p-6 bg-[var(--c-bg-surface)] shadow-[8px_8px_0px_0px_var(--c-shadow)] hover:shadow-[12px_12px_0px_0px_var(--c-accent-2)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <div>
                   <span className="text-[9px] font-black uppercase bg-[var(--c-accent)] text-black border border-black px-2.5 py-1 rounded-full tracking-wider block w-fit mb-3">
-                    DATA ANALYTICS & VISUALIZATION ({dataAnalyticsSeries.items.length})
+                    {dataAnalyticsSeries.name.toUpperCase()} ({dataAnalyticsSeries.items.length})
                   </span>
                   <h4 className="font-black text-lg text-black uppercase leading-tight">
                     {dataAnalyticsSeries.name}
@@ -334,7 +348,6 @@ export function LearningArchivePage() {
                       key={item.id}
                       onClick={() => {
                         setActiveItem(item);
-                        setShowPdf(false);
                       }}
                       className="text-left py-2.5 px-3.5 hover:bg-black/5 rounded-xl flex items-center justify-between text-xs font-black uppercase text-black/70 hover:text-black transition-all group cursor-pointer border border-transparent hover:border-black/10 w-full"
                     >
@@ -361,7 +374,6 @@ export function LearningArchivePage() {
                   key={item.id}
                   onClick={() => {
                     setActiveItem(item);
-                    setShowPdf(false);
                   }}
                   className="text-left bg-[var(--c-bg-surface)] border-[3px] border-black rounded-[2rem] p-6 shadow-[8px_8px_0px_0px_var(--c-shadow)] hover:shadow-[12px_12px_0px_0px_#00F5A0] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 cursor-pointer group relative w-full"
                 >
@@ -399,7 +411,6 @@ export function LearningArchivePage() {
                 exit={{ opacity: 0 }}
                 onClick={() => {
                   setActiveItem(null);
-                  setShowPdf(false);
                 }}
                 className="absolute inset-0 bg-black/80 backdrop-blur-md"
               />
@@ -428,7 +439,6 @@ export function LearningArchivePage() {
                   <button
                     onClick={() => {
                       setActiveItem(null);
-                      setShowPdf(false);
                     }}
                     className="w-8 h-8 rounded-full border-2 border-black flex items-center justify-center text-black hover:bg-black hover:text-white transition-all flex-shrink-0 cursor-pointer"
                   >
@@ -436,91 +446,99 @@ export function LearningArchivePage() {
                   </button>
                 </div>
 
-                {/* Conditional Body: PDF Viewer vs Details Text */}
-                {showPdf ? (
-                  <div className="p-4 bg-zinc-900 flex flex-col gap-4 overflow-y-auto">
-                    <iframe
-                      src={activeItem.credential}
-                      className="w-full h-[55vh] rounded-2xl border-[3px] border-black bg-white"
-                      title="Certificate PDF Viewer"
-                    />
-                    <div className="flex justify-between items-center text-white text-xs font-bold px-2">
-                      <button
-                        onClick={() => setShowPdf(false)}
-                        className="text-[var(--c-accent)] hover:text-white transition-colors cursor-pointer uppercase font-black tracking-wider"
-                      >
-                        ◀ Back to Details
-                      </button>
-                      <span className="text-white/50">Local Archive Viewer</span>
+                {/* Details Info */}
+                <div className="overflow-y-auto max-h-[70vh]">
+                  <div className="p-6 sm:p-8 flex flex-col gap-5 text-left">
+                    {activeItem.image && (
+                      <div className="rounded-xl overflow-hidden border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] bg-black/5">
+                        <img src={activeItem.image} alt={activeItem.title} className="w-full h-auto object-cover" />
+                      </div>
+                    )}
+                    {/* Overview */}
+                    <div>
+                      <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                        <FaAward /> Overview
+                      </h4>
+                      <p className="text-black/70 text-xs font-medium leading-relaxed">
+                        {activeItem.desc}
+                      </p>
                     </div>
-                  </div>
-                ) : (
-                  <div className="overflow-y-auto">
-                    {/* Details Info */}
-                    <div className="p-6 sm:p-8 flex flex-col gap-5 text-left">
-                      {/* Overview */}
+
+                    {/* What I Learnt */}
+                    {activeItem.learnt && (
                       <div>
                         <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
-                          <FaAward /> Overview
+                          <FaBookOpen /> What I Learnt
                         </h4>
                         <p className="text-black/70 text-xs font-medium leading-relaxed">
-                          {activeItem.desc}
+                          {activeItem.learnt}
                         </p>
                       </div>
+                    )}
 
-                      {/* What I Learnt */}
-                      {activeItem.learnt && (
-                        <div>
-                          <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
-                            <FaBookOpen /> What I Learnt
-                          </h4>
-                          <p className="text-black/70 text-xs font-medium leading-relaxed">
-                            {activeItem.learnt}
-                          </p>
-                        </div>
-                      )}
-
-                      {/* Skills Gained */}
-                      {activeItem.skills && (
-                        <div>
-                          <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
-                            <FaCompass /> Skills Gained
-                          </h4>
-                          <div className="flex flex-wrap gap-1.5">
-                            {activeItem.skills.map((s: string, i: number) => (
-                              <span key={i} className="text-[9px] font-black uppercase border border-black/10 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black/70">
-                                {s}
+                    {/* Coursework & Modules */}
+                    {activeItem.courses && activeItem.courses.length > 0 && (
+                      <div>
+                        <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
+                          <FaBookOpen /> Official Coursework ({activeItem.courses.length})
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {activeItem.courses.map((course: { code: string; name: string }, i: number) => (
+                            <div key={i} className="flex items-center gap-2 p-2 bg-black/5 rounded-xl border border-black/10">
+                              <span className="text-[9px] font-black px-2 py-0.5 rounded-md bg-[var(--c-accent)] text-black border border-black flex-shrink-0">
+                                {course.code}
                               </span>
-                            ))}
-                          </div>
+                              <span className="text-[11px] font-bold text-black/80 truncate">
+                                {course.name}
+                              </span>
+                            </div>
+                          ))}
                         </div>
-                      )}
+                      </div>
+                    )}
 
-                      {/* Hours completed */}
-                      {activeItem.hours && (
-                        <div>
-                          <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
-                            <FaHourglassHalf /> Course Time
-                          </h4>
-                          <p className="text-black/70 text-xs font-bold">
-                            {activeItem.hours} completed
-                          </p>
+                    {/* Skills Gained */}
+                    {activeItem.skills && (
+                      <div>
+                        <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
+                          <FaCompass /> Skills Gained
+                        </h4>
+                        <div className="flex flex-wrap gap-1.5">
+                          {activeItem.skills.map((s: string, i: number) => (
+                            <span key={i} className="text-[9px] font-black uppercase border border-black/10 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black/70">
+                              {s}
+                            </span>
+                          ))}
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
 
-                    {/* Footer / View Certificate Trigger */}
-                    <div className="px-6 sm:px-8 py-4 bg-[var(--c-bg-surface)] border-t-2 border-black flex items-center justify-between text-xs font-bold text-black/50">
-                      <span>ID: {activeItem.id}</span>
-                      <button
-                        onClick={() => setShowPdf(true)}
-                        className="flex items-center gap-1.5 text-black hover:text-[var(--c-accent-2)] transition-colors cursor-pointer uppercase font-black tracking-wider"
-                      >
-                        View Certificate <FaExternalLinkAlt className="w-3 h-3 text-[var(--c-accent-2)]" />
-                      </button>
-                    </div>
+                    {/* Hours completed */}
+                    {activeItem.hours && (
+                      <div>
+                        <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                          <FaHourglassHalf /> Course Time
+                        </h4>
+                        <p className="text-black/70 text-xs font-bold">
+                          {activeItem.hours} completed
+                        </p>
+                      </div>
+                    )}
                   </div>
-                )}
+
+                  {/* Footer / View Certificate */}
+                  <div className="px-6 sm:px-8 py-4 bg-[var(--c-bg-surface)] border-t-2 border-black flex items-center justify-between text-xs font-bold text-black/50">
+                    <span>ID: {activeItem.id}</span>
+                    <a
+                      href={activeItem.credential}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 text-black hover:text-[var(--c-accent-2)] transition-colors cursor-pointer uppercase font-black tracking-wider"
+                    >
+                      View Certificate <FaExternalLinkAlt className="w-3 h-3 text-[var(--c-accent-2)]" />
+                    </a>
+                  </div>
+                </div>
               </motion.div>
             </div>
           )}

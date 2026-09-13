@@ -14,7 +14,6 @@ import { useSEO } from '@/hooks/useSEO';
 import { HomePageStarWars } from './HomePageStarWars';
 
 import projectsData from '@/data/projects.json';
-import clientWorkData from '@/data/client-work.json';
 import internshipData from '@/data/experience.json';
 import certificationsData from '@/data/certifications.json';
 import siteData from '@/data/site.json';
@@ -53,14 +52,13 @@ function AnimatedSkillGauge({ value, gaugePrimaryColor, gaugeSecondaryColor }: {
 }
 
 export function HomePage() {
-  useSEO('Home', 'Personal portfolio of Rohit Dubey - AI & Full-Stack Developer. Showcasing engineering project case studies, client outcomes, skills toolkit, and internships.');
+  useSEO('Home', 'Personal portfolio of Dhruv Singh — Full-Stack Developer and Computer Engineering student at Toronto Metropolitan University.');
   const { activeTheme } = useTheme();
 
   const g1 = activeTheme.vars['--c-accent'];
   const g2 = activeTheme.vars['--c-accent-2'];
   const g3 = activeTheme.vars['--c-bg'];
   const [activeCert, setActiveCert] = useState<any | null>(null);
-  const [showPdf, setShowPdf] = useState(false);
 
   const originScrollRef = useRef<HTMLDivElement>(null);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
@@ -89,7 +87,6 @@ export function HomePage() {
   if (isGalaxy) return <HomePageStarWars />;
 
   const featuredProject = projectsData.find(p => p.featured) || projectsData[0];
-  const latestClient = clientWorkData[0];
   const latestInternship = internshipData[0];
   const featuredCerts = certificationsData.featured.slice(0, 2);
 
@@ -413,7 +410,13 @@ export function HomePage() {
               <p className="text-black/75 text-xs font-medium leading-relaxed max-w-lg">
                 {featuredProject.problem}
               </p>
-              <div className="flex flex-wrap gap-1.5 mt-2">
+              {featuredProject.metrics && (
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-black/[0.04] border border-black/10 text-xs font-black w-fit">
+                  <span className="text-[var(--c-accent)]">⚡ IMPACT:</span>
+                  <span className="text-black/80 font-bold">{featuredProject.metrics}</span>
+                </div>
+              )}
+              <div className="flex flex-wrap gap-1.5 mt-1">
                 {featuredProject.techStack.map(t => (
                   <span key={t} className="text-[9px] font-black uppercase border border-black/10 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black/70">
                     {t}
@@ -446,13 +449,7 @@ export function HomePage() {
             <div className="inline-flex items-center px-6 py-3 bg-[var(--c-accent)] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_var(--c-shadow)] self-start">
               WORK TIMELINE PREVIEW
             </div>
-            <Link
-              to="/experience"
-              className="px-6 py-3 bg-[var(--c-accent)] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_var(--c-shadow)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
-            >
-              <span>Explore Career Timeline</span>
-              <FaArrowRight className="w-3.5 h-3.5" />
-            </Link>
+
           </div>
 
           <div
@@ -502,87 +499,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 6. Client Work preview */}
-      <section className="py-24 px-6 md:px-10 border-t-2 border-black/10 relative z-30 overflow-hidden" style={{ background: `var(--c-bg)` }}>
-        {/* WebGL Grainient Background */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Grainient
-            color1={g1}
-            color2={g2}
-            color3={g3}
-            timeSpeed={1.0}
-            colorBalance={0.06}
-            warpStrength={1.2}
-            warpFrequency={3.0}
-            warpSpeed={0.8}
-            warpAmplitude={40.0}
-            blendAngle={0.0}
-            blendSoftness={0.05}
-            rotationAmount={300.0}
-            noiseScale={1.5}
-            grainAmount={0.07}
-            grainScale={2.0}
-            grainAnimated={false}
-            contrast={1.3}
-            gamma={1.0}
-            saturation={1.0}
-            centerX={0.0}
-            centerY={0.0}
-            zoom={1.05}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--c-bg)]/40 via-transparent to-[var(--c-bg)]/40 pointer-events-none" />
-        </div>
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
-            <div className="inline-flex items-center px-6 py-3 bg-[var(--c-accent)] text-black font-black text-xs uppercase tracking-widest border-2 border-black rounded-full shadow-[4px_4px_0_var(--c-shadow)] self-start">
-              CLIENT WORK PREVIEW
-            </div>
-            <Link
-              to="/client-work"
-              className="px-6 py-3 bg-[var(--c-accent)] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 transition-all duration-300 shadow-[4px_4px_0_var(--c-shadow)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] self-start md:self-auto flex-shrink-0"
-            >
-              <span>Explore Client Work</span>
-              <FaArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          <div
-            className="border-[3px] border-black rounded-[2.5rem] p-8 flex flex-col md:flex-row justify-between items-start gap-8 shadow-[8px_8px_0_var(--c-shadow)]"
-            style={{
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-            }}
-          >
-            <div className="flex-1 flex flex-col gap-4 text-left">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[var(--c-accent-2)]">
-                {latestClient.industry}
-              </span>
-              <h4 className="text-2xl font-black uppercase leading-tight text-black">
-                {latestClient.client} – {latestClient.role}
-              </h4>
-              <p className="text-black/75 text-xs font-medium leading-relaxed max-w-lg">
-                {latestClient.outcome}
-              </p>
-              <div className="flex flex-wrap gap-1.5 mt-2">
-                {latestClient.stack.map(t => (
-                  <span key={t} className="text-[9px] font-black uppercase border border-black/10 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black/70">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <Link
-              to="/client-work"
-              className="px-6 py-3 bg-[var(--c-accent)] hover:bg-black text-black hover:text-white font-black text-xs uppercase tracking-widest border-2 border-black rounded-full flex items-center gap-2 self-stretch md:self-center justify-center transition-all duration-300 shadow-[4px_4px_0_var(--c-shadow)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] flex-shrink-0"
-            >
-              <span>Read Case Study</span>
-              <FaArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* 7. Learning Archive preview */}
       <section className="py-24 px-6 md:px-10 bg-[var(--c-bg-surface)] border-t-2 border-black/5 relative z-30 overflow-hidden">
         {/* Interactive Grid Background */}
@@ -612,7 +528,6 @@ export function HomePage() {
                 key={cert.id}
                 onClick={() => {
                   setActiveCert(cert);
-                  setShowPdf(false);
                 }}
                 className="text-left p-6 rounded-[2rem] border-[3px] border-black flex items-start gap-4 shadow-[6px_6px_0_#000] hover:scale-[1.02] active:scale-[0.98] transition-transform cursor-pointer block w-full"
                 style={{
@@ -677,85 +592,70 @@ export function HomePage() {
                 </button>
               </div>
 
-              {/* Conditional Body: PDF Viewer vs Details Text */}
-              {showPdf ? (
-                <div className="p-4 bg-zinc-900 flex flex-col gap-4">
-                  <iframe
-                    src={activeCert.credential}
-                    className="w-full h-[55vh] rounded-2xl border-[3px] border-black bg-white"
-                    title="Certificate PDF Viewer"
-                  />
-                  <div className="flex justify-between items-center text-white text-xs font-bold px-2">
-                    <button
-                      onClick={() => setShowPdf(false)}
-                      className="text-[var(--c-accent)] hover:text-white transition-colors cursor-pointer uppercase font-black tracking-wider"
-                    >
-                      ◀ Back to Details
-                    </button>
-                    <span className="text-white/50">Local Archive Viewer</span>
+              {/* Details */}
+              <div className="p-8 flex flex-col gap-5 text-left max-h-[70vh] overflow-y-auto">
+                {activeCert.image && (
+                  <div className="rounded-xl overflow-hidden border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] bg-black/5">
+                    <img src={activeCert.image} alt={activeCert.title} className="w-full h-auto object-cover" />
+                  </div>
+                )}
+                {/* Overview */}
+                <div>
+                  <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                    <FaAward /> Overview
+                  </h4>
+                  <p className="text-black/70 text-xs font-medium leading-relaxed">
+                    {activeCert.desc}
+                  </p>
+                </div>
+
+                {/* What I Learnt */}
+                <div>
+                  <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                    <FaBookOpen /> What I Learnt
+                  </h4>
+                  <p className="text-black/70 text-xs font-medium leading-relaxed">
+                    {activeCert.learnt}
+                  </p>
+                </div>
+
+                {/* Skills Gained */}
+                <div>
+                  <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
+                    <FaCompass /> Skills Gained
+                  </h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {activeCert.skills.map((s: string, i: number) => (
+                      <span key={i} className="text-[9px] font-black uppercase border border-black/10 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black/70">
+                        {s}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              ) : (
-                <>
-                  {/* Details */}
-                  <div className="p-8 flex flex-col gap-5 text-left">
-                    {/* Overview */}
-                    <div>
-                      <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
-                        <FaAward /> Overview
-                      </h4>
-                      <p className="text-black/70 text-xs font-medium leading-relaxed">
-                        {activeCert.desc}
-                      </p>
-                    </div>
 
-                    {/* What I Learnt */}
-                    <div>
-                      <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
-                        <FaBookOpen /> What I Learnt
-                      </h4>
-                      <p className="text-black/70 text-xs font-medium leading-relaxed">
-                        {activeCert.learnt}
-                      </p>
-                    </div>
+                {/* Hours completed */}
+                <div>
+                  <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
+                    <FaHourglassHalf /> Course Time
+                  </h4>
+                  <p className="text-black/70 text-xs font-bold">
+                    {activeCert.hours} completed
+                  </p>
+                </div>
+              </div>
 
-                    {/* Skills Gained */}
-                    <div>
-                      <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-2">
-                        <FaCompass /> Skills Gained
-                      </h4>
-                      <div className="flex flex-wrap gap-1.5">
-                        {activeCert.skills.map((s: string, i: number) => (
-                          <span key={i} className="text-[9px] font-black uppercase border border-black/10 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black/70">
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Hours completed */}
-                    <div>
-                      <h4 className="text-[var(--c-accent-2)] text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
-                        <FaHourglassHalf /> Course Time
-                      </h4>
-                      <p className="text-black/70 text-xs font-bold">
-                        {activeCert.hours} completed
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Footer / ID Action */}
-                  <div className="px-8 py-5 bg-[var(--c-bg-surface)] border-t-2 border-black flex items-center justify-between text-xs font-bold text-black/50">
-                    <span>ID: {activeCert.id}</span>
-                    <button
-                      onClick={() => setShowPdf(true)}
-                      className="flex items-center gap-1.5 text-black hover:text-[var(--c-accent-2)] transition-colors cursor-pointer uppercase font-black tracking-wider"
-                    >
-                      View Certificate <FaExternalLinkAlt className="w-3 h-3 text-[var(--c-accent-2)]" />
-                    </button>
-                  </div>
-                </>
-              )}
+              {/* Footer / ID Action */}
+              <div className="px-8 py-5 bg-[var(--c-bg-surface)] border-t-2 border-black flex items-center justify-between text-xs font-bold text-black/50">
+                <span>ID: {activeCert.id}</span>
+                <a
+                  href={activeCert.credential}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1.5 text-black hover:text-[var(--c-accent-2)] transition-colors cursor-pointer uppercase font-black tracking-wider"
+                >
+                  View Certificate <FaExternalLinkAlt className="w-3 h-3 text-[var(--c-accent-2)]" />
+                </a>
+              </div>
             </motion.div>
           </div>
         )}

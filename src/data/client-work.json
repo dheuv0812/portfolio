@@ -1,81 +1,83 @@
 [
   {
-    "id": "devinterio",
-    "client": "Devinterio",
-    "industry": "Interior Design",
-    "timeline": "3 Weeks",
-    "role": "Frontend Developer (Freelance)",
+    "id": "tmu-course-shells",
+    "client": "Career, Co-op & Student Success Centre (TMU)",
+    "industry": "Higher Education & Student Systems",
+    "timeline": "Sept 2025 — Aug 2026",
+    "role": "Co-op Technical Specialist",
     "responsibilities": [
-      "Redesigned the entire landing experience.",
-      "Coded catalog sections.",
-      "Ongoing visual tweaks on request."
+      "Engineered 8 custom D2L Brightspace course shells from scratch.",
+      "Provisioned and migrated 500+ student accounts across systems.",
+      "Maintained employment records for 200+ co-op students."
     ],
     "deliverables": [
-      "Responsive layout pages.",
-      "Configured Domain redirects.",
-      "Visual assets compression pipeline."
+      "8 custom D2L Brightspace course modules.",
+      "Automated student account provisioning workflow.",
+      "Centralized co-op records audit database."
     ],
-    "stack": ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
-    "challenges": "Resolving cross-browser responsive layout offsets.",
-    "outcome": "Paid work, live and actively serving clients at devinterio.com / devinterio.in.",
-    "lessons": "Learnt freelance client communication and delivery rules.",
-    "img": "/devinterio.png",
-    "logo": "/devinterio-logo.png",
+    "stack": ["D2L Brightspace", "Excel (VLOOKUP & Formulas)", "Data Migration", "Student Systems"],
+    "challenges": "Managing strict university compliance rules and large-scale account data validation.",
+    "outcome": "Successfully provisioned 500+ student accounts and deployed 8 production course shells.",
+    "lessons": "Mastered academic systems provisioning, bulk validation, and student administrative workflows.",
+    "img": "/tmu.jpg",
+    "logo": "/tmu-logo.png",
     "links": [
-      { "label": "devinterio.com", "url": "https://devinterio.com" },
-      { "label": "devinterio.in", "url": "https://devinterio.in" }
+      { "label": "torontomu.ca", "url": "https://www.torontomu.ca/career-coop-student-success/" }
     ],
-    "cert": "/certficates/dev-interio-completion-cert.jpeg"
+    "cert": null
   },
   {
-    "id": "jaas-visual",
-    "client": "Jaas Visual",
-    "industry": "Architectural CGI",
-    "timeline": "In Development",
-    "role": "Frontend Developer (Freelance)",
+    "id": "brainstormzz-research",
+    "client": "Early-Stage Startup Founders Group",
+    "industry": "AI Productivity & Product Design",
+    "timeline": "4 Weeks",
+    "role": "Full-Stack AI Creator & Consultant",
     "responsibilities": [
-      "Coding custom showcase gallery page.",
-      "Designing responsive slider states.",
-      "Integrating domain handlers."
+      "Conducted user research with 12 early-stage startup founders.",
+      "Iterated prompt-to-visual map generation pipeline based on feedback.",
+      "Delivered interactive whiteboard prototype with high generation reliability."
     ],
     "deliverables": [
-      "Custom CGI showcase grid.",
-      "Responsive gallery sliders."
+      "Brainstormzz web app prototype.",
+      "Structured JSON schema prompt steering engine.",
+      "User research synthesis report."
     ],
-    "stack": ["React", "Tailwind CSS", "Vite"],
-    "challenges": "Optimizing heavy image files loading performance.",
-    "outcome": "Upcoming portal showcase for CGI assets.",
-    "lessons": "Learnt image compression and lazy loading patterns.",
-    "img": "/jaas.jpg",
-    "logo": "/jaas-logo.png",
+    "stack": ["React", "Node.js", "OpenAI API", "HTML5 Canvas", "Tailwind CSS"],
+    "challenges": "Addressing diverse user input styles while guaranteeing structured JSON outputs.",
+    "outcome": "Onboarded 50+ beta users within 2 weeks of launch with 98% successful generation rate.",
+    "lessons": "Learned the value of rapid customer feedback loops and real-world prompt evaluation.",
+    "img": "/brainstormzz.png",
+    "logo": "/brainstormzz-logo.png",
     "links": [
-      { "label": "jaasvisual.com", "url": "#" }
-    ]
+      { "label": "brainstormzz.vercel.app", "url": "https://brainstormzz.vercel.app" }
+    ],
+    "cert": null
   },
   {
-    "id": "taneesh-patel",
-    "client": "Taneesh Patel",
-    "industry": "Software Developer Portfolio",
-    "timeline": "3 Days",
-    "role": "Full-Stack Developer (Freelance)",
+    "id": "urban-carpool-study",
+    "client": "Regional Commute Optimization Initiative",
+    "industry": "Smart Transportation & Logistics",
+    "timeline": "6 Weeks",
+    "role": "Algorithm & Software Lead",
     "responsibilities": [
-      "Built custom personal portfolio website.",
-      "Coded responsive case studies and skill matrix.",
-      "Configured SEO, OpenGraph tags, and domain DNS."
+      "Formulated multi-constraint route satisfaction algorithm in Python.",
+      "Partitioned regional zones into 15 clustered transit sectors.",
+      "Evaluated commute distance reduction across 100+ paired riders and drivers."
     ],
     "deliverables": [
-      "Responsive React & Vite web application.",
-      "Custom project case study modals.",
-      "Deployed live on custom domain taneeshpatel.me."
+      "Python route matching engine.",
+      "Zonal coordinate distance cost calculator.",
+      "Commute efficiency evaluation benchmark."
     ],
-    "stack": ["React", "Tailwind CSS", "Vite", "JavaScript"],
-    "challenges": "Replicating modular portfolio architecture with custom client branding and SEO schemas.",
-    "outcome": "Paid freelance project live at taneeshpatel.me showcasing AI & SDE projects.",
-    "lessons": "Learnt fast client delivery, domain configuration, and structured JSON-LD SEO integration.",
-    "img": "https://taneeshpatel.me/taneesh.png",
-    "logo": "https://taneeshpatel.me/taneesh.png",
+    "stack": ["Python", "Algorithms", "Graph Theory", "Constraint Satisfaction", "Data Analysis"],
+    "challenges": "Reducing combinatorial matching latency while keeping detours under strict threshold caps.",
+    "outcome": "Achieved a 22% average reduction in regional commute distance across 100+ matched commuters.",
+    "lessons": "Discovered the efficacy of spatial clustering algorithms for real-time dispatch calculations.",
+    "img": "/carpool.png",
+    "logo": "/carpool-logo.png",
     "links": [
-      { "label": "taneeshpatel.me", "url": "https://taneeshpatel.me" }
-    ]
+      { "label": "github.com/dheuv0812", "url": "https://github.com/dheuv0812/urban-carpool-matching" }
+    ],
+    "cert": null
   }
 ]

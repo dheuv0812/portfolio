@@ -5,24 +5,24 @@ import { FaFilePdf, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './BubbleMenu.css';
 
 const DEFAULT_ITEMS = [
-  { label: 'home',           href: '/',               ariaLabel: 'Home',           rotation: -6, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
-  { label: 'about',          href: '#about',          ariaLabel: 'About',          rotation:  5, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
-  { label: 'skills',         href: '/skills',         ariaLabel: 'Skills',         rotation: -4, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
-  { label: 'projects',       href: '/projects',       ariaLabel: 'Projects',       rotation:  6, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
-  { label: 'client work',    href: '/client-work',    ariaLabel: 'Client Work',    rotation: -5, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
-  { label: 'experience',     href: '/experience',     ariaLabel: 'Experience',     rotation:  7, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
-  { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
-  { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, hoverStyles: { bgColor: '#00F5A0', textColor: '#000000' } },
+  { label: 'home',           href: '/',               ariaLabel: 'Home',           rotation: -6, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
+  { label: 'about',          href: '#about',          ariaLabel: 'About',          rotation:  5, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
+  { label: 'skills',         href: '/skills',         ariaLabel: 'Skills',         rotation: -4, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
+  { label: 'projects',       href: '/projects',       ariaLabel: 'Projects',       rotation:  6, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
+  { label: 'client work',    href: '/client-work',    ariaLabel: 'Client Work',    rotation: -5, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
+  { label: 'experience',     href: '/experience',     ariaLabel: 'Experience',     rotation:  7, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
+  { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
+  { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, hoverStyles: { bgColor: '#FF2A55', textColor: '#FFFFFF' } },
 ];
 
 export default function BubbleMenu({
-  logo = 'ROHIT',
+  logo = 'DHRUV',
   items = DEFAULT_ITEMS,
   className = '',
   style,
   menuAriaLabel = 'Toggle navigation',
   menuBg = '#ffffff',
-  menuContentColor = '#031714',
+  menuContentColor = '#070A13',
   useFixedPosition = true,
   animationEase = 'back.out(1.7)',
   animationDuration = 0.48,
@@ -209,10 +209,10 @@ export default function BubbleMenu({
         >
           {/* Top Personalized Tagline Header */}
           <div className="overlay-tagline font-sans">
-            <span className="tagline-title">ROHIT DUBEY</span>
-            <span className="tagline-sub">AI &amp; FULL-STACK DEVELOPER</span>
+            <span className="tagline-title">DHRUV SINGH</span>
+            <span className="tagline-sub">FULL-STACK DEVELOPER</span>
             <div className="tagline-badge">
-              <span className="status-dot" /> AVAILABLE FOR HIRE
+              <span className="status-dot" /> OPEN FOR OPPORTUNITIES
             </div>
           </div>
 
@@ -231,10 +231,10 @@ export default function BubbleMenu({
                     style={{
                       '--item-rot': `${item.rotation ?? 0}deg`,
                       '--item-ty': `${item.translateY ?? 0}px`,
-                      '--pill-bg': active ? '#000000' : 'rgba(255,255,255,0.08)',
-                      '--pill-color': active ? '#00F5A0' : '#ffffff',
-                      '--hover-bg': item.hoverStyles?.bgColor || '#00F5A0',
-                      '--hover-color': item.hoverStyles?.textColor || '#000000'
+                      '--pill-bg': active ? '#070A13' : 'rgba(255,255,255,0.08)',
+                      '--pill-color': active ? '#FF2A55' : '#ffffff',
+                      '--hover-bg': item.hoverStyles?.bgColor || '#FF2A55',
+                      '--hover-color': item.hoverStyles?.textColor || '#FFFFFF'
                     }}
                     ref={el => {
                       if (el) bubblesRef.current[idx] = el;
@@ -268,7 +268,7 @@ export default function BubbleMenu({
               <FaFilePdf className="w-3 h-3 text-black" /> ↓ Resume
             </button>
             <a
-              href="https://github.com/anakinskywalker0903"
+              href="https://github.com/dheuv0812"
               target="_blank"
               rel="noreferrer"
               className="cta-btn"
@@ -276,7 +276,7 @@ export default function BubbleMenu({
               <FaGithub className="w-3 h-3" /> GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/rohit--dubey03/"
+              href="https://linkedin.com/in/dhruv0812"
               target="_blank"
               rel="noreferrer"
               className="cta-btn"
@@ -295,7 +295,7 @@ export default function BubbleMenu({
           {/* Domain & Branding Footer */}
           <div className="overlay-domain-footer">
             <span className="footer-line" />
-            <span className="domain-text">Built by Rohit Dubey • <strong>rohitdubey.dev</strong></span>
+            <span className="domain-text">Built by Dhruv Singh • <strong>Toronto, Canada</strong></span>
           </div>
         </div>
       )}

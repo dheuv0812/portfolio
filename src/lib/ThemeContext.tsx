@@ -4,7 +4,7 @@ import {
 } from 'react';
 import { themes, DEFAULT_THEME_ID, type Theme } from './themes';
 
-const STORAGE_KEY = 'rohit-portfolio-skin';
+const STORAGE_KEY = 'dhruv-portfolio-skin';
 
 interface ThemeContextValue {
   activeTheme:      Theme;
@@ -26,8 +26,8 @@ function applyTheme(theme: Theme) {
   for (const [key, value] of Object.entries(theme.vars)) {
     root.style.setProperty(key, value);
   }
-  root.style.setProperty('--scrollbar-track', theme.vars['--c-bg']     ?? '#031714');
-  root.style.setProperty('--scrollbar-thumb', theme.vars['--c-accent'] ?? '#00F5A0');
+  root.style.setProperty('--scrollbar-track', theme.vars['--c-bg']     ?? '#070A13');
+  root.style.setProperty('--scrollbar-thumb', theme.vars['--c-accent'] ?? '#FF2A55');
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {

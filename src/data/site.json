@@ -1,70 +1,95 @@
 {
-  "name": "Rohit Dubey",
-  "email": "rohitdubey39005@gmail.com",
-  "website": "rohitdubey.dev",
+  "name": "Dhruv Singh",
+  "email": "singhdhruv1109@gmail.com",
+  "website": "dhruvsingh.dev",
+  "tagline": "Full-Stack Developer",
+  "location": "Toronto, Canada",
+  "bio": "Full-stack developer building web applications and AI-integrated products, with hands-on range into embedded systems and hardware. I like taking a project from idea to something people can actually use.",
+  "education": {
+    "degree": "BEng in Computer Engineering (Software Engineering Option)",
+    "institution": "Toronto Metropolitan University (TMU)",
+    "years": "2023–2028",
+    "location": "Toronto, ON",
+    "coursework": [
+      "CPS 510 Database Systems I",
+      "COE 538 Microprocessor Systems",
+      "COE 428 Engineering Algorithms & Data Structures",
+      "COE 528 Object Oriented Eng Analysis & Design",
+      "COE 318 Software Systems",
+      "COE 328 Digital Systems",
+      "ELE 532 Signals and Systems I",
+      "ELE 404 Electronic Circuits I",
+      "ELE 302 Electric Networks",
+      "ELE 202 Electric Circuit Analysis",
+      "MTH 314 Discrete Mathematics",
+      "MTH 312 Differential Equations",
+      "MTH 514 Probability and Stochastic Processes",
+      "CPS 188 Computer Programming Fundamentals"
+    ]
+  },
   "socials": {
-    "linkedin": "https://www.linkedin.com/in/rohit--dubey03/",
-    "github": "https://github.com/anakinskywalker0903",
-    "whatsapp": "https://wa.me/918777453162"
+    "linkedin": "https://linkedin.com/in/dhruv0812",
+    "github": "https://github.com/dheuv0812",
+    "resume": "https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing"
   },
   "homeStatus": {
     "currentObjectives": [
-      "Master modern frontend development",
-      "Strengthen Java & DSA",
-      "Build scalable full-stack applications",
-      "Explore AI engineering & intelligent systems"
+      "Ship AI-integrated web applications",
+      "Optimize embedded systems & hardware controllers",
+      "Architect full-stack distributed systems",
+      "Advance software engineering at TMU"
     ]
   },
   "aboutDeck": [
     {
       "id": "origin",
-      "title": "Origin",
-      "subtitle": "Every engineer starts somewhere. This is where my journey began.",
+      "title": "Engineering Origin",
+      "subtitle": "Bridging full-stack software and hardware engineering.",
       "paragraphs": [
-        "I am Rohit Dubey, a Computer Science student specializing in Artificial Intelligence and Machine Learning at VIT Bhopal University.",
-        "My journey into software development didn't begin with frameworks or complex technologies—it began with curiosity. I wanted to understand how websites were built, how applications worked behind the scenes, and how software could solve real-world problems.",
-        "Today, I'm building that foundation step by step. From learning core web technologies and data structures to exploring backend development and artificial intelligence, every project I create helps me understand not just how something works, but why it works."
+        "I am Dhruv Singh, a Computer Engineering student (Software Engineering Option) at Toronto Metropolitan University (TMU).",
+        "My passion lies at the intersection of robust full-stack software development and hands-on systems engineering from web applications and intelligent AI interfaces to microcontrollers and digital logic.",
+        "Whether crafting dynamic cloud-hosted user platforms or designing low-level processor architectures, I focus on practical engineering that solves real challenges."
       ],
-      "footer": "I believe strong fundamentals create better engineers, and that's the philosophy guiding my learning journey."
+      "footer": "BEng in Computer Engineering (Software Option) • TMU (2023–2028)"
     },
     {
       "id": "why-i-build",
       "title": "Why I Build",
-      "subtitle": "",
+      "subtitle": "From initial concept to software people actually use.",
       "paragraphs": [
-        "For me, software engineering is more than writing code—it's about solving problems with thoughtful, well-designed solutions.",
-        "I enjoy taking an idea, breaking it into smaller challenges, and gradually turning it into something people can use. Whether it's a productivity tool, an AI-powered application, or a client website, I find satisfaction in building software that is practical, reliable, and continuously improving."
+        "For me, software engineering is about taking an idea, breaking it down into rigorous problem statements, and building dependable systems.",
+        "I like taking a project from concept to something people can interact with optimizing route matching algorithms, automating computer vision validation on robotic rovers, or delivering intuitive AI brainstorming tools."
       ],
-      "footer": "Every project teaches me something new, and every challenge becomes another opportunity to grow as an engineer."
+      "footer": "Driven by pragmatic problem solving, measurable impact, and resilient system architecture."
     },
     {
-      "id": "learning-philosophy",
-      "title": "Learning Philosophy",
-      "subtitle": "",
+      "id": "full-stack-hardware",
+      "title": "Software to Silicon",
+      "subtitle": "Hands-on range across the stack.",
       "paragraphs": [
-        "I prefer learning from the ground up.",
-        "Rather than jumping directly into frameworks, I focus on understanding the technologies that power them. I study the fundamentals, build practical projects, experiment with different approaches, and continuously refine my work based on what I learn."
+        "My technical range spans from high-level web frameworks like React and Node.js to embedded C, Python automation, and digital hardware in VHDL.",
+        "Understanding how software compiles down to registers, control units, and physical signals gives me an architectural edge when optimizing web systems, memory footprints, and network communication."
       ],
-      "footer": "My goal isn't to collect as many technologies as possible—it's to build the knowledge and problem-solving skills needed to adapt to new ones throughout my career."
+      "footer": "Full-stack web applications • Embedded systems • Computer vision • Digital logic"
     },
     {
       "id": "current-mission",
       "title": "Current Mission",
       "subtitle": "",
       "paragraphs": [
-        "Building a strong foundation in Full-Stack Development and Artificial Intelligence through consistent learning, real-world projects, and continuous improvement."
+        "Building production-grade web applications and AI-integrated products with hands-on range into embedded systems and hardware."
       ],
       "footer": ""
     },
     {
       "id": "looking-ahead",
       "title": "Looking Ahead",
-      "subtitle": "",
+      "subtitle": "Continuous innovation and engineering leadership.",
       "paragraphs": [
-        "Technology evolves constantly, and I believe learning should never stop.",
-        "My long-term goal is to build software that combines intelligent systems with great user experiences while continuing to grow as a full-stack engineer."
+        "I am always looking forward to challenging engineering opportunities where I can apply full-stack development, AI workflows, and hardware insights.",
+        "Open to high-impact software engineering roles, co-op positions, and collaborative technical projects in Toronto and globally."
       ],
-      "footer": "Whether I'm contributing to a team, building products, or working with clients, I want every project to reflect thoughtful engineering, continuous learning, and a commitment to creating meaningful solutions."
+      "footer": "Based in Toronto, Canada • Open to Co-op & Software Engineering Opportunities"
     }
   ]
 }

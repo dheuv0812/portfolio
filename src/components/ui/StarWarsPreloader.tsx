@@ -14,7 +14,7 @@ const CRAWL_TEXT = [
   { text: '',                      style: 'gap'      },
   { text: "During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon — an unscalable monolith with enough technical debt to destroy an entire startup.", style: 'body' },
   { text: '',                      style: 'gap'      },
-  { text: "Pursued by the Empire's senior devs, ROHIT DUBEY races home, custodian of the stolen specs that can save his team and restore clean architecture to the galaxy….", style: 'body' },
+  { text: "Pursued by the Empire's senior devs, DHRUV SINGH races home, custodian of the stolen specs that can save his team and restore clean architecture to the galaxy….", style: 'body' },
 ];
 
 /*
@@ -132,7 +132,7 @@ function CrawlPlane({ accentColour }: { accentColour: string }) {
  * STAR WARS PRELOADER — Three-phase cinematic opening
  *
  *   Phase 1  "A long time ago…"     0 → 4.0s      (fade in, hold, fade out)
- *   Phase 2  ROHIT DUBEY title      4.0 → 9.5s    (smoothly & continuously recedes away into deep space)
+ *   Phase 2  DHRUV SINGH title      4.0 → 9.5s    (smoothly & continuously recedes away into deep space)
  *   Phase 3  Perspective crawl      9.5 → 48s     (38s linear scroll, large text)
  *   Done     fade to website        48s →          (1.5s fade out)
  *
@@ -207,7 +207,7 @@ export function StarWarsPreloader({ onComplete, accentColour = '#FFE81F' }: Prop
             )}
           </AnimatePresence>
 
-          {/* ── Phase 2 — ROHIT DUBEY (Smooth continuous recession into space) ── */}
+          {/* ── Phase 2 — DHRUV SINGH (Smooth continuous recession into space) ── */}
           <AnimatePresence>
             {phase === 'title' && (
               <motion.div
@@ -233,7 +233,7 @@ export function StarWarsPreloader({ onComplete, accentColour = '#FFE81F' }: Prop
                   letterSpacing: '0.14em',
                   textShadow:    `0 0 60px ${accentColour}80, 0 0 120px ${accentColour}30`,
                 }}>
-                  ROHIT
+                  DHRUV
                 </span>
                 <span style={{
                   fontFamily:    'monospace',
@@ -243,7 +243,7 @@ export function StarWarsPreloader({ onComplete, accentColour = '#FFE81F' }: Prop
                   letterSpacing: '0.65em',
                   textTransform: 'uppercase',
                 }}>
-                  DUBEY
+                  SINGH
                 </span>
               </motion.div>
             )}

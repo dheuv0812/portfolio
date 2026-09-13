@@ -14,8 +14,8 @@ import {
   trackEvent,
 } from '@/lib/analytics';
 
-const GITHUB_USERNAME   = 'anakinskywalker0903';
-const LEETCODE_USERNAME = 'anakin_090305';
+const GITHUB_USERNAME   = 'dheuv0812';
+const LEETCODE_USERNAME = 'dheuv0812';
 
 /* ── GitHub contribution popover ──────────────────────────────────────────── */
 function GitHubPopover({ onClose }: { onClose: () => void }) {
@@ -130,29 +130,22 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
       id: 'linkedin',
       icon: FaLinkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/rohit--dubey03/',
+      href: 'https://linkedin.com/in/dhruv0812',
       onClick: () => trackLinkedInClick('Action Dock'),
-    },
-    {
-      id: 'leetcode',
-      icon: SiLeetcode,
-      label: 'LeetCode',
-      href: `https://leetcode.com/u/${LEETCODE_USERNAME}/`,
-      onClick: () => trackEvent('LeetCode Click', 'Social', 'Action Dock'),
     },
     {
       id: 'email',
       icon: MdEmail,
       label: 'Email',
-      href: 'mailto:rohitdubey39005@gmail.com',
+      href: 'mailto:dhruv.singh@torontomu.ca',
       onClick: () => trackEmailClick('Action Dock'),
     },
     {
-      id: 'whatsapp',
-      icon: FaWhatsapp,
-      label: 'WhatsApp',
-      href: 'https://wa.me/918777453162',
-      onClick: () => trackWhatsappClick('Action Dock'),
+      id: 'resume',
+      icon: FaFilePdf,
+      label: 'Resume',
+      href: 'https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing',
+      onClick: () => trackEvent('Resume Click', 'Social', 'Action Dock'),
     },
   ];
 
@@ -164,13 +157,13 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
       label: 'Resume',
       href: undefined,
       onClick: () => { handleResumeClick(); setIsFabOpen(false); },
-      color: 'bg-[var(--c-accent)] text-black border-black',
+      color: 'bg-[var(--c-accent)] text-white border-black',
     },
     {
       id: 'linkedin',
       icon: FaLinkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/rohit--dubey03/',
+      href: 'https://linkedin.com/in/dhruv0812',
       onClick: () => { trackLinkedInClick('Mobile FAB'); setIsFabOpen(false); },
       color: 'bg-[var(--c-bg-surface)] text-black border-black',
     },
@@ -183,18 +176,10 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
       color: 'bg-[var(--c-bg-surface)] text-black border-black',
     },
     {
-      id: 'leetcode',
-      icon: SiLeetcode,
-      label: 'LeetCode',
-      href: `https://leetcode.com/u/${LEETCODE_USERNAME}/`,
-      onClick: () => { trackEvent('LeetCode Click', 'Social', 'Mobile FAB'); setIsFabOpen(false); },
-      color: 'bg-[var(--c-bg-surface)] text-black border-black',
-    },
-    {
       id: 'email',
       icon: MdEmail,
       label: 'Email',
-      href: 'mailto:rohitdubey39005@gmail.com',
+      href: 'mailto:dhruv.singh@torontomu.ca',
       onClick: () => { trackEmailClick('Mobile FAB'); setIsFabOpen(false); },
       color: 'bg-[var(--c-bg-surface)] text-black border-black',
     },
@@ -229,20 +214,7 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
           {/* Pulse dot */}
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--c-accent)] mx-auto animate-pulse mb-0.5" />
 
-          {/* Resume */}
-          <motion.button
-            onClick={handleResumeClick}
-            whileHover={{ scale: 1.15, x: -2 }}
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[var(--c-accent)] hover:text-black bg-black/30 hover:bg-[var(--c-accent)] border border-white/20 hover:border-transparent transition-all duration-300 relative group cursor-pointer"
-            aria-label="Open Resume Hub"
-          >
-            <FaFilePdf className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[var(--c-accent)] group-hover:text-black transition-colors" />
-            <span className="absolute right-12 sm:right-14 opacity-0 group-hover:opacity-100 px-3 py-1.5 rounded-lg bg-black text-[var(--c-accent)] text-[10px] font-black uppercase tracking-widest pointer-events-none transition-all duration-200 shadow-xl border border-[var(--c-accent)]/20 whitespace-nowrap">
-              RESUME
-            </span>
-          </motion.button>
 
-          <span className="w-4 h-[1px] bg-white/20" />
 
           {/* GitHub — special: opens popover */}
           <motion.button

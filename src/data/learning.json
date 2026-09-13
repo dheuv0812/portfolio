@@ -1,21 +1,20 @@
 {
   "shortTerm": [
-    "Get comfortable with DSA in Java",
-    "Learn Fetch API",
-    "Learn TypeScript and apply it in a real project",
-    "Move React usage from template-customization to independently writing hooks/state logic",
-    "Understand OAuth/authentication flow end-to-end, not just Google Console setup"
+    "Ship multi-user features for Brainstormzz AI platform",
+    "Deepen low-level microcontroller & RTOS programming in C",
+    "Expand automated computer vision test coverage with OpenCV",
+    "Advance full-stack distributed patterns with TypeScript & React"
   ],
   "mediumTerm": [
-    "Build backend logic (Node.js/Express) independently rather than AI-assisted",
-    "Learn to write SQL/Postgres queries independently, including joins",
-    "Learn Next.js",
-    "Handle API rate limits and errors robustly"
+    "Build high-concurrency backend services with Node.js & PostgreSQL",
+    "Synthesize 16-bit pipelined CPU architectures on FPGA using VHDL",
+    "Deploy multi-modal AI pipelines and vector search workflows",
+    "Complete advanced Software Engineering Co-op term at TMU"
   ],
   "longTerm": [
-    "Build fluency in Python for AI Engineer-track roles",
-    "Build a full RAG application",
-    "Explore LangChain, Vector Databases, and AI Agents hands-on",
-    "Combine full-stack + AI in a real project"
+    "Bridge full-stack AI SaaS platforms with edge embedded hardware",
+    "Lead end-to-end product architecture from idea to production scale",
+    "Design and tape out custom ASIC / mixed-signal IC prototypes",
+    "Graduate BEng in Computer Engineering (Software Option) at TMU"
   ]
 }

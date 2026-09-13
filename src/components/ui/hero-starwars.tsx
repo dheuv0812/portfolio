@@ -123,7 +123,7 @@ export function HeroStarWars() {
 
         {/* BIG stacked headline */}
         <div className="flex flex-col gap-0">
-          <h1 className="sr-only">Rohit Dubey — AI & Full-Stack Developer</h1>
+          <h1 className="sr-only">Dhruv Singh — Full-Stack Developer</h1>
 
           {/* JEDI */}
           <div className="flex items-center gap-4">

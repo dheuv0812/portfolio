@@ -15,6 +15,7 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
   useEffect(() => {
     barba.init({
       preventRunning: true,
+      prevent: () => true,
       transitions: [
         {
           name: 'brutalist-curtain-transition',
@@ -142,7 +143,7 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
         >
           <span className="font-black text-xs uppercase tracking-[0.3em] border px-4 py-1.5 rounded-full"
             style={{ color: 'var(--c-accent)', borderColor: 'var(--c-border)', background: 'rgba(0,0,0,0.4)' }}>
-            ROHIT DUBEY • PORTFOLIO
+            DHRUV SINGH • PORTFOLIO
           </span>
           <span className="text-white text-2xl font-black uppercase tracking-tight">
             LOADING PAGE

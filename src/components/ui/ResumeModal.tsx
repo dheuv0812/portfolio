@@ -16,28 +16,28 @@ interface ResumeModalProps {
 
 const resumeVersions = [
   {
-    id: 'ai-engineer',
-    role: 'AI Engineer',
-    description: 'LLMs, RAG pipelines, fine-tuning, vector DBs, and AI architectures.',
-    fileUrl: aiResume,
-    summary: 'Full-Stack & AI Engineer specializing in LLM integrations, RAG workflows, PyTorch, OpenAI/Claude APIs, and scalable Web Apps.',
-    skills: ['Python', 'TypeScript', 'LangChain / LlamaIndex', 'OpenAI & Claude API', 'PyTorch', 'Vector DBs (Pinecone/Chroma)', 'React / Next.js', 'FastAPI / Node.js']
+    id: 'full-stack-sde',
+    role: 'Full Stack & Software Engineering',
+    description: 'React, Node.js, Python, Java, REST APIs, PostgreSQL, and scalable web architectures.',
+    fileUrl: sdeResume,
+    summary: 'Full-Stack Developer & Computer Engineering student at TMU building resilient web applications, REST APIs, and database-backed platforms.',
+    skills: ['React', 'JavaScript / TypeScript', 'Node.js & Express', 'Python', 'Java', 'PostgreSQL', 'HTML5 / CSS3', 'Git & GitHub']
   },
   {
-    id: 'full-stack-sde',
-    role: 'Full Stack / SDE',
-    description: 'End-to-end web applications, system design, REST & GraphQL APIs, and databases.',
-    fileUrl: sdeResume,
-    summary: 'Full-Stack Software Development Engineer proficient in React, Next.js, Node.js, Express, PostgreSQL, MongoDB, Docker, and Cloud Deployments.',
-    skills: ['React & Next.js', 'Node.js & Express', 'TypeScript', 'PostgreSQL / Prisma', 'MongoDB', 'Docker & AWS', 'REST & GraphQL APIs', 'Tailwind CSS']
+    id: 'computer-engineering',
+    role: 'Computer Engineering & Embedded Systems',
+    description: 'VHDL, FPGA (Quartus & ModelSim), Arduino robotics, digital logic, and analog CMOS ICs.',
+    fileUrl: aiResume,
+    summary: 'Computer Engineering specialist with hands-on hardware expertise spanning 8-bit processor design, RTL synthesis, robotics microcontroller automation, and CMOS circuit design.',
+    skills: ['C / C++', 'VHDL', 'FPGA (Quartus/ModelSim)', 'Arduino & Steppers', 'Digital Logic & FSM', 'Analog IC Design (CMOS)', 'OpenCV', 'Circuit Analysis']
   },
   {
     id: 'frontend',
-    role: 'Frontend Developer',
-    description: 'Creative animations, pixel-perfect design systems, responsive UI/UX.',
+    role: 'Frontend & Creative Web Development',
+    description: 'Modern component architecture, Three.js 3D web canvas, responsive micro-animations.',
     fileUrl: frontendResume,
-    summary: 'Frontend Engineer focused on building high-performance, pixel-perfect, accessible user interfaces with Framer Motion, GSAP, and Tailwind CSS.',
-    skills: ['React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion & GSAP', 'Vite & Webpack', 'UI/UX Architecture', 'Web Performance & Accessibility']
+    summary: 'Frontend developer specializing in immersive, responsive, and accessible web experiences using React, Three.js, GSAP, and Tailwind CSS.',
+    skills: ['React', 'JavaScript / TypeScript', 'Tailwind CSS', 'Three.js / WebGL', 'GSAP & Motion', 'Responsive UI/UX', 'Design Tokens']
   },
 ];
 
@@ -72,7 +72,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
     trackResumeDownload(version.role);
     const link = document.createElement('a');
     link.href = version.fileUrl;
-    link.download = `Rohit_Dubey_${version.role.replace(/\s+/g, '_')}_Resume.pdf`;
+    link.download = `Dhruv_Singh_${version.role.replace(/\s+/g, '_')}_Resume.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -191,10 +191,10 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 {/* Resume In-Modal Viewer with Custom Thematic Scrollbar */}
                 <div className="flex-1 w-full bg-[var(--c-bg)] text-white p-3 sm:p-4 flex flex-col gap-3 overflow-hidden">
                   {/* Compact Header Summary Bar */}
-                  <div className="bg-[#02110F] border border-[var(--c-accent)]/20 rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 flex-shrink-0">
+                  <div className="bg-[#070A13] border border-[var(--c-accent)]/20 rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 flex-shrink-0">
                     <div className="flex-1 min-w-0">
                       <span className="text-[9px] font-black uppercase tracking-widest text-[var(--c-accent)] block">
-                        ROHIT DUBEY • {activePreview.role.toUpperCase()}
+                        DHRUV SINGH • {activePreview.role.toUpperCase()}
                       </span>
                       <p className="text-white/80 text-xs font-medium truncate mt-0.5">
                         {activePreview.summary}
@@ -211,7 +211,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   </div>
 
                   {/* Thematic Canvas Multi-Page PDF Viewer */}
-                  <div className="flex-1 w-full rounded-xl overflow-hidden border border-[var(--c-accent)]/30 bg-[#02110F] relative">
+                  <div className="flex-1 w-full rounded-xl overflow-hidden border border-[var(--c-accent)]/30 bg-[#070A13] relative">
                     <PdfCanvasViewer url={activePreview.fileUrl} zoomLevel={zoomLevel} onNumPages={setTotalPages} />
                   </div>
                 </div>
@@ -221,11 +221,11 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 {/* Header */}
                 <div className="flex items-center justify-between px-6 sm:px-8 py-4 sm:py-5 border-b-2 border-black bg-[var(--c-accent-2)]/5">
                   <div>
-                    <span className="inline-block bg-[var(--c-accent)] text-black text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-1 border border-black">
+                    <span className="inline-block bg-[var(--c-accent)] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-1 border border-black">
                       RECRUITER HUB
                     </span>
                     <h3 className="text-lg sm:text-2xl font-black text-black tracking-tight uppercase" style={{ fontFamily: '"Arial Black", sans-serif' }}>
-                      CHOOSE RESUME
+                      RESUME &amp; CREDENTIALS
                     </h3>
                   </div>
                   
@@ -235,6 +235,22 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   >
                     <IoClose className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
+                </div>
+
+                {/* Direct Google Drive Resume Button Banner */}
+                <div className="mx-4 sm:mx-6 mt-4 p-4 rounded-2xl border-2 border-black bg-gradient-to-r from-[#FF2A55] to-[#2563EB] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
+                  <div>
+                    <h4 className="font-black text-sm uppercase tracking-wide">Dhruv Singh — Official Master Resume</h4>
+                    <p className="text-white/80 text-xs font-medium">BEng Computer Engineering (Software Option) • TMU</p>
+                  </div>
+                  <a
+                    href="https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2 bg-white text-black font-black text-xs uppercase tracking-wider rounded-xl border border-black hover:bg-black hover:text-white transition-all flex items-center justify-center gap-1.5 shadow-sm self-start sm:self-auto flex-shrink-0"
+                  >
+                    <FaDownload className="w-3.5 h-3.5" /> Open Drive Resume ↗
+                  </a>
                 </div>
 
                 {/* Resume Version Cards */}
@@ -269,7 +285,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                         </button>
                         <button
                           onClick={() => handleDownload(version)}
-                          className="flex-1 sm:flex-initial px-3.5 py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[var(--c-accent)] hover:bg-black border-2 border-black text-black hover:text-white rounded-full flex items-center justify-center gap-1 transition-colors shadow-sm cursor-pointer"
+                          className="flex-1 sm:flex-initial px-3.5 py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[var(--c-accent)] hover:bg-black border-2 border-black text-white rounded-full flex items-center justify-center gap-1 transition-colors shadow-sm cursor-pointer"
                         >
                           <FaDownload className="w-3 h-3" />
                           Download
@@ -281,7 +297,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
                 {/* Footer */}
                 <div className="p-3.5 bg-[var(--c-bg-surface)] border-t-2 border-black text-center text-black/50 text-[9px] sm:text-[10px] font-black uppercase tracking-wider">
-                  Rohit Dubey • Engineering Portfolio 2026
+                  Dhruv Singh • Engineering Portfolio 2026
                 </div>
               </>
             )}

@@ -20,24 +20,25 @@ const EMPTY_TEXTURE_URL =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORUSCYII=';
 
 // ── Generate Lanyard Ribbon Texture (Repeating Text) ─────────────────────────
-function createRibbonTexture(text = 'ROHIT DUBEY • FULL-STACK • AI ENGINEER • '): THREE.CanvasTexture {
+function createRibbonTexture(text = 'DHRUV SINGH • FULL-STACK • COMPUTER ENGINEERING • '): THREE.CanvasTexture {
   const canvas = document.createElement('canvas');
   canvas.width = 1024;
   canvas.height = 128;
   const ctx = canvas.getContext('2d');
   if (ctx) {
-    // Ribbon background
-    ctx.fillStyle = '#031714';
+    // Ribbon background (Rich Midnight)
+    ctx.fillStyle = '#070A13';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Subtle border lines
-    ctx.fillStyle = '#00F5A0';
-    ctx.fillRect(0, 0, canvas.width, 6);
-    ctx.fillRect(0, canvas.height - 6, canvas.width, 6);
+    // Subtle border lines (Crimson & Cobalt)
+    ctx.fillStyle = '#FF2A55';
+    ctx.fillRect(0, 0, canvas.width, 5);
+    ctx.fillStyle = '#2563EB';
+    ctx.fillRect(0, canvas.height - 5, canvas.width, 5);
 
     // Text pattern
     ctx.font = 'bold 36px "Arial Black", sans-serif';
-    ctx.fillStyle = '#00F5A0';
+    ctx.fillStyle = '#FF2A55';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
 
@@ -56,7 +57,7 @@ function createRibbonTexture(text = 'ROHIT DUBEY • FULL-STACK • AI ENGINEER 
 }
 
 // ── Generate ID Card Front & Back Canvas Texture ─────────────────────────────
-function generateCardCanvasTexture(avatarSrc = '/rohit.jpg'): Promise<string> {
+function generateCardCanvasTexture(avatarSrc = '/dhruv.jpg'): Promise<string> {
   return new Promise((resolve) => {
     const resolution = 1024;
     const canvas = document.createElement('canvas');
@@ -72,72 +73,73 @@ function generateCardCanvasTexture(avatarSrc = '/rohit.jpg'): Promise<string> {
     const half = resolution / 2;
 
     // Backgrounds
-    // Left Half = Front of Card
-    ctx.fillStyle = '#031714';
+    // Left Half = Front of Card (Midnight Navy)
+    ctx.fillStyle = '#070A13';
     ctx.fillRect(0, 0, half, resolution);
-    // Right Half = Back of Card
-    ctx.fillStyle = '#021412';
+    // Right Half = Back of Card (Deep Charcoal Navy)
+    ctx.fillStyle = '#0D1322';
     ctx.fillRect(half, 0, half, resolution);
 
     // Border highlights
-    ctx.strokeStyle = 'rgba(0, 245, 160, 0.4)';
+    ctx.strokeStyle = 'rgba(255, 42, 85, 0.4)';
     ctx.lineWidth = 12;
     ctx.strokeRect(10, 10, half - 20, resolution - 20);
+    ctx.strokeStyle = 'rgba(37, 99, 235, 0.4)';
     ctx.strokeRect(half + 10, 10, half - 20, resolution - 20);
 
     // Accent header pill (Front)
-    ctx.fillStyle = '#00F5A0';
+    ctx.fillStyle = '#FF2A55';
     ctx.fillRect(40, 50, half - 80, 50);
     ctx.font = '900 24px "Arial Black", sans-serif';
-    ctx.fillStyle = '#031714';
+    ctx.fillStyle = '#FFFFFF';
     ctx.textAlign = 'center';
     ctx.fillText('VERIFIED DEVELOPER', half / 2, 84);
 
     // Name & Title (Front)
-    ctx.font = '900 42px "Arial Black", sans-serif';
+    ctx.font = '900 40px "Arial Black", sans-serif';
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillText('ROHIT DUBEY', half / 2, 590);
+    ctx.fillText('DHRUV SINGH', half / 2, 590);
 
-    ctx.font = 'bold 24px sans-serif';
-    ctx.fillStyle = '#00F5A0';
-    ctx.fillText('Full-Stack & AI Engineer', half / 2, 635);
+    ctx.font = 'bold 23px sans-serif';
+    ctx.fillStyle = '#38BDF8';
+    ctx.fillText('Full-Stack Engineer', half / 2, 635);
 
     ctx.font = 'bold 18px monospace';
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-    ctx.fillText('ID: 2026-RD-0903 • INDIA', half / 2, 675);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    ctx.fillText('ID: 2026-DS-0812 • TMU TORONTO', half / 2, 675);
 
     // Tech Tags (Front)
-    ctx.font = 'bold 18px sans-serif';
-    ctx.fillStyle = 'rgba(0, 245, 160, 0.8)';
-    ctx.fillText('REACT • THREE.JS • NODE • PYTHON', half / 2, 725);
+    ctx.font = 'bold 17px sans-serif';
+    ctx.fillStyle = 'rgba(255, 42, 85, 0.9)';
+    ctx.fillText('REACT • PYTHON • VHDL • NODE • FPGA', half / 2, 725);
 
     // --- Back Side Content ---
     ctx.font = '900 36px "Arial Black", sans-serif';
-    ctx.fillStyle = '#00F5A0';
+    ctx.fillStyle = '#FF2A55';
     ctx.fillText('PORTFOLIO 2026', half + half / 2, 120);
 
     ctx.font = 'bold 22px sans-serif';
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillText('BUILDING THE FUTURE', half + half / 2, 170);
+    ctx.fillText('SOFTWARE TO SILICON', half + half / 2, 170);
 
     // Back stats / info lines
     const drawBackLine = (label: string, value: string, y: number) => {
-      ctx.font = 'bold 18px monospace';
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+      ctx.font = 'bold 17px monospace';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.55)';
       ctx.textAlign = 'left';
       ctx.fillText(label, half + 50, y);
-      ctx.fillStyle = '#00F5A0';
+      ctx.fillStyle = '#38BDF8';
       ctx.textAlign = 'right';
       ctx.fillText(value, half + half - 50, y);
     };
 
-    drawBackLine('STATUS', 'AVAILABLE FOR WORK', 280);
-    drawBackLine('ROLE', 'FULL-STACK / AI', 340);
-    drawBackLine('EXPERIENCE', '3+ YEARS', 400);
-    drawBackLine('LOCATION', 'INDIA (REMOTE)', 460);
+    drawBackLine('STATUS', 'OPEN TO CO-OP / ROLES', 280);
+    drawBackLine('ROLE', 'FULL-STACK DEVELOPER', 340);
+    drawBackLine('DEGREE', 'BENG COMPENG (TMU)', 400);
+    drawBackLine('LOCATION', 'TORONTO, CANADA', 460);
 
     // Decorative Barcode on Back
-    ctx.fillStyle = '#00F5A0';
+    ctx.fillStyle = '#FF2A55';
     const barcodeY = 600;
     const barcodeXStart = half + 60;
     const barcodeWidth = half - 120;
@@ -149,20 +151,46 @@ function generateCardCanvasTexture(avatarSrc = '/rohit.jpg'): Promise<string> {
     }
 
     ctx.font = 'bold 16px monospace';
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.textAlign = 'center';
-    ctx.fillText('https://github.com/anakinskywalker0903', half + half / 2, barcodeY + 115);
+    ctx.fillText('https://github.com/dheuv0812', half + half / 2, barcodeY + 115);
 
-    // Load avatar image for front card
+    // Load avatar image for front card (or fallback monogram)
+    const avatarSize = 300;
+    const avatarX = half / 2;
+    const avatarY = 320;
+
+    const drawFallbackAvatar = () => {
+      ctx.save();
+      const grad = ctx.createLinearGradient(avatarX - 150, avatarY - 150, avatarX + 150, avatarY + 150);
+      grad.addColorStop(0, '#FF2A55');
+      grad.addColorStop(1, '#2563EB');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.font = '900 110px "Arial Black", sans-serif';
+      ctx.fillStyle = '#FFFFFF';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('DS', avatarX, avatarY + 8);
+      ctx.restore();
+
+      // Outer glow ring
+      ctx.beginPath();
+      ctx.arc(avatarX, avatarY, avatarSize / 2 + 4, 0, Math.PI * 2);
+      ctx.strokeStyle = '#FF2A55';
+      ctx.lineWidth = 8;
+      ctx.stroke();
+
+      finishCanvas();
+    };
+
     const img = new Image();
     img.crossOrigin = 'anonymous';
     img.onload = () => {
       ctx.save();
-      // Circular avatar clip on front side
-      const avatarSize = 300;
-      const avatarX = half / 2;
-      const avatarY = 320;
-
       ctx.beginPath();
       ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
       ctx.closePath();
@@ -180,7 +208,7 @@ function generateCardCanvasTexture(avatarSrc = '/rohit.jpg'): Promise<string> {
       // Outer glow ring around avatar
       ctx.beginPath();
       ctx.arc(avatarX, avatarY, avatarSize / 2 + 4, 0, Math.PI * 2);
-      ctx.strokeStyle = '#00F5A0';
+      ctx.strokeStyle = '#FF2A55';
       ctx.lineWidth = 8;
       ctx.stroke();
 
@@ -188,7 +216,7 @@ function generateCardCanvasTexture(avatarSrc = '/rohit.jpg'): Promise<string> {
     };
 
     img.onerror = () => {
-      finishCanvas();
+      drawFallbackAvatar();
     };
 
     img.src = avatarSrc;
@@ -429,7 +457,7 @@ export const Lanyard: React.FC<{ className?: string }> = ({ className = '' }) =>
 
   useEffect(() => {
     if (!isDesktop) return;
-    generateCardCanvasTexture('/rohit.jpg').then((dataUrl) => {
+    generateCardCanvasTexture('/dhruv.jpg').then((dataUrl) => {
       setCardImageUrl(dataUrl);
     });
   }, [isDesktop]);

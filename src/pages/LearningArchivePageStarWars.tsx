@@ -165,9 +165,28 @@ export function LearningArchivePageStarWars() {
                           // CORE FOCUS
                         </span>
                         <p className="text-xs md:text-sm font-medium leading-relaxed" style={{ color: 'var(--sw-white)', opacity: 0.85, fontFamily: 'monospace' }}>
-                          {activeCert.learningSummary || activeCert.description}
+                          {activeCert.learningSummary || activeCert.description || activeCert.desc}
                         </p>
                       </div>
+                      {activeCert.courses && activeCert.courses.length > 0 && (
+                        <div className="pt-2">
+                          <span className="text-xs font-black uppercase tracking-wider block mb-2" style={{ color: accent, fontFamily: 'monospace' }}>
+                            // COURSEWORK MODULES ({activeCert.courses.length})
+                          </span>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            {activeCert.courses.map((course: { code: string; name: string }, i: number) => (
+                              <div key={i} className="flex items-center gap-2 p-2 border border-white/15 bg-white/5">
+                                <span className="text-[10px] font-black px-2 py-0.5" style={{ background: accent, color: '#000', fontFamily: 'monospace' }}>
+                                  {course.code}
+                                </span>
+                                <span className="text-xs font-bold truncate" style={{ color: 'var(--sw-white)', opacity: 0.9 }}>
+                                  {course.name}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </motion.div>
                   )}
 

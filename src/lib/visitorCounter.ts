@@ -1,10 +1,10 @@
 /**
- * Lightweight Live Visitor Counter Service for rohitdubey.dev
+ * Lightweight Live Visitor Counter Service for Dhruv Singh's portfolio
  * Uses counterapi.dev with session-level deduplication combined with GA baseline count.
  */
 
-const COUNTER_API_BASE = 'https://api.counterapi.dev/v1/rohitdubey-portfolio/visits';
-const SESSION_KEY = 'rohitdubey_session_counted';
+const COUNTER_API_BASE = 'https://api.counterapi.dev/v1/dhruvsingh-portfolio/visits';
+const SESSION_KEY = 'dhruvsingh_session_counted';
 const BASELINE_OFFSET = 130; // GA historical baseline offset
 const FALLBACK_TOTAL = 137; // Total visitors fallback
 

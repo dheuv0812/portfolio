@@ -1,174 +1,180 @@
 {
   "featured": [
     {
-      "id": "ORACLE-JAVA-2026",
-      "title": "Oracle Certified Foundations Associate, Java",
-      "issuer": "Oracle University",
-      "issueDate": "June 2026",
-      "credential": "/certficates/eCertificate.pdf",
-      "skills": ["Java", "OOP", "Programming Fundamentals"],
+      "id": "UDEMY-FULLSTACK-2025",
+      "title": "Full Stack Web Development Bootcamp",
+      "issuer": "Udemy (Angela Yu)",
+      "issueDate": "2025",
+      "credential": "https://ude.my/UC-c0a6b111-7d73-4f5b-8ccc-77bc7b15e747",
+      "certificateId": "UC-c0a6b111-7d73-4f5b-8ccc-77bc7b15e747",
+      "skills": ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "REST APIs"],
       "category": "featured",
-      "badge": "JAVA",
-      "icon": "☕",
-      "hours": "40 hours",
-      "desc": "Demonstrates foundational knowledge of Java technology and programming, covering core concepts, data structures, and OOP methodologies.",
-      "learnt": "Java syntax, object-oriented concepts (inheritance, encapsulation, polymorphism), control flow structures, exception handling, data structures, and APIs."
-    },
-    {
-      "id": "NPTEL-CLOUD-2026",
-      "title": "Cloud Computing (12-Week Course - Elite)",
-      "issuer": "NPTEL (IIT Kharagpur)",
-      "issueDate": "Jan–Apr 2026",
-      "credential": "/certficates/NPTEL26CS55S105240514304822312.pdf",
-      "skills": ["Cloud Architecture", "Virtualization", "Resource Scheduling"],
-      "category": "featured",
-      "badge": "CLOUD",
-      "icon": "🌥️",
-      "hours": "60 hours",
-      "desc": "A rigorous academic course covering the fundamental design, models, resource virtualization, and architecture of cloud infrastructure.",
-      "learnt": "Cloud design models, SaaS/PaaS/IaaS setups, hypervisors, resource allocation, storage virtualization, MapReduce frameworks."
-    },
-    {
-      "id": "UMICH-AML-2026",
-      "title": "Applied Machine Learning in Python",
-      "issuer": "University of Michigan (Coursera)",
-      "issueDate": "Jan 2026",
-      "credential": "/certficates/Coursera 7RSUPVFLCPS3.pdf",
-      "skills": ["Python", "Scikit-Learn", "Feature Engineering"],
-      "category": "featured",
-      "badge": "ML",
-      "icon": "🐍",
-      "hours": "40 hours",
-      "desc": "Advanced machine learning course covering data analysis, predictive modeling, clustering, and deep evaluation strategies.",
-      "learnt": "Supervised & unsupervised learning algorithms, scikit-learn interfaces, SVM regression, decision trees, cross-validation metrics."
-    },
-    {
-      "id": "LINKEDIN-GH-2026",
-      "title": "Career Essentials in GitHub Professional Certificate",
-      "issuer": "LinkedIn Learning × GitHub",
-      "issueDate": "Jan 2026",
-      "credential": "/certficates/CertificateOfCompletion_Career Essentials in GitHub Professional Certificate.pdf",
-      "skills": ["GitHub Actions", "GitHub Copilot", "Workflow Automation"],
-      "category": "featured",
-      "badge": "GITHUB",
-      "icon": "🐙",
-      "hours": "15 hours",
-      "desc": "Professional credentials pathway validating workflows optimization, automated actions, and enterprise collaboration.",
-      "learnt": "Repository environments management, actions configuration settings, collaboration pipelines, Copilot configurations, and search parameters."
+      "badge": "FULL-STACK",
+      "icon": "⚡",
+      "hours": "65+ hours",
+      "desc": "Comprehensive full-stack engineering curriculum covering modern frontend web development, backend servers, relational databases, REST APIs, and authentication.",
+      "learnt": "End-to-end full-stack architectures, responsive design, React state workflows, asynchronous JavaScript, Node.js API development, SQL/PostgreSQL databases, and production deployments."
     }
   ],
   "collections": [
     {
-      "name": "GitHub Learning Series",
-      "description": "4 specialized courses covering GitHub Actions, Copilot automation, Code Search, and collaborative Project management pipelines.",
+      "name": "Academic & Engineering Honors",
+      "description": "Competitive engineering design accomplishments and institutional recognitions at Toronto Metropolitan University.",
       "items": [
         {
-          "id": "GH-ACTIONS",
-          "title": "Practical GitHub Actions",
-          "issuer": "LinkedIn Learning × GitHub",
-          "issueDate": "2026",
-          "credential": "/certficates/CertificateOfCompletion_Practical GitHub Actions.pdf",
-          "skills": ["CI/CD Pipelines", "GitHub Actions", "Automation Scripting"],
-          "icon": "⚙️",
-          "hours": "4 hours",
-          "desc": "Practical implementation of CI/CD pipelines, custom runners, environment variables, and build automation sequences.",
-          "learnt": "Workflow YAML setups, actions triggers, custom runners deployments, artifacts storage triggers, secure keys parameters."
-        },
-        {
-          "id": "GH-COPILOT",
-          "title": "Practical GitHub Copilot",
-          "issuer": "LinkedIn Learning × GitHub",
-          "issueDate": "2026",
-          "credential": "/certficates/CertificateOfCompletion_Practical GitHub Copilot.pdf",
-          "skills": ["GitHub Copilot", "AI Pair Programming", "Refactoring Helpers"],
-          "icon": "🤖",
-          "hours": "3 hours",
-          "desc": "Leveraging AI-assisted prompt triggers, context boundaries, code completions, and debug assistants inline.",
-          "learnt": "Prompt engineering patterns, security completions check, refactoring helpers, inline tests generation."
-        },
-        {
-          "id": "GH-SEARCH",
-          "title": "Practical GitHub Code Search",
-          "issuer": "LinkedIn Learning × GitHub",
-          "issueDate": "2026",
-          "credential": "/certficates/CertificateOfCompletion_Practical GitHub Code Search.pdf",
-          "skills": ["Code Auditing", "Search Syntax", "Repository Indexing"],
-          "icon": "🔍",
-          "hours": "3 hours",
-          "desc": "Advanced search syntax, indexing codes, locating security configurations, and scoping codebases.",
-          "learnt": "Regex code locator, scoping branches metadata, security audits mapping, cross-repo matching syntax."
-        },
-        {
-          "id": "GH-COLLAB",
-          "title": "Practical GitHub Project Management and Collaboration",
-          "issuer": "LinkedIn Learning × GitHub",
-          "issueDate": "2026",
-          "credential": "/certficates/CertificateOfCompletion_Practical GitHub Project Management and Collaboration.pdf",
-          "skills": ["Project Boards", "Review Gates", "Conflict Resolution"],
-          "icon": "👥",
-          "hours": "5 hours",
-          "desc": "Managing team project boards, issue trackers, pull request review gates, and branch protections.",
-          "learnt": "Milestones planning, branch locks policies, peer review workflows, conflict resolutions, tags management."
+          "id": "TMU-DESIGN-COMP-2023",
+          "title": "3rd Place — First-Year Engineering Student Design Competition",
+          "issuer": "Toronto Metropolitan University (TMU)",
+          "issueDate": "Nov 29, 2023",
+          "credential": "/certificate.jpg",
+          "image": "/certificate.jpg",
+          "skills": ["Engineering Design", "Sustainable Energy", "Team Leadership", "Prototyping", "Technical Pitching"],
+          "icon": "🏆",
+          "hours": "Term Project & Finals",
+          "desc": "Awarded 3rd Place overall for the project 'Sustainable Eco Powered House (SEPH)'. Selected as 1 of only 8 finalist teams across all first-year engineering sections at Toronto Metropolitan University.",
+          "learnt": "Rapid multidisciplinary prototyping, sustainable energy integration, system trade-off analysis, and presenting technical engineering solutions to faculty and industry judges."
         }
       ]
     },
     {
-      "name": "Data Analytics Series",
-      "description": "3 specialized courses covering Microsoft Power BI Desktop dashboard architectures and Python-powered visualization using Dash.",
+      "name": "Software Engineering & Systems Track",
+      "description": "Continuous specialized coursework in computer engineering, digital hardware, and modern full-stack development.",
       "items": [
         {
-          "id": "PBI-DESKTOP",
-          "title": "Learning Power BI Desktop",
-          "issuer": "Microsoft / LinkedIn Learning",
-          "issueDate": "2026",
-          "credential": "/certficates/CertificateOfCompletion_Learning Power BI Desktop.pdf",
-          "skills": ["Power BI Desktop", "Data Cleaning", "Relational Schemas"],
-          "icon": "📊",
-          "hours": "5 hours",
-          "desc": "Visualizing relational data, database connects, and cleaning modeling parameters.",
-          "learnt": "Power Query cleaning filters, data models schemas, measures calculations, interactive visuals grids."
+          "id": "TMU-BENG-2028",
+          "title": "BEng in Computer Engineering (Software Engineering Option)",
+          "issuer": "Toronto Metropolitan University (TMU)",
+          "issueDate": "2023 — 2028",
+          "credential": "https://www.torontomu.ca/",
+          "skills": ["Software Systems", "Digital Logic (VHDL)", "Data Structures & Algorithms", "Microprocessors", "Database Systems", "Object-Oriented Design", "Electronic Circuits"],
+          "icon": "🎓",
+          "hours": "5-Year Degree (Co-op)",
+          "desc": "Accredited Computer Engineering degree program with specialized Software Engineering concentration, bridging full-stack software development with low-level embedded hardware and digital silicon design.",
+          "learnt": "Full-stack software architectures, algorithmic complexity, combinational & sequential digital circuits, microprocessor assembly interfacing, SQL relational database systems, and electronic circuit analysis.",
+          "courses": [
+            { "code": "COE 318", "name": "Software Systems" },
+            { "code": "COE 328", "name": "Digital Systems" },
+            { "code": "COE 428", "name": "Engineering Algorithms and Data Structures" },
+            { "code": "COE 528", "name": "Object Oriented Eng Analysis and Design" },
+            { "code": "CPS 510", "name": "Database Systems I" },
+            { "code": "COE 538", "name": "Microprocessor Systems" }
+          ]
         },
         {
-          "id": "PBI-DASH",
-          "title": "Power BI Dashboards for Beginners",
-          "issuer": "Microsoft / LinkedIn Learning",
-          "issueDate": "2026",
-          "credential": "/certficates/CertificateOfCompletion_Power BI Dashboards for Beginners.pdf",
-          "skills": ["Dashboard Design", "Business Analytics", "Reporting Portals"],
-          "icon": "📈",
-          "hours": "4 hours",
-          "desc": "Designing dashboard metrics layouts, sharing portals, and analytics report setups.",
-          "learnt": "Visual layout rules, reports publishing setups, key metrics cards, slicers controllers."
+          "id": "TMU-SEM-5",
+          "title": "5th Semester: Database Systems & Microprocessors",
+          "issuer": "Toronto Metropolitan University (TMU)",
+          "issueDate": "Fall 2025",
+          "credential": "https://www.torontomu.ca/",
+          "skills": ["Relational Databases", "SQL", "Microprocessors", "Assembly", "Signals & Systems", "Probability & Statistics"],
+          "icon": "💾",
+          "hours": "Term Coursework",
+          "desc": "Advanced core semester focusing on relational database architecture, embedded microprocessor architectures, linear time-invariant systems, thermodynamics, and stochastic processes.",
+          "learnt": "Database schema modeling (DDL/DML, normalization, indexing, query planning), microprocessor CPU architecture (instruction sets, registers, interrupt handling, peripheral interfacing), and frequency-domain LTI signal analysis.",
+          "courses": [
+            { "code": "CPS 510", "name": "Database Systems I" },
+            { "code": "COE 538", "name": "Microprocessor Systems" },
+            { "code": "ELE 532", "name": "Signals and Systems I" },
+            { "code": "MEC 511", "name": "Thermodynamics and Fluids" },
+            { "code": "MTH 514", "name": "Probability and Stochastic Processes" }
+          ]
         },
         {
-          "id": "DASH-PYTHON",
-          "title": "Data Visualization in Python with Dash",
-          "issuer": "LinkedIn Learning",
-          "issueDate": "2026",
-          "credential": "/certficates/CertificateOfCompletion_Data Visualization in Python with Dash.pdf",
-          "skills": ["Dash Framework", "Plotly Charts", "Python callbacks"],
-          "icon": "🐍",
-          "hours": "6 hours",
-          "desc": "Building Python-powered analytics web dashboards using Plotly and Dash frameworks.",
-          "learnt": "Dash layout components, reactive input-output decorators callbacks, Plotly charts rendering, CSS skins styling."
+          "id": "TMU-SEM-4",
+          "title": "4th Semester: Algorithms & OOP Design",
+          "issuer": "Toronto Metropolitan University (TMU)",
+          "issueDate": "Winter 2025",
+          "credential": "https://www.torontomu.ca/",
+          "skills": ["Data Structures", "Algorithm Analysis", "OOP Design Patterns", "UML", "Electronic Circuits", "Discrete Math"],
+          "icon": "⚡",
+          "hours": "Term Coursework",
+          "desc": "Rigorous software engineering curriculum centered on asymptotic algorithm analysis, abstract data types, object-oriented design principles (GoF patterns), discrete structures, and analog electronic devices.",
+          "learnt": "Trees, heaps, graph traversals (Dijkstra, BFS/DFS), dynamic programming, algorithmic space/time trade-offs, SOLID principles, design patterns (Singleton, Factory, Observer, Decorator), BJT/MOSFET amplifier analysis, and discrete logic.",
+          "courses": [
+            { "code": "COE 428", "name": "Engineering Algorithms and Data Structures" },
+            { "code": "COE 528", "name": "Object Oriented Eng Analysis and Design" },
+            { "code": "ELE 404", "name": "Electronic Circuits I" },
+            { "code": "MTH 314", "name": "Discrete Mathematics for Engineers" },
+            { "code": "CMN 432", "name": "Communication in the Engineering Professions" }
+          ]
+        },
+        {
+          "id": "TMU-SEM-3",
+          "title": "3rd Semester: Software Systems & Digital Systems",
+          "issuer": "Toronto Metropolitan University (TMU)",
+          "issueDate": "Fall 2024",
+          "credential": "https://www.torontomu.ca/",
+          "skills": ["Java", "OOP", "Digital Logic", "VHDL", "FPGA", "Network Analysis", "Vector Calculus"],
+          "icon": "💻",
+          "hours": "Term Coursework",
+          "desc": "Core computer engineering semester introducing formal software systems engineering in Java, hardware description with VHDL on Intel Quartus/ModelSim, RLC network analysis, and vector calculus.",
+          "learnt": "Object-oriented program architecture in Java, combinational logic (multiplexers, ALUs, decoders), finite state machines (FSMs) in VHDL synthesized on FPGA boards, transient and sinusoidal circuit responses, and multi-variable differential equations.",
+          "courses": [
+            { "code": "COE 318", "name": "Software Systems" },
+            { "code": "COE 328", "name": "Digital Systems" },
+            { "code": "ELE 302", "name": "Electric Networks" },
+            { "code": "MTH 312", "name": "Differential Equations and Vector Calculus" },
+            { "code": "PCS 224", "name": "Solid State Physics" }
+          ]
+        },
+        {
+          "id": "TMU-SEM-2",
+          "title": "2nd Semester: Programming Fundamentals & Circuits",
+          "issuer": "Toronto Metropolitan University (TMU)",
+          "issueDate": "Winter 2024",
+          "credential": "https://www.torontomu.ca/",
+          "skills": ["C Programming", "Electric Circuit Analysis", "Calculus II", "Wave Physics", "Engineering Economics"],
+          "icon": "🔬",
+          "hours": "Term Coursework",
+          "desc": "Introduction to low-level procedural programming in C, DC/AC fundamental electric circuit analysis, multivariable integral calculus, and engineering economic evaluation.",
+          "learnt": "Pointers, memory management, arrays, and structs in C; Kirchhoff's laws (KCL/KVL), nodal and mesh circuit analysis, Thévenin and Norton equivalents, op-amps, Taylor series, multiple integrals, and engineering project financial viability.",
+          "courses": [
+            { "code": "CPS 188", "name": "Computer Programming Fundamentals" },
+            { "code": "ELE 202", "name": "Electric Circuit Analysis" },
+            { "code": "MTH 240", "name": "Calculus II" },
+            { "code": "PCS 125", "name": "Physics: Waves and Fields" },
+            { "code": "ECN 801", "name": "Principles of Engineering Economics" },
+            { "code": "Table A", "name": "Lower Level Liberal Studies" }
+          ]
+        },
+        {
+          "id": "TMU-SEM-1",
+          "title": "1st Semester: Engineering Foundations & Mathematics",
+          "issuer": "Toronto Metropolitan University (TMU)",
+          "issueDate": "Fall 2023",
+          "credential": "https://www.torontomu.ca/",
+          "skills": ["Engineering Problem Solving", "Calculus I", "Linear Algebra", "Classical Mechanics", "Technical Writing"],
+          "icon": "📐",
+          "hours": "Term Coursework",
+          "desc": "Foundational engineering semester developing rigorous analytical problem solving, matrix algebra, differential calculus, Newtonian mechanics, and technical engineering documentation.",
+          "learnt": "Vectors, matrices, eigenvalues/eigenvectors, systems of linear equations, limits, derivatives, optimization, Newtonian mechanics, equilibrium, work-energy theorem, and technical communication standards.",
+          "courses": [
+            { "code": "CEN 100", "name": "Introduction to Engineering" },
+            { "code": "CEN 199", "name": "Writing Skills" },
+            { "code": "MTH 140", "name": "Calculus I" },
+            { "code": "MTH 141", "name": "Linear Algebra" },
+            { "code": "PCS 211", "name": "Physics: Mechanics" },
+            { "code": "CHY 102", "name": "General Chemistry" }
+          ]
         }
       ]
     }
   ],
   "other": [
     {
-      "id": "FIN-QUIZ-2026",
-      "title": "National Financial Literacy Quiz 2026",
-      "issuer": "National Financial Authorities",
-      "issueDate": "2026",
-      "credential": "/certficates/Certificate_8777453162_29012026083726.pdf",
+      "id": "TMU-AWARD-SEPH",
+      "title": "Sustainable Eco Powered House (SEPH) — 3rd Place Finalist",
+      "issuer": "Toronto Metropolitan University",
+      "issueDate": "Nov 29, 2023",
+      "credential": "/certificate.jpg",
+      "image": "/certificate.jpg",
       "category": "achievements",
-      "badge": "FINANCE",
-      "icon": "🏆",
-      "hours": "2 hours",
-      "desc": "Certificate of Participation validating knowledge of core personal finance parameters, investment basics, and digital transaction securities.",
-      "learnt": "Digital payments safety checks, basic credit scoring parameters, interest rate indexes calculations, assets diversification rules.",
-      "skills": ["Financial Literacy", "Personal Finance Basics", "Digital Payments Security"]
+      "badge": "HONORS",
+      "icon": "🥇",
+      "hours": "Competition",
+      "desc": "Engineered an eco-powered sustainable housing model evaluated on renewable efficiency, architectural feasibility, and practical energy storage.",
+      "learnt": "Sustainable design metrics, collaborative hardware engineering, and presenting under competitive judging criteria.",
+      "skills": ["Sustainable Tech", "Hardware Prototyping", "Competitive Design"]
     }
   ]
 }

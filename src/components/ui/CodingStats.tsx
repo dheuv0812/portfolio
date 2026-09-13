@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
 import { useTheme } from '@/lib/ThemeContext';
 
-const GITHUB_USERNAME  = 'anakinskywalker0903';
-const LEETCODE_USERNAME = 'anakin_090305';
+const GITHUB_USERNAME  = 'dheuv0812';
+const LEETCODE_USERNAME = 'dheuv0812';
 
 /* ── LeetCode data via public GraphQL proxy ─────────────────────────────── */
 interface LCStats {

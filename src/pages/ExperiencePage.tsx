@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { FaCalendarAlt, FaAward, FaBuilding, FaHandshake, FaFileAlt, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa';
+import { FaCalendarAlt, FaAward, FaBuilding, FaFileAlt, FaExternalLinkAlt } from 'react-icons/fa';
 
 import { useSEO } from '@/hooks/useSEO';
 import internshipData from '@/data/experience.json';
-import clientWorkData from '@/data/client-work.json';
 
 const MOBILE_EXP_TABS = [
   { id: 'overview', label: '📋 Overview' },
@@ -14,12 +12,11 @@ const MOBILE_EXP_TABS = [
 ];
 
 export function ExperiencePage() {
-  useSEO('Experience', 'Review my professional timeline and work experience, including internships and freelance history.');
-  const [activeCategory, setActiveCategory] = useState<'internship' | 'freelance'>('internship');
+  useSEO('Experience', 'Review my professional timeline and work experience across official software engineering internships.');
   const [activeExpIdx, setActiveExpIdx] = useState(0);
   const [activeMobileTab, setActiveMobileTab] = useState<'overview' | 'achievements' | 'stack'>('overview');
 
-  const currentDataset = activeCategory === 'internship' ? internshipData : clientWorkData;
+  const currentDataset = internshipData;
   const activeExp: any = currentDataset[activeExpIdx] || currentDataset[0];
 
   return (
@@ -39,40 +36,8 @@ export function ExperiencePage() {
             <span className="text-[var(--c-accent-2)]">EXPERIENCE</span>
           </h1>
           <p className="text-black/50 text-xs sm:text-sm max-w-md font-medium leading-relaxed mt-3">
-            A structured repository separating official internships from freelance client work.
+            A structured repository showcasing official software engineering internships, core responsibilities, and technical achievements.
           </p>
-        </div>
-
-        {/* Category Toggle Tabs (Internships vs Freelance) */}
-        <div className="flex gap-3 mb-6 border-b border-black/10 pb-4">
-          <button
-            onClick={() => {
-              setActiveCategory('internship');
-              setActiveExpIdx(0);
-              setActiveMobileTab('overview');
-            }}
-            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer flex items-center gap-2 ${
-              activeCategory === 'internship'
-                ? 'bg-black text-[var(--c-accent)] border-black shadow-[3px_3px_0_var(--c-accent-2)]'
-                : 'bg-[var(--c-bg-surface)] text-black border-black/10 hover:border-black'
-            }`}
-          >
-            <FaBuilding className="w-3.5 h-3.5" /> Internships ({internshipData.length})
-          </button>
-          <button
-            onClick={() => {
-              setActiveCategory('freelance');
-              setActiveExpIdx(0);
-              setActiveMobileTab('overview');
-            }}
-            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer flex items-center gap-2 ${
-              activeCategory === 'freelance'
-                ? 'bg-black text-[var(--c-accent)] border-black shadow-[3px_3px_0_var(--c-accent-2)]'
-                : 'bg-[var(--c-bg-surface)] text-black border-black/10 hover:border-black'
-            }`}
-          >
-            <FaHandshake className="w-3.5 h-3.5" /> Freelance ({clientWorkData.length})
-          </button>
         </div>
 
         {/* Mobile View: Swiper + Tabbed Card */}
@@ -105,7 +70,7 @@ export function ExperiencePage() {
           <AnimatePresence mode="wait">
             {activeExp && (
               <motion.div
-                key={`${activeCategory}-${activeExpIdx}`}
+                key={activeExpIdx}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
@@ -217,14 +182,6 @@ export function ExperiencePage() {
                           <FaFileAlt className="w-3 h-3" /> Offer Letter
                         </a>
                       )}
-                      {activeCategory === 'freelance' && (
-                        <Link
-                          to="/client-work"
-                          className="text-[9.5px] font-black uppercase bg-[var(--c-accent)] border border-black py-2 rounded-xl text-black flex items-center justify-center gap-1.5 mt-1"
-                        >
-                          Detailed View <FaArrowRight className="w-3 h-3" />
-                        </Link>
-                      )}
                     </div>
                   )}
                 </div>
@@ -233,161 +190,100 @@ export function ExperiencePage() {
           </AnimatePresence>
         </div>
 
-        {/* Desktop View: Full Expanded Timeline / Square Grid */}
+        {/* Desktop View: Full Expanded Timeline */}
         <div className="hidden lg:block w-full">
-          {activeCategory === 'internship' ? (
-            <div className="flex flex-col gap-8 max-w-4xl mx-auto">
-              {internshipData.map((exp, idx) => (
-                <motion.div
-                  key={exp.company}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className="border-[3px] border-black rounded-[2rem] overflow-hidden shadow-[6px_6px_0px_0px_var(--c-shadow)] hover:shadow-[10px_10px_0px_0px_var(--c-accent-2)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-300 bg-white/70 backdrop-blur-md p-6 sm:p-8 flex flex-col gap-5 text-left"
-                >
-                  {/* Header */}
-                  <div className="flex items-start justify-between gap-4 border-b border-black/10 pb-5">
-                    <div>
-                      <span className="text-[9px] font-black uppercase tracking-widest text-[var(--c-accent-2)] mb-1 block">
-                        {exp.type}
-                      </span>
-                      <h3 className="text-2xl font-black uppercase tracking-tight leading-none text-black">
-                        {exp.role}
-                      </h3>
-                      {(exp as any).companyUrl ? (
-                        <a
-                          href={(exp as any).companyUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-xs sm:text-sm font-black uppercase tracking-wider text-[var(--c-accent-2)] hover:text-black hover:underline inline-flex items-center gap-1.5 mt-1.5 transition-colors"
-                        >
-                          <span>{exp.company}</span>
-                          <FaExternalLinkAlt className="w-3 h-3 text-[var(--c-accent-2)]" />
-                        </a>
-                      ) : (
-                        <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-black/50 block mt-1.5">
-                          {exp.company}
-                        </span>
-                      )}
-                    </div>
-                    <div className="flex items-center gap-2 text-xs font-bold text-black/70 bg-black/5 px-3.5 py-1.5 rounded-full border border-black/10 flex-shrink-0">
-                      <FaCalendarAlt className="w-3.5 h-3.5 text-[var(--c-accent-2)]" />
-                      <span>{exp.duration}</span>
-                    </div>
-                  </div>
-
-                  {/* Responsibilities */}
-                  <div className="flex flex-col gap-2.5">
-                    <span className="text-[9px] font-black text-[var(--c-accent-2)] tracking-widest uppercase block">
-                      Core Responsibilities
+          <div className="flex flex-col gap-8 max-w-4xl mx-auto">
+            {internshipData.map((exp, idx) => (
+              <motion.div
+                key={exp.company}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="border-[3px] border-black rounded-[2rem] overflow-hidden shadow-[6px_6px_0px_0px_var(--c-shadow)] hover:shadow-[10px_10px_0px_0px_var(--c-accent-2)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-300 bg-white/70 backdrop-blur-md p-6 sm:p-8 flex flex-col gap-5 text-left"
+              >
+                {/* Header */}
+                <div className="flex items-start justify-between gap-4 border-b border-black/10 pb-5">
+                  <div>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-[var(--c-accent-2)] mb-1 block">
+                      {exp.type}
                     </span>
-                    <ul className="flex flex-col gap-2 text-xs text-black/75 font-medium leading-relaxed">
-                      {exp.responsibilities.map((point, i) => (
-                        <li key={i} className="flex items-start gap-2.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--c-accent-2)] mt-1.5 flex-shrink-0" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Achievements */}
-                  <div className="flex flex-col gap-2.5">
-                    <span className="text-[9px] font-black text-[var(--c-accent)] bg-black px-3 py-1.5 rounded-full tracking-widest uppercase block w-fit border border-black">
-                      Key Achievements
-                    </span>
-                    <ul className="flex flex-col gap-2 text-xs text-black/80 font-bold leading-relaxed">
-                      {exp.achievements.map((ach, i) => (
-                        <li key={i} className="flex items-center gap-2">
-                          <FaAward className="w-3.5 h-3.5 text-[var(--c-accent-2)] flex-shrink-0" />
-                          <span>{ach}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Tools footer */}
-                  <div className="flex flex-wrap items-center gap-1.5 pt-4 border-t border-black/10">
-                    {exp.technologies.map(t => (
-                      <span key={t} className="text-[8.5px] font-black uppercase border border-black/10 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black/70">
-                        {t}
-                      </span>
-                    ))}
-                    {(exp as any).offerLetter && (
+                    <h3 className="text-2xl font-black uppercase tracking-tight leading-none text-black">
+                      {exp.role}
+                    </h3>
+                    {(exp as any).companyUrl ? (
                       <a
-                        href={(exp as any).offerLetter}
+                        href={(exp as any).companyUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="ml-auto text-[9.5px] font-black uppercase tracking-wider bg-[var(--c-accent)] border-2 border-black px-3.5 py-1.5 rounded-full text-black hover:bg-black hover:text-[var(--c-accent)] transition-colors flex items-center gap-1.5 shadow-sm flex-shrink-0"
+                        className="text-xs sm:text-sm font-black uppercase tracking-wider text-[var(--c-accent-2)] hover:text-black hover:underline inline-flex items-center gap-1.5 mt-1.5 transition-colors"
                       >
-                        <FaFileAlt className="w-2.5 h-2.5" /> Offer Letter
+                        <span>{exp.company}</span>
+                        <FaExternalLinkAlt className="w-3 h-3 text-[var(--c-accent-2)]" />
                       </a>
+                    ) : (
+                      <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-black/50 block mt-1.5">
+                        {exp.company}
+                      </span>
                     )}
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          ) : (
-            /* Square-Shaped Cards Grid for Freelance Client Work */
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-              {clientWorkData.map((exp, idx) => (
-                <motion.div
-                  key={exp.client}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className="border-[3px] border-black rounded-[2rem] shadow-[6px_6px_0px_0px_var(--c-shadow)] hover:shadow-[10px_10px_0px_0px_var(--c-accent-2)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 bg-white/70 backdrop-blur-md p-6 flex flex-col justify-between aspect-square relative group text-left"
-                >
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between gap-1.5 border-b border-black/10 pb-3 min-h-[42px]">
-                      <span className="text-[8px] sm:text-[8.5px] font-black uppercase tracking-wider text-black bg-[var(--c-accent)] px-2.5 py-1 rounded-full border border-black shadow-xs leading-none flex-shrink min-w-0 truncate">
-                        {exp.industry}
-                      </span>
-                      <span className="text-[8.5px] sm:text-[9px] font-black text-black bg-black/10 px-2.5 py-1 rounded-full border border-black/15 uppercase tracking-wider leading-none flex-shrink-0">
-                        {exp.timeline}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-black uppercase tracking-tight text-black leading-tight">
-                        {exp.client}
-                      </h3>
-                      <span className="text-xs font-black uppercase tracking-wider text-black/80 block mt-0.5">
-                        {exp.role}
-                      </span>
-                    </div>
-
-                    <p className="text-xs text-black/85 font-bold leading-relaxed line-clamp-3 mt-1">
-                      {exp.outcome}
-                    </p>
+                  <div className="flex items-center gap-2 text-xs font-bold text-black/70 bg-black/5 px-3.5 py-1.5 rounded-full border border-black/10 flex-shrink-0">
+                    <FaCalendarAlt className="w-3.5 h-3.5 text-[var(--c-accent-2)]" />
+                    <span>{exp.duration}</span>
                   </div>
+                </div>
 
-                  <div className="flex flex-col gap-3 mt-4 pt-3 border-t border-black/10">
-                    <div className="flex flex-wrap gap-1.5">
-                      {exp.stack.slice(0, 4).map(t => (
-                        <span key={t} className="text-[9px] font-black uppercase border-2 border-black/15 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black shadow-xs">
-                          {t}
-                        </span>
-                      ))}
-                      {exp.stack.length > 4 && (
-                        <span className="text-[9px] font-black text-black bg-black/5 border border-black/10 px-2 py-0.5 rounded-full">+{exp.stack.length - 4}</span>
-                      )}
-                    </div>
+                {/* Responsibilities */}
+                <div className="flex flex-col gap-2.5">
+                  <span className="text-[9px] font-black text-[var(--c-accent-2)] tracking-widest uppercase block">
+                    Core Responsibilities
+                  </span>
+                  <ul className="flex flex-col gap-2 text-xs text-black/75 font-medium leading-relaxed">
+                    {exp.responsibilities.map((point, i) => (
+                      <li key={i} className="flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--c-accent-2)] mt-1.5 flex-shrink-0" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                    <Link
-                      to="/client-work"
-                      className="w-full py-3 px-4 bg-[var(--c-accent)] hover:bg-black text-black hover:text-[var(--c-accent)] border-2 border-black rounded-full font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 shadow-[2px_2px_0_#000] cursor-pointer"
+                {/* Achievements */}
+                <div className="flex flex-col gap-2.5">
+                  <span className="text-[9px] font-black text-[var(--c-accent)] bg-black px-3 py-1.5 rounded-full tracking-widest uppercase block w-fit border border-black">
+                    Key Achievements
+                  </span>
+                  <ul className="flex flex-col gap-2 text-xs text-black/80 font-bold leading-relaxed">
+                    {exp.achievements.map((ach, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <FaAward className="w-3.5 h-3.5 text-[var(--c-accent-2)] flex-shrink-0" />
+                        <span>{ach}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Tools footer */}
+                <div className="flex flex-wrap items-center gap-1.5 pt-4 border-t border-black/10">
+                  {exp.technologies.map(t => (
+                    <span key={t} className="text-[8.5px] font-black uppercase border border-black/10 bg-[var(--c-bg-surface)] px-2.5 py-1 rounded-full text-black/70">
+                      {t}
+                    </span>
+                  ))}
+                  {(exp as any).offerLetter && (
+                    <a
+                      href={(exp as any).offerLetter}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ml-auto text-[9.5px] font-black uppercase tracking-wider bg-[var(--c-accent)] border-2 border-black px-3.5 py-1.5 rounded-full text-black hover:bg-black hover:text-[var(--c-accent)] transition-colors flex items-center gap-1.5 shadow-sm flex-shrink-0"
                     >
-                      <span>Detailed View</span>
-                      <FaArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
+                      <FaFileAlt className="w-2.5 h-2.5" /> Offer Letter
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
       </div>

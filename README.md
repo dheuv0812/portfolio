@@ -1,24 +1,24 @@
-# Rohit Dubey — Engineering Portfolio Hub (2026)
+# Dhruv Singh — Engineering Portfolio Hub (2026)
 
-A premium, high-performance web portfolio built to showcase personal engineering milestones, production applications, verified internship experience, and professional client case studies.
+A premium, high-performance web portfolio built for Dhruv Singh to showcase software engineering milestones, full-stack web applications, hardware and embedded systems projects, academic achievements at Toronto Metropolitan University (TMU), and Co-op experience.
 
 ## 🚀 Tech Stack
 
 *   **Framework**: React 19 (TypeScript)
 *   **Build Tool**: Vite (optimized asset pipelining)
-*   **Styling**: Tailwind CSS (custom utility skins)
-*   **Animations**: Motion (Framer Motion) & Custom CSS Keyframes
-*   **3D Elements**: React Three Fiber & Three.js
-*   **Hosting & Deployment**: Vercel
+*   **Styling**: Tailwind CSS v4 with custom Crimson Red & Cobalt Blue theme variables
+*   **Animations**: Motion (Framer Motion), GSAP, & Custom CSS Keyframes
+*   **3D Elements**: React Three Fiber & Three.js (interactive 3D ID lanyard card)
+*   **Deployment**: Vercel / Static Hosting
 
 ## 📂 Core Pages & Architecture
 
-1.  **Home Page (`/`)**: Cinematic opening preloader, dynamic availability indicators, interactive skill gauges, and featured engineering showcases.
-2.  **Projects (`/projects`)**: Scoped grid displaying production builds (NoteLift, NoteLift-AI, Brainstormzz, SSB Simulator, InstaSave, RailDost) with verified contribution notes.
-3.  **Client Work (`/client-work`)**: Clean client case studies page featuring DevInterio website redesign and upcoming CGI architecture portals (Jaas Visual).
-4.  **Experience (`/experience`)**: Chronological timeline displaying verified AKS Ecosystem Web Development Internship.
-5.  **Learning & Certifications (`/learning-archive`)**: Categorized certification registry featuring Featured credentials (Oracle Java, IIT NPTEL Cloud, UMich Applied ML, GitHub LinkedIn) and learning collection pathways. Includes stateful inline PDF viewing without page redirections.
-6.  **Global Shell Navigation**: Unified `Layout` component with a responsive floating `← Back to Home` breadcrumb button that dynamically hides on the home view.
+1.  **Home Page (`/`)**: Dynamic hero with 3D interactive lanyard badge, Toronto live time clock, brutalist skill gauges, origin deck, and featured engineering showcases.
+2.  **Projects (`/projects`)**: Deep-dive case studies displaying Brainstormzz, Urban Carpool Matching System, Rover Arm Controller & CV Test Automation, 8-Bit Processor, Bookstore Application, and Three-Stage MOSFET Voltage Amplifier with verified impact metrics.
+3.  **Client Work (`/client-work`)**: Academic and startup client outcomes including TMU interactive course engineering shells and carpool network transit modeling.
+4.  **Experience (`/experience`)**: Chronological timeline displaying verified TMU Co-op Program Assistant role.
+5.  **Learning & Certifications (`/certifications`)**: Categorized certification registry featuring Angela Yu Full Stack Web Development and TMU First-Year Engineering Student Design Competition Award.
+6.  **Global Shell Navigation**: Unified `Layout` component with responsive bubble menu navigation, skin switcher, social sidebar, and multi-version resume viewer.
 
 ## 🛠️ Local Development & Commands
 

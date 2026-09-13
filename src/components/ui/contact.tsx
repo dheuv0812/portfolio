@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { FaCopy, FaCheck, FaPaperPlane, FaClock, FaMapMarkerAlt, FaBolt, FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { FaCopy, FaCheck, FaPaperPlane, FaClock, FaMapMarkerAlt, FaBolt, FaEnvelope, FaLinkedin, FaGithub, FaFilePdf } from 'react-icons/fa';
 import { Grainient } from '@/components/ui/Grainient';
 import { trackContactFormSubmit } from '@/lib/analytics';
 import { useTheme } from '@/lib/ThemeContext';
@@ -25,18 +25,18 @@ export const ContactSection = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState('');
 
-  // Live IST Clock
+  // Live Toronto Clock
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
       const options: Intl.DateTimeFormatOptions = {
-        timeZone: 'Asia/Kolkata',
+        timeZone: 'America/Toronto',
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
         hour12: false
       };
-      setCurrentTime(new Intl.DateTimeFormat('en-GB', options).format(now));
+      setCurrentTime(new Intl.DateTimeFormat('en-CA', options).format(now));
     };
     updateTime();
     const interval = setInterval(updateTime, 1000);
@@ -44,7 +44,7 @@ export const ContactSection = () => {
   }, []);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('rohitdubey39005@gmail.com');
+    navigator.clipboard.writeText('dhruv.singh@torontomu.ca');
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -168,9 +168,9 @@ export const ContactSection = () => {
                 </span>
                 <span className="w-2.5 h-2.5 rounded-full bg-[var(--c-accent)] animate-pulse" />
               </div>
-              
+
               <p className="font-black text-sm md:text-base text-white tracking-tight break-all mb-4 select-all">
-                rohitdubey39005@gmail.com
+                singhdhruv1109@gmail.com
               </p>
 
               <div className="flex items-center gap-2">
@@ -192,7 +192,7 @@ export const ContactSection = () => {
                   )}
                 </button>
                 <a
-                  href="mailto:rohitdubey39005@gmail.com"
+                  href="mailto:dhruv.singh@torontomu.ca"
                   className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[var(--c-bg-surface)] hover:text-black border border-white/20 flex items-center justify-center text-white transition-colors"
                   title="Open in Mail app"
                 >
@@ -210,15 +210,15 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-[8px] font-black uppercase tracking-widest text-black/40">LOCATION</p>
-                    <p className="font-extrabold text-xs text-black">India • Working Worldwide</p>
+                    <p className="font-extrabold text-xs text-black">Toronto, Canada • Working Worldwide</p>
                   </div>
                 </div>
                 <span className="text-[9px] font-black text-[var(--c-accent-2)] bg-[var(--c-accent-2)]/10 px-2.5 py-1 rounded-full uppercase">
-                  Remote
+                  Hybrid / Remote
                 </span>
               </div>
 
-              {/* Live IST Time */}
+              {/* Live Toronto Time */}
               <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[var(--c-bg-surface)] border-2 border-black/5 hover:border-black/20 transition-all">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-xl bg-black flex items-center justify-center text-[var(--c-accent)] flex-shrink-0">
@@ -226,11 +226,11 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-[8px] font-black uppercase tracking-widest text-black/40">CURRENT LOCAL TIME</p>
-                    <p className="font-extrabold text-xs text-black font-mono">{currentTime || 'IST (UTC+5:30)'}</p>
+                    <p className="font-extrabold text-xs text-black font-mono">{currentTime || 'Toronto (EDT/EST)'}</p>
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-1 text-[8px] font-black text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full uppercase border border-emerald-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" /> IST
+                <span className="inline-flex items-center gap-1 text-[8px] font-black text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase border border-blue-200">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping" /> TORONTO
                 </span>
               </div>
 
@@ -253,9 +253,9 @@ export const ContactSection = () => {
               </p>
               <div className="flex items-center justify-center gap-2 flex-wrap">
                 {[
-                  { label: 'GitHub', icon: FaGithub, href: 'https://github.com/anakinskywalker0903' },
-                  { label: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/' },
-                  { label: 'WhatsApp', icon: FaWhatsapp, href: 'https://wa.me/918777453162' },
+                  { label: 'GitHub', icon: FaGithub, href: 'https://github.com/dheuv0812' },
+                  { label: 'LinkedIn', icon: FaLinkedin, href: 'https://linkedin.com/in/dhruv0812' },
+                  { label: 'Resume', icon: FaFilePdf, href: 'https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing' },
                 ].map(s => {
                   const Icon = s.icon;
                   return (
@@ -264,7 +264,7 @@ export const ContactSection = () => {
                       href={s.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border-2 border-black text-[10px] font-black bg-[var(--c-bg-surface)] text-black hover:bg-[var(--c-accent)] hover:shadow-[3px_3px_0_var(--c-shadow)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border-2 border-black text-[10px] font-black bg-[var(--c-bg-surface)] text-black hover:bg-[var(--c-accent)] hover:text-white hover:shadow-[3px_3px_0_var(--c-shadow)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
                     >
                       <Icon className="w-3.5 h-3.5" />
                       <span>{s.label}</span>
@@ -296,7 +296,7 @@ export const ContactSection = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                
+
                 {/* Topic Selector Pills */}
                 <div>
                   <label className="text-[9px] font-black uppercase tracking-widest text-black/40 block mb-2">
@@ -308,11 +308,10 @@ export const ContactSection = () => {
                         type="button"
                         key={topic.id}
                         onClick={() => setForm({ ...form, subject: topic.id })}
-                        className={`px-3 py-2.5 rounded-xl border-2 text-[10px] font-black uppercase text-left transition-all cursor-pointer ${
-                          form.subject === topic.id
+                        className={`px-3 py-2.5 rounded-xl border-2 text-[10px] font-black uppercase text-left transition-all cursor-pointer ${form.subject === topic.id
                             ? `bg-[var(--c-bg-alt)] text-[var(--c-accent)] border-black shadow-[2px_2px_0_var(--c-accent)]`
                             : 'bg-[var(--c-bg-surface)] text-black border-black/10 hover:border-black'
-                        }`}
+                          }`}
                       >
                         {topic.label}
                       </button>

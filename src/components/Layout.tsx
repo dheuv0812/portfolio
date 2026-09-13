@@ -31,7 +31,7 @@ const Logo = () => {
         }}
       >
         <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
-        ROHIT
+        DHRUV
       </Link>
     </div>
   );
@@ -43,14 +43,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const { toggleSwitcher, activeTheme } = useTheme();
 
   const menuItems = [
-    { label: 'home',           href: '/',               ariaLabel: 'Home',           rotation: -6, translateY: -14, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
-    { label: 'about',          href: '#about',          ariaLabel: 'About',          rotation:  5, translateY:  12, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
-    { label: 'skills',         href: '/skills',         ariaLabel: 'Skills',         rotation: -4, translateY:  -8, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
-    { label: 'projects',       href: '/projects',       ariaLabel: 'Projects',       rotation:  6, translateY:  16, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
-    { label: 'client work',    href: '/client-work',    ariaLabel: 'Client Work',    rotation: -5, translateY: -12, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
-    { label: 'experience',     href: '/experience',     ariaLabel: 'Experience',     rotation:  7, translateY:  10, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
-    { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, translateY:  -8, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
-    { label: 'contact',        href: '#contact',        ariaLabel: 'Contact',        rotation:  5, translateY:  14, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
+    { label: 'home', href: '/', ariaLabel: 'Home', rotation: -6, translateY: -14, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
+    { label: 'about', href: '#about', ariaLabel: 'About', rotation: 5, translateY: 12, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
+    { label: 'skills', href: '/skills', ariaLabel: 'Skills', rotation: -4, translateY: -8, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
+    { label: 'projects', href: '/projects', ariaLabel: 'Projects', rotation: 6, translateY: 16, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
+    { label: 'experience', href: '/experience', ariaLabel: 'Experience', rotation: 7, translateY: 10, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
+    { label: 'certifications', href: '/certifications', ariaLabel: 'Certifications', rotation: -4, translateY: -8, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
+    { label: 'contact', href: '#contact', ariaLabel: 'Contact', rotation: 5, translateY: 14, hoverStyles: { bgColor: activeTheme.vars['--c-accent'], textColor: activeTheme.vars['--c-accent-text'] } },
   ];
 
   useEffect(() => {
@@ -66,9 +65,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const accent  = 'var(--c-accent)';
+  const accent = 'var(--c-accent)';
   const accent2 = 'var(--c-accent-2)';
-  const shadow  = 'var(--c-shadow)';
+  const shadow = 'var(--c-shadow)';
 
   return (
     <SmoothScroll>
@@ -199,17 +198,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       fontFamily: '"Arial Black", Impact, sans-serif',
                     }}
                   >
-                    <span className="text-xs font-black tracking-widest uppercase">ROHIT DUBEY</span>
+                    <span className="text-xs font-black tracking-widest uppercase">DHRUV SINGH</span>
                   </div>
                   <p className="text-xs max-w-sm font-semibold leading-relaxed" style={{ color: 'var(--c-text-muted)', fontFamily: 'monospace' }}>
-                    // Full-Stack &amp; AI Engineer portfolio showcasing real-world engineering case studies, verified client outcomes, and core toolkit.
+                    // Full-stack developer building web applications and AI-integrated products, with hands-on range into embedded systems and hardware.
                   </p>
                   <div className="flex gap-2.5 mt-1">
                     {[
-                      { icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/', label: 'LinkedIn Profile' },
-                      { icon: FaGithub,   href: 'https://github.com/anakinskywalker0903',      label: 'GitHub Profile' },
-                      { icon: MdEmail,    href: 'mailto:rohitdubey39005@gmail.com',             label: 'Email Contact' },
-                      { icon: FaWhatsapp, href: 'https://wa.me/918777453162',                   label: 'WhatsApp Chat' },
+                      { icon: FaLinkedin, href: 'https://linkedin.com/in/dhruv0812', label: 'LinkedIn Profile' },
+                      { icon: FaGithub, href: 'https://github.com/dheuv0812', label: 'GitHub Profile' },
+                      { icon: MdEmail, href: 'mailto:dhruv.singh@torontomu.ca', label: 'Email Contact' },
                     ].map((s, i) => {
                       const Icon = s.icon;
                       return (
@@ -294,12 +292,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 {/* Profile card with compact wrapper */}
                 <div className="flex justify-center xl:justify-end md:col-span-2 xl:col-span-1 overflow-visible pr-8 xl:pr-0 origin-top scale-90 sm:scale-95 xl:scale-100">
                   <ProfileCard
-                    name="Rohit Dubey"
-                    title="AI & Full-Stack Developer"
-                    handle="rohitdubey"
-                    status="Building something"
+                    name="Dhruv Singh"
+                    title="Full-Stack & Systems Developer"
+                    handle="dhruv_08.12"
+                    status="Building Products"
                     contactText="Hire Me"
-                    avatarUrl="/rohit.jpg"
+                    avatarUrl="/dhruv.jpg"
                     showUserInfo={true}
                     enableTilt={true}
                     enableMobileTilt={false}
@@ -320,7 +318,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--c-text-muted)', fontFamily: 'monospace' }}
               >
                 <p className="font-bold uppercase tracking-wider">
-                  © {new Date().getFullYear()} ROHIT DUBEY. ALL RIGHTS RESERVED.
+                  © {new Date().getFullYear()} DHRUV SINGH. ALL RIGHTS RESERVED.
                 </p>
                 <div
                   className="px-3 py-1 border border-black/20 rounded-md font-black uppercase tracking-widest text-[10px]"
@@ -338,18 +336,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
                 {/* Branding Column */}
                 <div className="md:col-span-2 xl:col-span-2 flex flex-col gap-4">
-                  <span className="inline-block bg-[#00F5A0] text-black font-black text-xs px-4 py-1.5 rounded-full w-fit tracking-wider uppercase">
-                    ROHIT DUBEY
+                  <span className="inline-block bg-[var(--c-accent)] text-white font-black text-xs px-4 py-1.5 rounded-full w-fit tracking-wider uppercase">
+                    DHRUV SINGH
                   </span>
-                  <p className="text-white/50 text-sm max-w-sm font-medium leading-relaxed">
-                    A personal product and portfolio hub built to demonstrate engineering case studies, client outcomes, and core competencies.
+                  <p className="text-white/70 text-sm max-w-sm font-medium leading-relaxed">
+                    Full-stack developer building web applications and AI-integrated products, with hands-on range into embedded systems and hardware.
                   </p>
                   <div className="flex gap-2.5 mt-2">
                     {[
-                      { icon: FaLinkedin, href: 'https://www.linkedin.com/in/rohit--dubey03/', label: 'LinkedIn Profile' },
-                      { icon: FaGithub, href: 'https://github.com/anakinskywalker0903', label: 'GitHub Profile' },
-                      { icon: MdEmail, href: 'mailto:rohitdubey39005@gmail.com', label: 'Email Contact' },
-                      { icon: FaWhatsapp, href: 'https://wa.me/918777453162', label: 'WhatsApp Chat' },
+                      { icon: FaLinkedin, href: 'https://linkedin.com/in/dhruv0812', label: 'LinkedIn Profile' },
+                      { icon: FaGithub, href: 'https://github.com/dheuv0812', label: 'GitHub Profile' },
+                      { icon: MdEmail, href: 'mailto:singhdhruv1109@gmail.com', label: 'Email Contact' },
                     ].map((social, i) => {
                       const Icon = social.icon;
                       return (
@@ -375,49 +372,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </h4>
                   <Link to="/" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Home / About</Link>
                   <Link to="/skills" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Toolkit</Link>
-                  <Link to="/experience" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Timeline</Link>
+
                   <Link to="/client-work" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Client Work</Link>
                   <Link to="/certifications" className="text-white/60 hover:text-white text-sm font-bold w-fit transition-colors">Learning Archive</Link>
                 </div>
 
-                <div className="flex flex-col gap-3">
-                  <h4 className="text-[#00F5A0] font-black text-xs tracking-widest uppercase mb-1">
-                    DOCUMENTS
-                  </h4>
-                  <button
-                    onClick={() => setResumeOpen(true)}
-                    className="text-left text-white/60 hover:text-white text-sm font-bold w-fit transition-colors cursor-pointer animate-none"
-                  >
-                    AI Engineer Resume
-                  </button>
-                  <button
-                    onClick={() => setResumeOpen(true)}
-                    className="text-left text-white/60 hover:text-white text-sm font-bold w-fit transition-colors cursor-pointer animate-none"
-                  >
-                    Full Stack / SDE Resume
-                  </button>
-                  <button
-                    onClick={() => setResumeOpen(true)}
-                    className="text-left text-white/60 hover:text-white text-sm font-bold w-fit transition-colors cursor-pointer animate-none"
-                  >
-                    Frontend Developer Resume
-                  </button>
-                </div>
+
 
                 {/* Profile Card Column */}
                 <div className="flex justify-center xl:justify-end md:col-span-2 xl:col-span-1 overflow-visible mt-6 xl:mt-0 pr-8 xl:pr-0">
                   <ProfileCard
-                    name="Rohit Dubey"
-                    title="AI & Full-Stack Developer"
-                    handle="rohitdubey"
-                    status="Building something"
-                    contactText="Hire Me"
-                    avatarUrl="/rohit.jpg"
+                    name="Dhruv Singh"
+                    title="Full-Stack Developer"
+                    handle="dhruv0812"
+                    status="Open for Roles"
+                    contactText="Contact Me"
+                    avatarUrl="/dhruv.jpg"
                     showUserInfo={true}
                     enableTilt={true}
                     enableMobileTilt={false}
                     behindGlowEnabled={true}
-                    behindGlowColor="rgba(0, 245, 160, 0.15)"
+                    behindGlowColor="rgba(255, 42, 85, 0.25)"
                     innerGradient="transparent"
                     onContactClick={() => {
                       if (window.location.pathname !== '/') {
@@ -437,10 +412,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
               <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-white/10 gap-4 text-white/40 text-xs">
                 <p className="font-bold uppercase tracking-wider">
-                  © {new Date().getFullYear()} ROHIT DUBEY. ALL RIGHTS RESERVED.
+                  © {new Date().getFullYear()} DHRUV SINGH. ALL RIGHTS RESERVED.
                 </p>
-                <p className="font-black uppercase tracking-widest text-[#00F5A0]/60">
-                  v3.1 • BUILT WITH REACT, THREE.JS, &amp; GSAP
+                <p className="font-black uppercase tracking-widest text-[var(--c-accent)]">
+                  BUILT WITH REACT, THREE.JS, &amp; GSAP • TORONTO, ON
                 </p>
               </div>
             </div>

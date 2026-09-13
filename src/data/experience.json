@@ -1,23 +1,22 @@
 [
   {
-    "role": "Web Development Intern",
-    "company": "AKS Ecosystem (aksecosystem.in)",
-    "companyUrl": "https://aksecosystem.in/",
-    "duration": "May 31, 2026 — Present",
-    "type": "Internship (Ecosystem Frontend)",
+    "role": "Co-op Program Assistant",
+    "company": "Career, Co-op & Student Success Centre, TMU",
+    "companyUrl": "https://www.torontomu.ca/career-coop-student-success/",
+    "duration": "Sept 2025 — Aug 2026",
+    "type": "Co-op & Technical Administration",
     "responsibilities": [
-      "Engineering the responsive landing portal and core dashboard interfaces for the AKS product ecosystem, handling multiple simultaneous web projects.",
-      "Developed core frontend versions for Upsilon and Upsilon Landing sites using React and Tailwind CSS, designing custom configuration themes and spacing rules.",
-      "Configured Google Cloud Console OAuth authentication credentials, client IDs, and redirect URI handlers for aksquestion.",
-      "Constructed database schemas, established tables, and mapped NeonDB PostgreSQL connection adapters.",
-      "Collaborated daily within a team of 4 tech developers, reporting directly to the Tech Lead and coordinating requirements updates."
+      "Engineered and constructed 8 custom D2L (Brightspace) course shells completely from scratch, streamlining onboarding curriculums and module delivery for engineering students.",
+      "Migrated and provisioned 500+ student accounts with zero security discrepancies, automating data batching and permission assignments across university systems.",
+      "Managed and audited employment records for 200+ active co-op students, collaborating with academic advisors and industry employers to maintain seamless compliance.",
+      "Streamlined technical workflows, data validation spreadsheets, and communications pipelines across cross-functional departmental teams."
     ],
-    "technologies": ["React", "Tailwind CSS", "PostgreSQL", "Vite", "Google Console", "Git"],
+    "technologies": ["D2L Brightspace", "Account Provisioning", "Excel (VLOOKUP & Formulas)", "Data Migration", "Student Systems"],
     "achievements": [
-      "Successfully launched Upsilon Landing version and integrated dark mode features.",
-      "Handled Google OAuth credentials setups.",
-      "Constructed NeonDB database table columns."
+      "Built 8 custom D2L Brightspace course shells from scratch.",
+      "Migrated and provisioned 500+ student accounts with flawless record integrity.",
+      "Managed employment and co-op records for 200+ students across faculties."
     ],
-    "offerLetter": "/aks-offer-letter.pdf"
+    "offerLetter": null
   }
 ]

@@ -1,22 +1,20 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { FaBuilding, FaHandshake, FaCalendarAlt, FaAward } from 'react-icons/fa';
+import { FaBuilding, FaCalendarAlt, FaAward } from 'react-icons/fa';
 import { useTheme } from '@/lib/ThemeContext';
 import { useSEO } from '@/hooks/useSEO';
 import internshipData from '@/data/experience.json';
-import clientWorkData from '@/data/client-work.json';
 
 export function ExperiencePageStarWars() {
-  useSEO('Timeline — Force Skin', 'Review official engineering campaigns, internships, and freelance assignments.');
+  useSEO('Timeline — Force Skin', 'Review official engineering campaigns and technical internships.');
   const { activeTheme } = useTheme();
   const isSith = activeTheme.id === 'sith';
   const accent = isSith ? '#FF2020' : '#FFE81F';
 
-  const [activeCategory, setActiveCategory] = useState<'internship' | 'freelance'>('internship');
   const [activeIdx, setActiveIdx] = useState(0);
   const [activeTab, setActiveTab] = useState<'overview' | 'achievements' | 'stack'>('overview');
 
-  const dataset = activeCategory === 'internship' ? internshipData : clientWorkData;
+  const dataset = internshipData;
   const currentItem: any = dataset[activeIdx] || dataset[0];
 
   const headShadow = Array.from({ length: 4 }, (_, i) => `${i + 1}px ${i + 1}px 0 #000`).join(',');
@@ -43,40 +41,8 @@ export function ExperiencePageStarWars() {
           </h1>
           <p className="text-xs md:text-sm font-semibold mt-2 max-w-md"
             style={{ color: 'var(--sw-white)', opacity: 0.7, fontFamily: 'monospace' }}>
-            // Official engineering deployments, squadron internships, and client contracts.
+            // Official engineering deployments and squadron internships.
           </p>
-        </div>
-
-        {/* Category switcher: Internships vs Freelance */}
-        <div className="flex gap-3 mb-6 border-b-2 pb-4" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-          <button
-            onClick={() => { setActiveCategory('internship'); setActiveIdx(0); setActiveTab('overview'); }}
-            className="px-4 py-2.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer flex items-center gap-2"
-            style={{
-              borderColor: activeCategory === 'internship' ? accent : 'rgba(255,255,255,0.2)',
-              background: activeCategory === 'internship' ? accent : 'transparent',
-              color: activeCategory === 'internship' ? '#000' : 'rgba(255,255,255,0.7)',
-              boxShadow: activeCategory === 'internship' ? '3px 3px 0 #000' : 'none',
-              fontFamily: 'monospace',
-            }}
-          >
-            <FaBuilding className="w-3.5 h-3.5" />
-            <span>INTERNSHIPS ({internshipData.length})</span>
-          </button>
-          <button
-            onClick={() => { setActiveCategory('freelance'); setActiveIdx(0); setActiveTab('overview'); }}
-            className="px-4 py-2.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer flex items-center gap-2"
-            style={{
-              borderColor: activeCategory === 'freelance' ? accent : 'rgba(255,255,255,0.2)',
-              background: activeCategory === 'freelance' ? accent : 'transparent',
-              color: activeCategory === 'freelance' ? '#000' : 'rgba(255,255,255,0.7)',
-              boxShadow: activeCategory === 'freelance' ? '3px 3px 0 #000' : 'none',
-              fontFamily: 'monospace',
-            }}
-          >
-            <FaHandshake className="w-3.5 h-3.5" />
-            <span>FREELANCE CONTRACTS ({clientWorkData.length})</span>
-          </button>
         </div>
 
         {/* Item Selector Chips */}

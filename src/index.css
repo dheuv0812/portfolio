@@ -1,53 +1,57 @@
 @import "tailwindcss";
 
 /* ── Theme tokens ────────────────────────────────────────────────────────────
-   Defaults match Cyber Green. Overridden at runtime by ThemeContext.
-   Every component must read these instead of hardcoded hex values.
+   Defaults match Crimson & Cobalt (Red & Blue). Overridden at runtime by ThemeContext.
+   Every component reads these tokens for dynamic high-contrast consistency.
    ─────────────────────────────────────────────────────────────────────────── */
 :root {
-  --c-bg:              #031714;
-  --c-bg-alt:          #042420;
-  --c-bg-surface:      #F8F9FA;
+  --c-bg:              #070A13;
+  --c-bg-alt:          #0D1322;
+  --c-bg-surface:      #F8FAFC;
   --c-bg-page:         #FFFFFF;
-  --c-bg-footer:       #000000;
+  --c-bg-footer:       #03060D;
 
-  --c-accent:          #00F5A0;
-  --c-accent-2:        #0D9488;
-  --c-accent-text:     #000000;
+  --c-accent:          #FF2A55;
+  --c-accent-2:        #2563EB;
+  --c-accent-text:     #FFFFFF;
 
-  --c-text:            #FFFFFF;
-  --c-text-muted:      rgba(255,255,255,0.55);
-  --c-text-dark:       #0A0A0A;
-  --c-text-dark-muted: rgba(0,0,0,0.45);
+  --c-text:            #F8FAFC;
+  --c-text-muted:      rgba(248,250,252,0.65);
+  --c-text-dark:       #090D16;
+  --c-text-dark-muted: rgba(9,13,22,0.5);
 
-  --c-border:          rgba(0,245,160,0.18);
-  --c-border-dark:     rgba(0,0,0,0.08);
-  --c-shadow:          #000000;
+  --c-border:          rgba(255,42,85,0.22);
+  --c-border-dark:     rgba(9,13,22,0.1);
+  --c-shadow:          #070A13;
 
-  --c-ticker-bg:       #031714;
-  --c-ticker-text:     #00F5A0;
-  --c-ticker-border:   rgba(0,245,160,0.2);
+  --c-ticker-bg:       #070A13;
+  --c-ticker-text:     #FF2A55;
+  --c-ticker-border:   rgba(255,42,85,0.25);
 
-  --c-nav-bg:          #ffffff;
-  --c-nav-content:     #031714;
+  --c-nav-bg:          #FFFFFF;
+  --c-nav-content:     #070A13;
 
-  --c-panel-bg:        #1E2026;
-  --c-panel-text:      #FFFFFF;
+  --c-panel-bg:        #0F172A;
+  --c-panel-text:      #F8FAFC;
 
-  --scrollbar-track:   #031714;
-  --scrollbar-thumb:   #00F5A0;
+  --scrollbar-track:   #070A13;
+  --scrollbar-thumb:   #FF2A55;
 
-  --c-preloader-bg:    #031714;
-  --c-preloader-text:  #00F5A0;
+  --c-preloader-bg:    #070A13;
+  --c-preloader-text:  #FF2A55;
 
-  --c-curtain-1:       #00F5A0;
-  --c-curtain-2:       #031714;
+  --c-curtain-1:       #FF2A55;
+  --c-curtain-2:       #2563EB;
 
-  --c-hero-shadow:     #021412;
-  --c-grid:            rgba(0,245,160,0.07);
+  --c-hero-shadow:     #04060C;
+  --c-grid:            rgba(37,99,235,0.08);
 
-  --c-selection-bg:    #00F5A0;
-  --c-selection-text:  #000000;
+  --c-selection-bg:    #FF2A55;
+  --c-selection-text:  #FFFFFF;
+
+  --c-gradient-primary: linear-gradient(135deg, #FF2A55 0%, #2563EB 100%);
+  --c-gradient-hover:   linear-gradient(135deg, #FF1744 0%, #1D4ED8 100%);
+  --c-gradient-subtle:  linear-gradient(135deg, rgba(255,42,85,0.08) 0%, rgba(37,99,235,0.08) 100%);
 }
 
 /* Selection follows theme */
@@ -62,20 +66,20 @@
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-track, #031714);
+  background: var(--scrollbar-track, #070A13);
   border-left: 1px solid rgba(255,255,255,0.08);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb, #00F5A0);
+  background: var(--scrollbar-thumb, #FF2A55);
   border-radius: 9999px;
-  border: 2px solid var(--scrollbar-track, #031714);
+  border: 2px solid var(--scrollbar-track, #070A13);
 }
 ::-webkit-scrollbar-thumb:hover {
   filter: brightness(1.15);
 }
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb, #00F5A0) var(--scrollbar-track, #031714);
+  scrollbar-color: var(--scrollbar-thumb, #FF2A55) var(--scrollbar-track, #070A13);
 }
 
 .pdf-thematic-scrollbar::-webkit-scrollbar {
@@ -83,16 +87,16 @@
   height: 12px;
 }
 .pdf-thematic-scrollbar::-webkit-scrollbar-track {
-  background: #02110F;
-  border-left: 2px solid #00F5A0;
+  background: #070A13;
+  border-left: 2px solid #FF2A55;
 }
 .pdf-thematic-scrollbar::-webkit-scrollbar-thumb {
-  background: #00F5A0;
+  background: #FF2A55;
   border-radius: 9999px;
-  border: 3px solid #02110F;
+  border: 3px solid #070A13;
 }
 .pdf-thematic-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #00D088;
+  background: #E11D48;
 }
 
 .custom-pdf-scroll::-webkit-scrollbar {
@@ -100,19 +104,39 @@
   height: 14px;
 }
 .custom-pdf-scroll::-webkit-scrollbar-track {
-  background: #02110F;
-  border-left: 2px solid rgba(0, 245, 160, 0.3);
+  background: #070A13;
+  border-left: 2px solid rgba(255, 42, 85, 0.3);
 }
 .custom-pdf-scroll::-webkit-scrollbar-thumb {
-  background: #00F5A0;
+  background: #FF2A55;
   border-radius: 9999px;
-  border: 3px solid #02110F;
+  border: 3px solid #070A13;
 }
 .custom-pdf-scroll::-webkit-scrollbar-thumb:hover {
-  background: #00D088;
+  background: #E11D48;
 }
 
-/* Firefox scrollbar — handled by * selector using --scrollbar-* vars above */
+/* Linear Red-to-Blue Gradients and Accents */
+.btn-red-blue-gradient {
+  background: linear-gradient(135deg, #FF2A55 0%, #2563EB 100%);
+  color: #FFFFFF !important;
+  transition: all 0.25s ease;
+}
+.btn-red-blue-gradient:hover {
+  background: linear-gradient(135deg, #FF1744 0%, #1D4ED8 100%);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #070A13;
+}
+
+.text-gradient-rb {
+  background: linear-gradient(135deg, #FF2A55 0%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gradient-rb {
+  border-image: linear-gradient(135deg, #FF2A55, #2563EB) 1;
+}
 
 @layer base {
   * {
@@ -132,10 +156,10 @@
   }
 }
 
-/* Custom Brutalist Theme Mouse Pointer for Desktop / Fine-Pointer Devices (Cyber Green) */
+/* Custom Brutalist Theme Mouse Pointer for Desktop / Fine-Pointer Devices (Crimson & Electric Blue) */
 @media (pointer: fine) {
   html:not([data-theme="starwars"]):not([data-theme="sith"]) body {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z' fill='%2300F5A0' stroke='%23000000' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='6' r='1.5' fill='%230D9488'/%3E%3C/svg%3E") 3 3, auto;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z' fill='%23FF2A55' stroke='%23000000' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='6' r='1.5' fill='%232563EB'/%3E%3C/svg%3E") 3 3, auto;
   }
 
   html:not([data-theme="starwars"]):not([data-theme="sith"]) a,
@@ -144,7 +168,7 @@
   html:not([data-theme="starwars"]):not([data-theme="sith"]) input[type="submit"],
   html:not([data-theme="starwars"]):not([data-theme="sith"]) input[type="button"],
   html:not([data-theme="starwars"]):not([data-theme="sith"]) .cursor-pointer {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='11' fill='%23042420' stroke='%23000000' stroke-width='2.5'/%3E%3Ccircle cx='14' cy='14' r='4' fill='%2300F5A0' stroke='%23000000' stroke-width='1.5'/%3E%3C/svg%3E") 14 14, pointer !important;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='11' fill='%230D1322' stroke='%23000000' stroke-width='2.5'/%3E%3Ccircle cx='14' cy='14' r='4' fill='%23FF2A55' stroke='%232563EB' stroke-width='1.5'/%3E%3C/svg%3E") 14 14, pointer !important;
   }
 
   html[data-theme="starwars"],
@@ -167,31 +191,31 @@
   scrollbar-width: none;
 }
 
-/* Formspree Submission Button Animation from CodePen QWwOqM */
+/* Submission Button Animation */
 @keyframes button-loading {
   0% {
     width: 12rem;
     margin-left: 0;
     background-color: transparent;
-    border-color: #042420;
+    border-color: #0D1322;
   }
   20% {
     color: transparent;
     transform: scale(1, 1);
   }
   40% {
-    border-color: #042420;
+    border-color: #0D1322;
     background-color: transparent;
     transform: scale(1, 1);
   }
   60% {
     transform: scale(.7, 1.1);
-    margin-left: 4.75rem; /* center offset: (12rem - 2.5rem)/2 = 4.75rem */
+    margin-left: 4.75rem;
     width: 2.5rem;
     text-indent: -9999px;
     color: transparent;
-    border-color: #042420;
-    background-color: #042420;
+    border-color: #FF2A55;
+    background-color: #FF2A55;
   }
   80% {
     transform: scale(1, 1);
@@ -199,8 +223,8 @@
   100% {
     margin-left: 4.75rem;
     width: 2.5rem;
-    background-color: #042420;
-    border-color: #042420;
+    background-color: #FF2A55;
+    border-color: #FF2A55;
     color: transparent;
   }
 }
@@ -209,12 +233,12 @@
   0% {
     margin-left: 4.75rem;
     width: 2.5rem;
-    background-color: #042420;
-    border-color: #042420;
+    background-color: #FF2A55;
+    border-color: #FF2A55;
   }
   10% {
-    background-color: #042420;
-    border-color: #042420;
+    background-color: #FF2A55;
+    border-color: #FF2A55;
   }
   70% {
     margin-left: -0.6rem;
@@ -225,7 +249,7 @@
   100% {
     margin-left: 0;
     width: 12rem;
-    border-color: #8cce1e;
+    border-color: #2563EB;
     background-color: #fff;
   }
 }
@@ -260,8 +284,8 @@ button.submit-anim-btn {
   overflow: hidden;
   width: 12rem;
   height: 3rem;
-  color: #042420;
-  border: 2px solid #042420;
+  color: #0D1322;
+  border: 2px solid #0D1322;
   background-color: transparent;
   cursor: pointer;
   border-radius: 1.5rem;
@@ -288,7 +312,7 @@ button.submit-anim-btn:after {
   background-color: #fff;
   top: 50%;
   left: 50%;
-  margin-top: -0.625rem; /* center the 1.25rem dot */
+  margin-top: -0.625rem;
   margin-left: -0.625rem;
   width: 1.25rem;
   height: 1.25rem;
@@ -320,7 +344,7 @@ button.submit-anim-btn.loading:after {
 button.submit-anim-btn.ready {
   text-indent: 0;
   color: transparent !important;
-  background-color: #042420;
+  background-color: #0D1322;
   animation: button-ready .333s forwards;
   pointer-events: none;
 }
@@ -340,7 +364,7 @@ button.submit-anim-btn.ready:before {
   height: auto;
   border-radius: 0;
   background-color: transparent;
-  color: #8cce1e;
+  color: #2563EB;
   content: 'SENT ✓';
   opacity: 0;
   z-index: 2;
@@ -364,7 +388,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid #042420 !important;
+  outline: 3px solid #FF2A55 !important;
   outline-offset: 3px !important;
 }
 

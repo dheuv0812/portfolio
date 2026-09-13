@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function NotFoundPage() {
   useEffect(() => {
-    document.title = '404 - Page Not Found | Rohit Dubey';
+    document.title = '404 - Page Not Found | Dhruv Singh';
   }, []);
 
   return (

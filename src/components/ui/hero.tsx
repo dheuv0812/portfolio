@@ -56,7 +56,7 @@ export const HeroSection = () => {
   // Star Wars skin gets its own completely different hero
   if (activeTheme.id === 'starwars') return <HeroStarWars />;
 
-  const heroShadow = Array.from({ length: 12 }, (_, i) => `${i+1}px ${i+1}px 0 var(--c-hero-shadow)`).join(',');
+  const heroShadow = Array.from({ length: 12 }, (_, i) => `${i + 1}px ${i + 1}px 0 var(--c-hero-shadow)`).join(',');
   const headFont: React.CSSProperties = { fontFamily: '"Arial Black", Impact, sans-serif', textShadow: heroShadow };
 
   return (
@@ -88,7 +88,7 @@ export const HeroSection = () => {
         </div>
 
         <div className="flex flex-col gap-1 my-auto">
-          <h1 className="sr-only">Rohit Dubey - Full-Stack Developer &amp; AI Engineer</h1>
+          <h1 className="sr-only">Dhruv Singh - Full-Stack Developer &amp; Computer Engineer</h1>
 
           <div className="flex justify-start sm:pl-[5%] md:pl-[10%]">
             {preloaderDone ? (
@@ -126,33 +126,20 @@ export const HeroSection = () => {
           </div>
 
           <div className="flex justify-end sm:pr-[4%] md:pr-[8%] items-baseline gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
-            {preloaderDone && (
-              <TextType
-                text="AI ENGINEER"
-                as="span"
-                typingSpeed={100}
-                initialDelay={2400}
-                loop={false}
-                showCursor={false}
-                className="text-[clamp(0.85rem,2.5vw,32px)] font-black uppercase tracking-[0.22em]"
-                style={{ fontFamily: '"Arial Black", Impact, sans-serif', color: 'var(--c-accent-2)' }}
-              />
-            )}
-            <span className="text-[clamp(0.85rem,2vw,24px)] font-black" style={{ color: 'var(--c-accent)', opacity: 0.6 }}>+</span>
             {preloaderDone ? (
               <TextType
-                text="IN PROGRESS"
+                text="ENGINEER IN PROGRESS"
                 as="h2"
-                typingSpeed={100}
-                initialDelay={3800}
+                typingSpeed={80}
+                initialDelay={2400}
                 loop={false}
                 showCursor={true}
                 cursorCharacter="|"
-                className="text-[clamp(2.1rem,8.8vw,120px)] font-black leading-[0.88] tracking-tighter m-0 p-0 uppercase"
-                style={{ ...headFont, color: 'var(--c-text)', opacity: 0.4 }}
+                className="text-[clamp(1.6rem,6.5vw,90px)] font-black leading-[0.88] tracking-tighter m-0 p-0 uppercase"
+                style={{ ...headFont, color: 'var(--c-text)', opacity: 0.85 }}
               />
             ) : (
-              <h2 className="text-[clamp(2.1rem,8.8vw,120px)] font-black leading-[0.88] tracking-tighter m-0 p-0 uppercase opacity-0" style={headFont}>&nbsp;</h2>
+              <h2 className="text-[clamp(1.6rem,6.5vw,90px)] font-black leading-[0.88] tracking-tighter m-0 p-0 uppercase opacity-0" style={headFont}>&nbsp;</h2>
             )}
           </div>
         </div>
@@ -160,8 +147,8 @@ export const HeroSection = () => {
         <div className="flex flex-row items-center gap-4 sm:gap-6 mt-6 pointer-events-auto">
           <CircularBadge />
           <p className="text-xs sm:text-sm font-medium leading-relaxed max-w-[240px]" style={{ color: 'var(--c-text-muted)' }}>
-            Building polished, fast &amp; accessible digital products.<br />
-            Based in India — working worldwide.
+            Building web apps, embedded systems &amp; everything in between.<br />
+            Based in Toronto, Canada.
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ const MOBILE_TABS = [
 ];
 
 export function ProjectsPage() {
-  useSEO('Projects', 'Inspect my engineering projects and case studies, including NoteLift, Brainstormzz, and AI Career Engine.');
+  useSEO('Projects', 'Inspect my engineering projects and case studies, including Brainstormzz, Urban Carpool Matching, Rover Arm Controller, and 8-Bit Processor.');
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
   const [activeMobileTab, setActiveMobileTab] = useState<'overview' | 'arch' | 'hurdles'>('overview');
 
@@ -174,6 +174,13 @@ export function ProjectsPage() {
                     </div>
                   </div>
 
+                  {project.metrics && (
+                    <div className="bg-[var(--c-accent)]/10 border border-black/15 p-3 rounded-xl flex flex-col gap-0.5">
+                      <span className="text-[8.5px] font-black uppercase tracking-wider text-[var(--c-accent)]">⚡ Key Metric / Impact:</span>
+                      <p className="text-xs font-bold text-black">{project.metrics}</p>
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-2 gap-2 border-t border-black/10 pt-3 text-xs">
                     <div>
                       <span className="text-[8.5px] font-black text-black/40 block uppercase">Role &amp; Year</span>
@@ -278,6 +285,15 @@ export function ProjectsPage() {
                     ))}
                   </div>
                 </div>
+
+                {project.metrics && (
+                  <div className="bg-[var(--c-accent)]/10 border-2 border-black p-4 rounded-2xl flex flex-col gap-1 shadow-sm">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-[var(--c-accent)] flex items-center gap-1">
+                      <span>⚡</span> Key Metric / Impact
+                    </span>
+                    <p className="text-xs font-black text-black leading-snug">{project.metrics}</p>
+                  </div>
+                )}
 
                 {/* Highlights Card */}
                 <div className="bg-[var(--c-panel-bg)] text-white p-5 rounded-2xl flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden border-2 border-black">

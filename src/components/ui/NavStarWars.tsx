@@ -9,7 +9,6 @@ const links = [
   { label: 'About',          href: '#about'         },
   { label: 'Skills',         href: '/skills'        },
   { label: 'Projects',       href: '/projects'      },
-  { label: 'Client Work',    href: '/client-work'   },
   { label: 'Experience',     href: '/experience'    },
   { label: 'Certifications', href: '/certifications'},
   { label: 'Contact',        href: '#contact'       },
@@ -83,7 +82,7 @@ export function NavStarWars({ onResumeOpen }: { onResumeOpen: () => void }) {
               boxShadow: '2px 2px 0 #000',
             }}
           >
-            ROHIT
+            DHRUV
           </div>
           <div
             className="px-2 py-1 border-2 border-l-0 font-black text-[9px] uppercase tracking-[0.15em]"

@@ -1,33 +1,35 @@
-# Rohit Dubey — AI & Full-Stack Developer
+# Dhruv Singh — Full-Stack Developer & Computer Engineering
 
-> Rohit Dubey is an AI and Full-Stack Developer based in India specializing in React, TypeScript, Node.js, Python, and AI integrations (OpenAI and Claude APIs).
+> Dhruv Singh is a Full-Stack Developer and Computer Engineering student at Toronto Metropolitan University (TMU) based in Toronto, Canada, building web applications, AI products, embedded systems, and hardware.
 
 ## Summary
-Full-stack software engineer with a track record of building web applications, AI tools, Chrome extensions, and custom client sites. Shipped NoteLift on the Chrome Web Store, built AI tools like Brainstormzz and AI Career Engine, and delivered commercial website solutions for client Devinterio.
+Full-stack software developer and computer engineering student with a track record of building web applications, AI-integrated software, embedded systems, and digital hardware architectures. Currently serving as Co-op Program Assistant at the TMU Career, Co-op & Student Success Centre.
 
 ## Key Projects
-- [NoteLift](https://rohitdubey.dev/projects): Chrome extension published on the Chrome Web Store for extracting PDF and web highlights into modular revision notes (built with Manifest V3 and local storage).
-- [Brainstormzz](https://rohitdubey.dev/projects): AI-powered whiteboard application for structured concept generation using OpenAI API, HTML5 Canvas, and React 18.
-- [AI Career Engine](https://rohitdubey.dev/projects): Career discovery and 12-week roadmap optimization platform powered by Anthropic Claude API, Node.js, Express, and React.
-- [SSB Practice Simulator](https://rohitdubey.dev/projects): Interactive simulator for Service Selection Board (WAT/PPDT/SRT) test preparation.
-- [Devinterio](https://rohitdubey.dev/client-work): Complete client website redesign and post-launch maintenance for an interior design business.
-- [RailDost](https://rohitdubey.dev/projects): Indian Railways route comparison tool using Leaflet.js mapping.
+- [Brainstormzz](https://dhruvsingh.dev/projects): AI-powered whiteboard application for structured concept generation using OpenAI API, HTML5 Canvas, and React.
+- [Urban Carpool Matching System](https://dhruvsingh.dev/projects): Geospatial ride-sharing matching engine in Python processing 500+ simulated rider coordinates with optimal pickup clusters.
+- [Rover Arm Controller & CV Test Automation](https://dhruvsingh.dev/projects): Robotics test framework using Python, OpenCV, and Arduino to automate precision verification across 6 servo joints with ARUCO tag visual feedback.
+- [8-Bit General-Purpose Processor](https://dhruvsingh.dev/projects): Custom processor architecture designed in VHDL with ALU, multi-state control FSM, registers, and decoders validated on Intel Quartus and ModelSim.
+- [Bookstore Application](https://dhruvsingh.dev/projects): Desktop retail management software implemented in Java Swing using State and Factory design patterns with persistent customer tiers.
+- [Three-Stage MOSFET Voltage Amplifier](https://dhruvsingh.dev/projects): 180nm CMOS multi-stage analog amplifier designed and simulated in KiCad and ngspice achieving 42 dB voltage gain and >1.8 MHz bandwidth.
 
 ## Core Technical Skills
-- Languages: JavaScript (ES6+), TypeScript, Python, HTML5, CSS3, SQL.
-- Frontend: React, Tailwind CSS, Responsive Web Design, DOM Manipulation, Single Page Applications.
-- Backend: Node.js, Express, REST APIs, Google OAuth authentication.
-- AI / ML Integration: OpenAI API (Structured JSON prompting), Anthropic Claude API, Prompt Engineering.
-- Cloud & Tools: Vercel, Hostinger, Railway, Git, GitHub, Chrome Extensions API.
+- Languages: Python, Java, C, C#, JavaScript, SQL, VHDL.
+- Frontend & Web: React, HTML5, CSS3, Tailwind CSS, Responsive UI/UX, Component State Machines.
+- Backend & Databases: Node.js, Express, REST APIs, PostgreSQL, Relational DBMS.
+- Hardware & Systems: FPGA (Quartus & ModelSim), Arduino, Digital Circuits & FSM Design, Analog IC Design (CMOS).
+- AI / ML & Tools: OpenAI API, OpenCV, Git, GitHub, Jira, Excel (VLOOKUP & Data Auditing).
 
 ## Subpages
-- [Skills](https://rohitdubey.dev/skills): Complete technical skills matrix and engineering breakdown.
-- [Projects](https://rohitdubey.dev/projects): Detailed case studies for all built projects.
-- [Client Work](https://rohitdubey.dev/client-work): Commercial client outcomes and redesign work.
-- [Experience](https://rohitdubey.dev/experience): Internship experience and educational background.
-- [Certifications](https://rohitdubey.dev/certifications): Learning archive and technical milestones.
+- [Skills](https://dhruvsingh.dev/skills): Complete technical skills matrix and engineering breakdown.
+- [Projects](https://dhruvsingh.dev/projects): Detailed case studies for all built projects.
+- [Client Work](https://dhruvsingh.dev/client-work): Commercial and academic client outcomes.
+- [Experience](https://dhruvsingh.dev/experience): TMU Co-op Assistant experience and educational background.
+- [Certifications](https://dhruvsingh.dev/certifications): Learning archive and technical milestones.
 
 ## Contact Information
-- Website: https://rohitdubey.dev
-- GitHub: https://github.com/anakinskywalker0903
-- Portfolio Contact: https://rohitdubey.dev/#contact
+- Website: https://dhruvsingh.dev
+- GitHub: https://github.com/dheuv0812
+- LinkedIn: https://linkedin.com/in/dhruv0812
+- Email: dhruv.singh@torontomu.ca
+- Resume: https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing

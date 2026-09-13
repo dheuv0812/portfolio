@@ -23,5 +23,5 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://rohitdubey.dev/sitemap.xml
+Sitemap: https://dhruvsingh.dev/sitemap.xml
 

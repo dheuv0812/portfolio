@@ -4,7 +4,7 @@ interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElemen
   fallbackSrc?: string;
 }
 
-export function ImageWithFallback({ src, fallbackSrc = '/rohit.jpg', alt, className, ...props }: ImageWithFallbackProps) {
+export function ImageWithFallback({ src, fallbackSrc = '/dhruv.jpg', alt, className, ...props }: ImageWithFallbackProps) {
   const [imgSrc, setImgSrc] = useState(src);
   const [loading, setLoading] = useState(true);
 

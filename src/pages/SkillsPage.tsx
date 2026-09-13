@@ -4,6 +4,14 @@ import { VscCode } from 'react-icons/vsc';
 import { IoClose } from 'react-icons/io5';
 import { FaAws, FaRobot } from 'react-icons/fa6';
 import {
+  FaJava,
+  FaMicrochip,
+  FaWaveSquare,
+  FaDatabase,
+  FaTable,
+  FaCss3Alt
+} from 'react-icons/fa';
+import {
   SiTypescript,
   SiJavascript,
   SiPython,
@@ -16,35 +24,43 @@ import {
   SiMongodb,
   SiDocker,
   SiGit,
-  SiNumpy,
-  SiPandas,
-  SiSupabase,
-  SiPrisma
+  SiC,
+  SiArduino,
+  SiOpencv,
+  SiHtml5,
+  SiJira
 } from 'react-icons/si';
+import { TbBrandCSharp, TbBrandOpenai } from 'react-icons/tb';
 
 import { useSEO } from '@/hooks/useSEO';
 import skillsData from '@/data/skills.json';
 
 // Icon and color mapping helper
 const skillStyles: Record<string, { icon: any; color: string }> = {
-  'TypeScript': { icon: SiTypescript, color: '#3178C6' },
-  'JavaScript': { icon: SiJavascript, color: '#F7DF1E' },
   'Python': { icon: SiPython, color: '#3776AB' },
+  'Java': { icon: FaJava, color: '#E76F00' },
+  'C': { icon: SiC, color: '#00599C' },
+  'C#': { icon: TbBrandCSharp, color: '#239120' },
+  'JavaScript': { icon: SiJavascript, color: '#F7DF1E' },
+  'SQL': { icon: FaDatabase, color: '#00758F' },
+  'VHDL': { icon: FaMicrochip, color: '#FF2A55' },
   'React': { icon: SiReact, color: '#61DAFB' },
-  'Next.js': { icon: SiNextdotjs, color: '#000000' },
-  'Tailwind CSS': { icon: SiTailwindcss, color: '#06B6D4' },
+  'HTML': { icon: SiHtml5, color: '#E34F26' },
+  'CSS': { icon: FaCss3Alt, color: '#1572B6' },
   'Node.js': { icon: SiNodedotjs, color: '#339933' },
-  'Express.js': { icon: SiExpress, color: '#000000' },
-  'PostgreSQL': { icon: SiPostgresql, color: '#4169E1' },
-  'MongoDB': { icon: SiMongodb, color: '#47A248' },
-  'Docker': { icon: SiDocker, color: '#2496ED' },
+  'REST APIs': { icon: VscCode, color: '#2563EB' },
+  'FPGA (Quartus & ModelSim)': { icon: FaMicrochip, color: '#7B1FA2' },
+  'Arduino': { icon: SiArduino, color: '#00979D' },
+  'Digital Circuits & FSM Design': { icon: FaMicrochip, color: '#F59E0B' },
+  'Analog IC Design': { icon: FaWaveSquare, color: '#EC4899' },
   'Git & GitHub': { icon: SiGit, color: '#F05032' },
-  'AWS': { icon: FaAws, color: '#FF9900' },
-  'OpenAI / Claude API': { icon: FaRobot, color: '#10A37F' },
-  'Prompt Engineering': { icon: FaRobot, color: 'var(--c-accent-2)' },
-  'NumPy / Pandas': { icon: SiNumpy || SiPandas || VscCode, color: '#013243' },
-  'Supabase': { icon: SiSupabase || VscCode, color: '#3ECF8E' },
-  'Prisma ORM': { icon: SiPrisma || VscCode, color: '#2D3748' },
+  'Excel (VLOOKUP & Formulas)': { icon: FaTable, color: '#107C41' },
+  'Jira': { icon: SiJira, color: '#0052CC' },
+  'PostgreSQL & DBMS': { icon: SiPostgresql, color: '#4169E1' },
+  'OpenAI API': { icon: TbBrandOpenai, color: '#10A37F' },
+  'OpenCV': { icon: SiOpencv, color: '#5C3EE8' },
+  'Tailwind CSS': { icon: SiTailwindcss, color: '#06B6D4' },
+  'TypeScript': { icon: SiTypescript, color: '#3178C6' },
 };
 
 export function SkillsPage() {
@@ -54,7 +70,7 @@ export function SkillsPage() {
   const [selectedSkill, setSelectedSkill] = useState(skillsData[0]);
   const [mobileDetailOpen, setMobileDetailOpen] = useState(false);
 
-  const categories = ['All', 'Frontend', 'Backend', 'Languages', 'Databases', 'AI / ML', 'Cloud', 'Tools'];
+  const categories = ['All', 'Languages', 'Frontend', 'Backend', 'Hardware & Systems', 'Databases', 'AI / ML', 'Tools'];
 
   // Filter skills based on active tab and search query
   const filteredSkills = skillsData.filter(skill => {

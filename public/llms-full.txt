@@ -1,71 +1,87 @@
-# Rohit Dubey — AI & Full-Stack Developer (Full Documentation)
+# Dhruv Singh — Full-Stack Developer & Computer Engineering (Full Documentation)
 
 ## Overview
-Rohit Dubey is an AI and Full-Stack Developer specializing in building modern web applications, AI tools, Chrome extensions, and full-stack software.
+Dhruv Singh is a Full-Stack Developer and Computer Engineering student at Toronto Metropolitan University (TMU) based in Toronto, Canada, building web applications, AI products, embedded systems, and hardware.
 
 ## Technical Architecture & Engineering Skills
 
 ### Languages
-- Python: Experienced with automation scripts, GUI tools (Tkinter), and AI/LLM integration.
-- JavaScript (ES6+): Deep DOM manipulation, asynchronous programming, event handling, and single page applications.
-- TypeScript: Typed development for scalable React applications.
-- Java: Data Structures and Algorithms practice.
-- SQL: Database querying syntax (PostgreSQL/NeonDB).
+- Python: Algorithms, route optimization, automation scripts, computer vision (OpenCV).
+- Java: Object-oriented architecture, design patterns (State, Factory), GUI development (Swing).
+- C & C#: Systems programming, memory management, .NET application engineering.
+- JavaScript (ES6+): Modern ESNext, asynchronous architectures, real-time UI, Canvas manipulation.
+- SQL: Relational database design, query optimization, PostgreSQL schema modeling.
+- VHDL: Hardware description language, RTL design, FSM sequencing, digital processor architecture.
 
 ### Frontend Development
 - Frameworks & Libraries: React 19, Tailwind CSS v4, Motion (Framer Motion), Three.js, GSAP.
-- UI Engineering: Responsive layouts, dark mode UI, micro-animations, interactive canvas components.
+- UI Engineering: Responsive layouts, crimson and cobalt theme palettes, micro-animations, 3D interactive lanyard canvas.
 
-### Backend & Cloud Engineering
+### Backend & Systems Engineering
 - Server Tech: Node.js, Express.js REST APIs.
-- Authentication: OAuth 2.0 / Google Cloud Console integration.
-- Storage: PostgreSQL (NeonDB), Browser Local Storage, Chrome Storage API.
-- Cloud & Hosting: Vercel (Frontend deployment), Railway (Node.js backend deployment), Hostinger.
+- Databases: PostgreSQL, relational DBMS.
+- Hardware & Embedded: FPGA synthesis (Intel Quartus, ModelSim), Arduino robotics microcontroller programming, stepper motor control, analog IC design (180nm CMOS, KiCad, ngspice).
+- Tools & CI/CD: Git, GitHub, Jira, Microsoft Excel (Advanced VLOOKUP & data audits).
 
-### AI & Generative AI Engineering
-- OpenAI API: Structured JSON output generation, prompt engineering, canvas tool integration.
-- Anthropic Claude API: Resume parsing analysis, scoring heuristics, personalized roadmap generation.
-- LLM Standards: llms.txt, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), JSON-LD Schemas.
+### AI & Computer Vision Engineering
+- OpenAI API: Structured JSON output generation, prompt engineering, schema steering for real-time concept mapping.
+- OpenCV: Video stream analysis, ARUCO marker tracking, camera calibration, pose estimation.
 
 ## Project Case Studies
 
-### 1. NoteLift (Published Chrome Extension)
-- Status: Live on Chrome Web Store (v0.2).
-- Problem: Students need a seamless way to capture and organize key highlights from online PDFs and web pages without context-switching.
-- Solution: Lightweight Chrome extension using Manifest V3 that captures selected text, organizes notes module-wise, stores them locally, and exports to TXT or Markdown.
-- Tech Stack: JavaScript, Chrome Extension APIs, Chrome Local Storage.
+### 1. Brainstormzz (AI Whiteboard Application)
+- Status: Production Ready.
+- Problem: Brainstorming sessions lack structured AI-driven visual expansion and intuitive spatial organization.
+- Solution: Interactive whiteboard UI where single prompts generate multi-category structured idea cards with refinement tools and sub-1.2s response times.
+- Tech Stack: React, HTML5 Canvas, Tailwind CSS, OpenAI API, Node.js.
 
-### 2. Brainstormzz (AI Whiteboard Application)
-- Status: Live.
-- Problem: Brainstorming sessions lack structured AI-driven visual expansion.
-- Solution: Interactive whiteboard UI where single prompts generate multi-category structured idea cards with refinement tools.
-- Tech Stack: React 18, HTML5 Canvas, Tailwind CSS, OpenAI API.
+### 2. Urban Carpool Matching System
+- Status: Completed / Benchmark Validated.
+- Problem: Daily urban commuters generate excessive single-occupancy vehicle traffic and high emissions.
+- Solution: Python geospatial ride-sharing matching engine processing 500+ simulated rider coordinates and clustering pickups with 28% commute-time savings.
+- Tech Stack: Python, NetworkX, Haversine Geospatial Algorithms.
 
-### 3. AI Career Engine
-- Status: Live.
-- Problem: Job seekers need actionable insights bridging their resume to target job descriptions.
-- Solution: Dual-mode application offering career role discovery and job description overlap scoring with a 12-week custom roadmap.
-- Tech Stack: React, Vite, Node.js, Express, pdfjs-dist, Multer, Anthropic Claude API, deployed on Vercel & Railway.
+### 3. Rover Arm Controller & CV Test Automation
+- Status: Completed / Verified.
+- Problem: Multi-axis robotic arms require rigorous physical repeatability and joint angle verification.
+- Solution: Automated test framework using Python, OpenCV, and Arduino to automate precision verification across 6 servo joints with ARUCO tag visual feedback, achieving 99.2% tracking accuracy.
+- Tech Stack: Python, OpenCV, Arduino, Hardware Serial, PySerial.
 
-### 4. Devinterio (Commercial Client Work)
-- Status: Live at devinterio.com / devinterio.in.
-- Scope: Complete redesign and rebuild of an interior design business website with ongoing post-launch maintenance.
-- Outcome: Commercial client deployment with responsive design and fast load speeds.
+### 4. 8-Bit General-Purpose Processor
+- Status: Completed / Verified.
+- Problem: Understanding compute micro-architecture demands full-stack hardware design from logic gates to instruction execution.
+- Solution: Custom 8-bit processor designed in VHDL with ALU, multi-state control FSM, general-purpose registers, and instruction decoders verified on Intel Quartus and ModelSim (100% waveform testbench validation).
+- Tech Stack: VHDL, Intel Quartus Prime, ModelSim, Digital Logic Design.
 
-### 5. SSB Practice Simulator
-- Status: Live.
-- Solution: Test simulator for Services Selection Board aspirants with strict timed modules for WAT, PPDT, and SRT tests.
+### 5. Bookstore Application
+- Status: Completed / Production Architecture.
+- Problem: Retail desktop software often suffers from tightly-coupled business logic, making tier changes and inventory updates brittle.
+- Solution: Desktop retail management system in Java Swing implementing the State Design Pattern for customer status tiers (Silver, Gold, Platinum) and Factory Pattern for item creation with file persistence.
+- Tech Stack: Java, Java Swing, OOP Design Patterns.
 
-### 6. RailDost
-- Status: Prototype / Showcase.
-- Solution: Visualized route and travel-time comparison tool for Indian Railways using Leaflet.js maps.
+### 6. Three-Stage MOSFET Voltage Amplifier
+- Status: Completed / Verified.
+- Problem: Micro-sensor signal conditioning demands high gain, wide bandwidth, and minimal thermal distortion in analog CMOS.
+- Solution: 180nm CMOS multi-stage analog amplifier designed and simulated in KiCad and ngspice achieving 42 dB voltage gain and >1.8 MHz bandwidth.
+- Tech Stack: KiCad, ngspice, CMOS Analog IC Design.
+
+## Professional Experience
+
+### Co-op Program Assistant — Career, Co-op & Student Success Centre, TMU
+- Duration: Sept 2025 – Aug 2026 | Toronto, ON
+- Managed and audited co-op student records and employer communications using Excel (VLOOKUP, formulas) and relational databases.
+- Streamlined student onboarding, documentation workflows, and employer inquiries across engineering disciplines.
+- Collaborated across student success teams to support co-op employment cycles and data integrity.
 
 ## Frequently Asked Questions (FAQ)
 
-### What makes Rohit Dubey's engineering approach unique?
-Rohit combines clean frontend design with direct AI API integrations, ensuring AI features return reliable, structured JSON data that renders into interactive visual components.
+### What makes Dhruv Singh's engineering approach unique?
+Dhruv bridges full-stack web and AI application engineering with low-level computer engineering, embedded systems, and hardware design. He builds end-to-end solutions that connect user interfaces, backend services, microcontrollers, and digital hardware.
 
-### How can recruiters or clients contact Rohit Dubey?
-- Portfolio URL: https://rohitdubey.dev
-- Contact Page: https://rohitdubey.dev/#contact
-- GitHub: https://github.com/anakinskywalker0903
+### How can recruiters or clients contact Dhruv Singh?
+- Portfolio URL: https://dhruvsingh.dev
+- Email: dhruv.singh@torontomu.ca
+- LinkedIn: https://linkedin.com/in/dhruv0812
+- GitHub: https://github.com/dheuv0812
+- Resume: https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing
+

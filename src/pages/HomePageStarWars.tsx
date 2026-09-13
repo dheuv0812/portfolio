@@ -102,7 +102,7 @@ function AboutSection() {
             className="text-[clamp(1.6rem,3.8vw,44px)] font-black leading-tight uppercase"
             style={{ ...brutal, color: WH, textShadow: '3px 3px 0 #000' }}
           >
-            WHO IS <span style={{ color: Y }}>ROHIT DUBEY?</span>
+            WHO IS <span style={{ color: Y }}>DHRUV SINGH?</span>
           </h2>
           <div
             className="border-2 p-2 max-w-[280px] self-start md:self-end"
@@ -536,8 +536,8 @@ function ContactSection() {
               style={{ background: 'color-mix(in srgb, var(--sw-yellow) 8%, transparent)', borderColor: Y, boxShadow: `3px 3px 0 var(--sw-yellow)` }}
             >
               <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: Y, ...mono }}>// TRANSMISSION DETAILS</p>
-              <p className="text-xs font-bold" style={{ color: B, ...mono }}>rohitdubey39005@gmail.com</p>
-              <p className="text-xs font-bold mt-1" style={{ color: WH, opacity: 0.9, ...mono }}>India · Remote Worldwide · &lt;24h Reply</p>
+              <p className="text-xs font-bold" style={{ color: B, ...mono }}>dhruv.singh@torontomu.ca</p>
+              <p className="text-xs font-bold mt-1" style={{ color: WH, opacity: 0.9, ...mono }}>Toronto, Canada · Open for Roles · &lt;24h Reply</p>
             </div>
 
             {/* THWIP-style sound effect */}
@@ -632,7 +632,7 @@ function ContactSection() {
 
 /* ── Full Star Wars home page ────────────────────────────────────────────── */
 export function HomePageStarWars() {
-  useSEO('Home', 'Rohit Dubey — AI & Full-Stack Developer portfolio.');
+  useSEO('Home', 'Dhruv Singh — Full-Stack Developer & Computer Engineering.');
 
   return (
     <div className="w-full relative snap-y snap-proximity" style={{ background: BG }}>

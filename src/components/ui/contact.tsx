@@ -255,9 +255,22 @@ export const ContactSection = () => {
                 {[
                   { label: 'GitHub', icon: FaGithub, href: 'https://github.com/dheuv0812' },
                   { label: 'LinkedIn', icon: FaLinkedin, href: 'https://linkedin.com/in/dhruv0812' },
-                  { label: 'Resume', icon: FaFilePdf, href: 'https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing' },
+                  { label: 'Resume', icon: FaFilePdf, href: undefined, onClick: () => window.dispatchEvent(new CustomEvent('open-resume')) },
                 ].map(s => {
                   const Icon = s.icon;
+                  if (!s.href) {
+                    return (
+                      <button
+                        key={s.label}
+                        type="button"
+                        onClick={s.onClick}
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border-2 border-black text-[10px] font-black bg-[var(--c-bg-surface)] text-black hover:bg-[var(--c-accent)] hover:text-white hover:shadow-[3px_3px_0_var(--c-shadow)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all cursor-pointer"
+                      >
+                        <Icon className="w-3.5 h-3.5" />
+                        <span>{s.label}</span>
+                      </button>
+                    );
+                  }
                   return (
                     <a
                       key={s.label}

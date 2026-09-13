@@ -144,8 +144,8 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
       id: 'resume',
       icon: FaFilePdf,
       label: 'Resume',
-      href: 'https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing',
-      onClick: () => trackEvent('Resume Click', 'Social', 'Action Dock'),
+      href: undefined,
+      onClick: handleResumeClick,
     },
   ];
 
@@ -232,6 +232,27 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
           {/* Other social links */}
           {dockLinks.map((link, idx) => {
             const Icon = link.icon;
+            if (!link.href) {
+              return (
+                <motion.button
+                  key={link.id}
+                  type="button"
+                  aria-label={link.label}
+                  onClick={link.onClick}
+                  initial={{ opacity: 0, x: 16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.06, duration: 0.3 }}
+                  whileHover={{ scale: 1.15, x: -2 }}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[var(--c-accent)] hover:text-white bg-black/30 hover:bg-[var(--c-accent)] border border-white/20 hover:border-transparent transition-all duration-300 relative group cursor-pointer"
+                >
+                  <Icon className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[var(--c-accent)] group-hover:text-white transition-colors" />
+                  <span className="absolute right-12 sm:right-14 opacity-0 group-hover:opacity-100 px-3 py-1.5 rounded-lg bg-black text-[var(--c-accent)] text-[10px] font-black uppercase tracking-widest pointer-events-none transition-all duration-200 shadow-xl border border-[var(--c-accent)]/20 whitespace-nowrap">
+                    {link.label}
+                  </span>
+                </motion.button>
+              );
+            }
+
             return (
               <motion.a
                 key={link.id}
@@ -244,9 +265,9 @@ export function RightActionDock({ onResumeOpen }: { onResumeOpen: () => void }) 
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.06, duration: 0.3 }}
                 whileHover={{ scale: 1.15, x: -2 }}
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[var(--c-accent)] hover:text-black bg-black/30 hover:bg-[var(--c-accent)] border border-white/20 hover:border-transparent transition-all duration-300 relative group"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[var(--c-accent)] hover:text-white bg-black/30 hover:bg-[var(--c-accent)] border border-white/20 hover:border-transparent transition-all duration-300 relative group cursor-pointer"
               >
-                <Icon className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[var(--c-accent)] group-hover:text-black transition-colors" />
+                <Icon className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[var(--c-accent)] group-hover:text-white transition-colors" />
                 <span className="absolute right-12 sm:right-14 opacity-0 group-hover:opacity-100 px-3 py-1.5 rounded-lg bg-black text-[var(--c-accent)] text-[10px] font-black uppercase tracking-widest pointer-events-none transition-all duration-200 shadow-xl border border-[var(--c-accent)]/20 whitespace-nowrap">
                   {link.label}
                 </span>

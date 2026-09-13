@@ -59,8 +59,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         toggleSwitcher();
       }
     };
+    const handleOpenResume = () => setResumeOpen(true);
     window.addEventListener('keydown', handle);
-    return () => window.removeEventListener('keydown', handle);
+    window.addEventListener('open-resume', handleOpenResume);
+    return () => {
+      window.removeEventListener('keydown', handle);
+      window.removeEventListener('open-resume', handleOpenResume);
+    };
   }, [toggleSwitcher]);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -60,7 +60,7 @@ export const ContactSection = () => {
     setIsSuccess(false);
 
     try {
-      const response = await fetch('https://formspree.io/f/mqerqbyz', {
+      const response = await fetch('https://formspree.io/f/mdeorkbv', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -309,8 +309,8 @@ export const ContactSection = () => {
                         key={topic.id}
                         onClick={() => setForm({ ...form, subject: topic.id })}
                         className={`px-3 py-2.5 rounded-xl border-2 text-[10px] font-black uppercase text-left transition-all cursor-pointer ${form.subject === topic.id
-                            ? `bg-[var(--c-bg-alt)] text-[var(--c-accent)] border-black shadow-[2px_2px_0_var(--c-accent)]`
-                            : 'bg-[var(--c-bg-surface)] text-black border-black/10 hover:border-black'
+                          ? `bg-[var(--c-bg-alt)] text-[var(--c-accent)] border-black shadow-[2px_2px_0_var(--c-accent)]`
+                          : 'bg-[var(--c-bg-surface)] text-black border-black/10 hover:border-black'
                           }`}
                       >
                         {topic.label}

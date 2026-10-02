@@ -14,11 +14,11 @@ const DHRUV_RESUME = {
   id: 'dhruv-master-resume',
   title: 'Dhruv Singh — Official Master Resume',
   role: 'Full-Stack Developer & Computer Engineering',
-  subtitle: 'BEng Computer Engineering (Software Option) • TMU (2023–2028)',
+  subtitle: 'BEng Computer Engineering (Software Option) • TMU (Sept 2023 – Apr 2028)',
   fileUrl: '/Dhruv_Singh_Resume.pdf',
   driveUrl: 'https://drive.google.com/file/d/1cJKmsAqZNy6NeFj46CWnpGMhrv9Ovd1a/view?usp=sharing',
-  summary: 'Full-Stack Developer & Computer Engineering student at TMU building resilient web applications, REST APIs, and database-backed platforms.',
-  skills: ['React', 'TypeScript', 'Node.js', 'Python', 'Java', 'VHDL / FPGA', 'PostgreSQL', 'OpenCV', 'REST APIs', 'Arduino']
+  summary: 'Full-stack developer (React, Node.js, OpenAI API) who launched Brainstormzz to 50+ beta users in 2 weeks with a 98% successful generation rate.',
+  skills: ['React', 'Node.js', 'OpenAI API', 'Python', 'JavaScript', 'VHDL / FPGA', 'OpenCV', 'REST APIs', 'Test Automation', 'Git']
 };
 
 export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
@@ -218,7 +218,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
             {/* Bottom Footer Bar */}
             <div className="px-4 py-2 bg-[#0D1322] border-t border-[rgba(255,42,85,0.2)] flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-white/60">
-              <span>Dhruv Singh • TMU Computer Engineering 2026</span>
+              <span>Dhruv Singh • TMU Computer Engineering (2023–2028)</span>
               <span className="text-[#FF2A55]">Interactive In-Tab Preview</span>
             </div>
           </motion.div>

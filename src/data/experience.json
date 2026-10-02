@@ -4,18 +4,36 @@
     "company": "Career, Co-op & Student Success Centre, TMU",
     "companyUrl": "https://www.torontomu.ca/career-coop-student-success/",
     "duration": "Sept 2025 — Aug 2026",
-    "type": "Co-op & Technical Administration",
+    "type": "Co-op & Front-End Course Development",
     "responsibilities": [
-      "Engineered and constructed 8 custom D2L (Brightspace) course shells completely from scratch, streamlining onboarding curriculums and module delivery for engineering students.",
-      "Migrated and provisioned 500+ student accounts with zero security discrepancies, automating data batching and permission assignments across university systems.",
-      "Managed and audited employment records for 200+ active co-op students, collaborating with academic advisors and industry employers to maintain seamless compliance.",
-      "Streamlined technical workflows, data validation spreadsheets, and communications pipelines across cross-functional departmental teams."
+      "Built 8 custom D2L (Brightspace) course shells in HTML/CSS as the front-end for co-op programs, deployed to 500+ students.",
+      "Migrated and provisioned 500+ student accounts with data mapping and access configuration, with zero reported access issues.",
+      "Managed and validated employment records for 200+ co-op students in Excel (VLOOKUP, advanced formulas), maintaining 95%+ data integrity."
     ],
-    "technologies": ["D2L Brightspace", "Account Provisioning", "Excel (VLOOKUP & Formulas)", "Data Migration", "Student Systems"],
+    "technologies": ["HTML", "CSS", "D2L Brightspace", "Excel (VLOOKUP & Formulas)", "Data Mapping", "Account Provisioning"],
     "achievements": [
-      "Built 8 custom D2L Brightspace course shells from scratch.",
-      "Migrated and provisioned 500+ student accounts with flawless record integrity.",
-      "Managed employment and co-op records for 200+ students across faculties."
+      "Built 8 custom D2L Brightspace course shells deployed to 500+ students.",
+      "Migrated and provisioned 500+ student accounts with zero access discrepancies.",
+      "Maintained 95%+ data integrity across 200+ co-op employment records."
+    ],
+    "offerLetter": null
+  },
+  {
+    "role": "UI Technician",
+    "company": "Game Makers Union, TMU",
+    "companyUrl": "https://www.torontomu.ca",
+    "duration": "Sept 2024 — Apr 2025",
+    "type": "UI Engineering & Performance Optimization",
+    "responsibilities": [
+      "Delivered 8 UI components across 3 Agile sprints with a 10+ member cross-functional team, using Git for version control.",
+      "Analyzed feedback from 25+ playtest sessions, increasing task completion rate by 35% and reducing average interaction time by 20%.",
+      "Profiled and resolved performance bottlenecks through systematic debugging, reducing frame drops by 40%."
+    ],
+    "technologies": ["UI Components", "Git", "Agile / Scrum", "Performance Profiling", "Playtest Analytics", "Systematic Debugging"],
+    "achievements": [
+      "Delivered 8 UI components across 3 Agile sprints with a 10+ member cross-functional team.",
+      "Increased task completion rate by 35% and cut interaction time by 20% from 25+ playtest sessions.",
+      "Reduced frame drops by 40% through systematic bottleneck profiling and debugging."
     ],
     "offerLetter": null
   }

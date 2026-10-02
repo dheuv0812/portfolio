@@ -223,6 +223,26 @@ export function NavStarWars({ onResumeOpen }: { onResumeOpen: () => void }) {
                     )}
                   </motion.div>
                 ))}
+                <motion.div
+                  initial={{ opacity: 0, x: 16 }}
+                  animate={{ opacity: 1, x: 0, transition: { delay: links.length * 0.04, duration: 0.2 } }}
+                >
+                  <button
+                    onClick={() => {
+                      setOpen(false);
+                      onResumeOpen();
+                    }}
+                    className="w-full text-right py-2 font-black uppercase tracking-tight cursor-pointer transition-colors block"
+                    style={{
+                      fontSize: 'clamp(1.3rem, 4vw, 1.6rem)',
+                      color: accent,
+                      fontFamily: '"Arial Black", Impact, sans-serif',
+                      lineHeight: 1.15,
+                    }}
+                  >
+                    ↓ RESUME
+                  </button>
+                </motion.div>
               </nav>
             </motion.div>
           </>
